@@ -199,45 +199,26 @@ func main() {
 		}
 	}
 
-	// Download and extract 7-Zip or tar (platform-dependent)
-	var extractorPath string
-	if platform == "windows" {
-		printSection("Step 1: Setting up 7-Zip")
-		extractorPath = filepath.Join(baseDir, "Tools", "7zip", "7za.exe")
-		if !fileExists(extractorPath) {
-			if err := setup7Zip(baseDir); err != nil {
-				printError("Failed to setup 7-Zip: " + err.Error())
-				waitForExit(1)
-				return
-			}
-		} else {
-			printSuccess("7-Zip already installed")
+	// Download and setup 7-Zip for all platforms
+	printSection("Step 1: Setting up 7-Zip")
+	extractorPath := get7ZipPath(baseDir)
+	if !fileExists(extractorPath) {
+		if err := setup7Zip(baseDir); err != nil {
+			printError("Failed to setup 7-Zip: " + err.Error())
+			waitForExit(1)
+			return
 		}
 	} else {
-		printSection("Step 1: Checking system tools")
-		// Check if tar/unzip are available
+		printSuccess("7-Zip already installed")
+	}
+	
+	// On non-Windows, also check for tar (needed for .tar.xz files)
+	if platform != "windows" {
 		if !commandExists("tar") {
 			printError("'tar' command not found. Please install tar utilities.")
 			waitForExit(1)
 			return
 		}
-		// Check for 7z (p7zip) - needed for some emulators
-		if !commandExists("7z") {
-			printWarning("'7z' (p7zip) not found. Some emulators may not install correctly.")
-			printInfo("  Install with:")
-			if platform == "linux" {
-				printInfo("    Ubuntu/Debian: sudo apt install p7zip-full")
-				printInfo("    Fedora: sudo dnf install p7zip p7zip-plugins")
-				printInfo("    Arch: sudo pacman -S p7zip")
-			} else if platform == "darwin" {
-				printInfo("    macOS: brew install p7zip")
-			}
-			fmt.Println()
-		} else {
-			printSuccess("7z (p7zip) available")
-		}
-		printSuccess("System extraction tools available")
-		extractorPath = "" // Use system commands
 	}
 
 	// Download emulators
@@ -682,15 +663,8 @@ func extractFile(extractorPath, archivePath, destDir string, platform string) er
 		return extractZip(archivePath, destDir)
 
 	case strings.HasSuffix(archivePath, ".7z"):
-		if platform == "windows" {
-			return extract7z(extractorPath, archivePath, destDir)
-		}
-		// On Linux/macOS, try p7zip if available
-		if commandExists("7z") {
-			cmd := exec.Command("7z", "x", archivePath, "-o"+destDir, "-y")
-			return cmd.Run()
-		}
-		return fmt.Errorf("7z extraction not supported on this platform")
+		// Use our bundled 7-Zip on all platforms
+		return extract7z(extractorPath, archivePath, destDir)
 
 	case strings.HasSuffix(archivePath, ".tar.xz"):
 		return extractTarXz(archivePath, destDir)
@@ -1052,16 +1026,75 @@ func setup7Zip(baseDir string) error {
 		return err
 	}
 
-	sevenZipPath := filepath.Join(toolsDir, "7za.exe")
-
-	printInfo("Downloading 7-Zip standalone...")
-	url := "https://www.7-zip.org/a/7zr.exe"
-	if err := downloadFile(url, sevenZipPath); err != nil {
-		return err
+	platform := runtime.GOOS
+	
+	switch platform {
+	case "windows":
+		sevenZipPath := filepath.Join(toolsDir, "7za.exe")
+		printInfo("Downloading 7-Zip for Windows...")
+		url := "https://www.7-zip.org/a/7zr.exe"
+		if err := downloadFile(url, sevenZipPath); err != nil {
+			return err
+		}
+		
+	case "linux":
+		printInfo("Downloading 7-Zip for Linux...")
+		tarPath := filepath.Join(toolsDir, "7z-linux.tar.xz")
+		url := "https://github.com/ip7z/7zip/releases/download/25.01/7z2501-linux-x64.tar.xz"
+		if err := downloadFile(url, tarPath); err != nil {
+			return err
+		}
+		// Extract tar.xz
+		if err := extractTarXz(tarPath, toolsDir); err != nil {
+			return fmt.Errorf("failed to extract 7-Zip: %v", err)
+		}
+		// Make 7zz executable
+		sevenZipPath := filepath.Join(toolsDir, "7zz")
+		if err := os.Chmod(sevenZipPath, 0755); err != nil {
+			return err
+		}
+		// Clean up tarball
+		os.Remove(tarPath)
+		
+	case "darwin":
+		printInfo("Downloading 7-Zip for macOS...")
+		tarPath := filepath.Join(toolsDir, "7z-mac.tar.xz")
+		url := "https://github.com/ip7z/7zip/releases/download/25.01/7z2501-mac.tar.xz"
+		if err := downloadFile(url, tarPath); err != nil {
+			return err
+		}
+		// Extract tar.xz
+		if err := extractTarXz(tarPath, toolsDir); err != nil {
+			return fmt.Errorf("failed to extract 7-Zip: %v", err)
+		}
+		// Make 7zz executable
+		sevenZipPath := filepath.Join(toolsDir, "7zz")
+		if err := os.Chmod(sevenZipPath, 0755); err != nil {
+			return err
+		}
+		// Clean up tarball
+		os.Remove(tarPath)
+		
+	default:
+		return fmt.Errorf("unsupported platform: %s", platform)
 	}
 
 	printSuccess("✓ 7-Zip installed")
 	return nil
+}
+
+func get7ZipPath(baseDir string) string {
+	toolsDir := filepath.Join(baseDir, "Tools", "7zip")
+	platform := runtime.GOOS
+	
+	switch platform {
+	case "windows":
+		return filepath.Join(toolsDir, "7za.exe")
+	case "linux", "darwin":
+		return filepath.Join(toolsDir, "7zz")
+	default:
+		return ""
+	}
 }
 
 func formatBytes(bytes int64) string {
