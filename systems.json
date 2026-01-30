@@ -166,7 +166,7 @@
       "id": "gc",
       "name": "GameCube",
       "dir": "gc",
-      "romJsonFile": "gc.json",
+      "romJsonFile": "games_1g1r_english_gc_full.json",
       "libretroName": "Nintendo - GameCube",
       "emulator": {
         "path": "Emulators/Dolphin/Dolphin-x64/Dolphin.exe",
@@ -181,7 +181,7 @@
       "id": "wii",
       "name": "Wii",
       "dir": "wii",
-      "romJsonFile": "wii.json",
+      "romJsonFile": "games_1g1r_english_wii_full.json",
       "libretroName": "Nintendo - Wii",
       "emulator": {
         "path": "Emulators/Dolphin/Dolphin-x64/Dolphin.exe",
@@ -196,7 +196,7 @@
       "id": "psp",
       "name": "PlayStation Portable",
       "dir": "psp",
-      "romJsonFile": "psp.json",
+      "romJsonFile": "games_1g1r_english_psp_full.json",
       "libretroName": "Sony - PlayStation Portable",
       "emulator": {
         "path": "Emulators/RetroArch/RetroArch-Win64/retroarch.exe",
@@ -218,7 +218,7 @@
       "id": "ps1",
       "name": "PlayStation 1",
       "dir": "ps1",
-      "romJsonFile": "ps1.json",
+      "romJsonFile": "games_1g1r_english_ps1_full.json",
       "libretroName": "Sony - PlayStation",
       "emulator": {
         "path": "Emulators/RetroArch/RetroArch-Win64/retroarch.exe",
@@ -237,7 +237,7 @@
       "id": "ps2",
       "name": "PlayStation 2",
       "dir": "ps2",
-      "romJsonFile": "ps2.json",
+      "romJsonFile": "games_1g1r_english_ps2_full.json",
       "libretroName": "Sony - PlayStation 2",
       "emulator": {
         "path": "Emulators/PCSX2/pcsx2-qt.exe",
