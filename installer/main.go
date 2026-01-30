@@ -1044,9 +1044,13 @@ func setup7Zip(baseDir string) error {
 		if err := downloadFile(url, tarPath); err != nil {
 			return err
 		}
-		// Extract tar.xz
-		if err := extractTarXz(tarPath, toolsDir); err != nil {
-			return fmt.Errorf("failed to extract 7-Zip: %v", err)
+		// Extract tar.xz using system tar (more reliable for complex xz files)
+		cmd := exec.Command("tar", "-xf", tarPath, "-C", toolsDir)
+		if err := cmd.Run(); err != nil {
+			// Fallback to Go implementation
+			if err := extractTarXz(tarPath, toolsDir); err != nil {
+				return fmt.Errorf("failed to extract 7-Zip: %v", err)
+			}
 		}
 		// Make 7zz executable
 		sevenZipPath := filepath.Join(toolsDir, "7zz")
@@ -1063,9 +1067,13 @@ func setup7Zip(baseDir string) error {
 		if err := downloadFile(url, tarPath); err != nil {
 			return err
 		}
-		// Extract tar.xz
-		if err := extractTarXz(tarPath, toolsDir); err != nil {
-			return fmt.Errorf("failed to extract 7-Zip: %v", err)
+		// Extract tar.xz using system tar (more reliable for complex xz files)
+		cmd := exec.Command("tar", "-xf", tarPath, "-C", toolsDir)
+		if err := cmd.Run(); err != nil {
+			// Fallback to Go implementation
+			if err := extractTarXz(tarPath, toolsDir); err != nil {
+				return fmt.Errorf("failed to extract 7-Zip: %v", err)
+			}
 		}
 		// Make 7zz executable
 		sevenZipPath := filepath.Join(toolsDir, "7zz")
