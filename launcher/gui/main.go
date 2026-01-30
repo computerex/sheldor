@@ -172,6 +172,10 @@ type App struct {
 	emulatorArgs        [][]string
 	selectedEmulatorIdx int
 	pendingGame         ROM
+	
+	// Mouse double-click tracking
+	lastClickTime time.Time
+	lastClickIdx  int
 
 	// UI elements
 	systemList   *widget.List
@@ -284,6 +288,18 @@ func (a *App) buildUI() {
 	)
 
 	a.gameList.OnSelected = func(id widget.ListItemID) {
+		now := time.Now()
+		
+		// Check for double-click (same item clicked within 500ms)
+		if id == a.lastClickIdx && now.Sub(a.lastClickTime) < 500*time.Millisecond {
+			// Double-click detected - launch the game
+			a.launchSelected()
+			a.lastClickTime = time.Time{} // Reset to prevent triple-click
+			return
+		}
+		
+		a.lastClickIdx = id
+		a.lastClickTime = now
 		a.selectedGameIdx = id
 		a.focusOnGames = true
 		a.updateStatus()
@@ -303,7 +319,7 @@ func (a *App) buildUI() {
 	a.statusBar = widget.NewLabel("Select a system")
 
 	// Instructions
-	a.instructions = widget.NewLabel("L-Stick=Systems | R-Stick=Games (hold=fast) | Bottom=Select | Right=Back | Left=Download | Top=Favorite | Start=Favs")
+	a.instructions = widget.NewLabel("Controller: L-Stick=Sys R-Stick=Games A=Select B=Back X=DL Y=Fav | Keyboard: Arrows/Enter/Esc/D=DL/F=Fav | Mouse: Double-click=Launch")
 	a.instructions.TextStyle = fyne.TextStyle{Italic: true}
 
 	// Title
@@ -377,6 +393,158 @@ func (a *App) buildUI() {
 	)
 
 	a.window.SetContent(content)
+
+	// Add keyboard shortcuts
+	a.window.Canvas().SetOnTypedKey(func(ke *fyne.KeyEvent) {
+		// Don't handle keys if search box is focused or dialog is open
+		if a.dialogOpen {
+			return
+		}
+		
+		switch ke.Name {
+		case fyne.KeyReturn, fyne.KeyEnter:
+			// Enter - Launch selected game or select emulator
+			if a.choosingEmulator {
+				a.confirmEmulatorChoice()
+			} else if a.focusOnGames {
+				a.launchSelected()
+			} else {
+				// Focus on games
+				a.focusOnGames = true
+				if len(a.filteredGames) > 0 {
+					a.gameList.Select(0)
+				}
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+			
+		case fyne.KeyEscape, fyne.KeyBackspace:
+			// Escape/Backspace - Go back
+			if a.choosingEmulator {
+				a.cancelEmulatorChoice()
+			} else if a.focusOnGames {
+				a.focusOnGames = false
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+			
+		case fyne.KeyDown:
+			// Down arrow - Move selection down
+			if a.choosingEmulator {
+				if a.selectedEmulatorIdx < len(a.emulatorChoices)-1 {
+					a.selectedEmulatorIdx++
+					a.emulatorList.Select(a.selectedEmulatorIdx)
+				}
+			} else if a.focusOnGames {
+				if a.selectedGameIdx < len(a.filteredGames)-1 {
+					a.selectedGameIdx++
+					a.gameList.Select(a.selectedGameIdx)
+				}
+			} else {
+				if a.selectedSysIdx < len(systemsList)-1 {
+					a.selectedSysIdx++
+					a.systemList.Select(a.selectedSysIdx)
+				}
+			}
+			
+		case fyne.KeyUp:
+			// Up arrow - Move selection up
+			if a.choosingEmulator {
+				if a.selectedEmulatorIdx > 0 {
+					a.selectedEmulatorIdx--
+					a.emulatorList.Select(a.selectedEmulatorIdx)
+				}
+			} else if a.focusOnGames {
+				if a.selectedGameIdx > 0 {
+					a.selectedGameIdx--
+					a.gameList.Select(a.selectedGameIdx)
+				}
+			} else {
+				if a.selectedSysIdx > 0 {
+					a.selectedSysIdx--
+					a.systemList.Select(a.selectedSysIdx)
+				}
+			}
+			
+		case fyne.KeyLeft:
+			// Left arrow - Focus on systems or download
+			if !a.choosingEmulator && a.focusOnGames {
+				a.focusOnGames = false
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+			
+		case fyne.KeyRight:
+			// Right arrow - Focus on games
+			if !a.choosingEmulator && !a.focusOnGames {
+				a.focusOnGames = true
+				if len(a.filteredGames) > 0 && a.selectedGameIdx < 0 {
+					a.selectedGameIdx = 0
+					a.gameList.Select(0)
+				}
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+			
+		case fyne.KeyD:
+			// D key - Download selected game
+			if a.focusOnGames && !a.choosingEmulator {
+				a.downloadSelected()
+			}
+			
+		case fyne.KeyF:
+			// F key - Toggle favorite
+			if a.focusOnGames && !a.choosingEmulator {
+				a.toggleSelectedFavorite()
+			}
+			
+		case fyne.KeyTab:
+			// Tab - Toggle between systems and games
+			if !a.choosingEmulator {
+				a.focusOnGames = !a.focusOnGames
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+			
+		case fyne.KeyPageDown:
+			// Page Down - Jump down 10 items
+			if a.focusOnGames {
+				newIdx := a.selectedGameIdx + 10
+				if newIdx >= len(a.filteredGames) {
+					newIdx = len(a.filteredGames) - 1
+				}
+				if newIdx >= 0 {
+					a.selectedGameIdx = newIdx
+					a.gameList.Select(a.selectedGameIdx)
+				}
+			}
+			
+		case fyne.KeyPageUp:
+			// Page Up - Jump up 10 items
+			if a.focusOnGames {
+				newIdx := a.selectedGameIdx - 10
+				if newIdx < 0 {
+					newIdx = 0
+				}
+				a.selectedGameIdx = newIdx
+				a.gameList.Select(a.selectedGameIdx)
+			}
+			
+		case fyne.KeyHome:
+			// Home - Jump to first item
+			if a.focusOnGames && len(a.filteredGames) > 0 {
+				a.selectedGameIdx = 0
+				a.gameList.Select(0)
+			}
+			
+		case fyne.KeyEnd:
+			// End - Jump to last item
+			if a.focusOnGames && len(a.filteredGames) > 0 {
+				a.selectedGameIdx = len(a.filteredGames) - 1
+				a.gameList.Select(a.selectedGameIdx)
+			}
+		}
+	})
 
 	// Select first system
 	if len(systemsList) > 0 {

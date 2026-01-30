@@ -67,3 +67,138 @@
 [03:52:08] Selecting system: psp, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_psp_full.json
 [03:52:08] Read 233705 bytes from JSON
 [03:52:08] Loaded 800 games
+[03:52:10] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:52:10] Read 657716 bytes from JSON
+[03:52:10] Loaded 2426 games
+[03:52:10] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:52:10] Read 844415 bytes from JSON
+[03:52:10] Loaded 2978 games
+[03:52:11] Selecting system: dreamcast, JSON: C:\projects\emubuddy\1g1rsets\dreamcast.json
+[03:52:11] Read 101125 bytes from JSON
+[03:52:11] Loaded 354 games
+[03:52:11] Selecting system: genesis, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_genesis.json
+[03:52:11] Read 263595 bytes from JSON
+[03:52:11] Loaded 904 games
+[03:52:11] Selecting system: sms, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_sms.json
+[03:52:11] Read 89414 bytes from JSON
+[03:52:11] Loaded 292 games
+[03:52:12] Selecting system: genesis, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_genesis.json
+[03:52:12] Read 263595 bytes from JSON
+[03:52:12] Loaded 904 games
+[03:52:12] Selecting system: dreamcast, JSON: C:\projects\emubuddy\1g1rsets\dreamcast.json
+[03:52:12] Read 101125 bytes from JSON
+[03:52:12] Loaded 354 games
+[03:52:12] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:52:12] Read 844415 bytes from JSON
+[03:52:12] Loaded 2978 games
+[03:52:13] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:52:13] Read 657716 bytes from JSON
+[03:52:13] Loaded 2426 games
+[03:52:13] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:52:13] Read 844415 bytes from JSON
+[03:52:13] Loaded 2978 games
+[03:52:13] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:52:13] Read 657716 bytes from JSON
+[03:52:13] Loaded 2426 games
+[03:52:28] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:52:28] Read 844415 bytes from JSON
+[03:52:28] Loaded 2978 games
+[03:52:49] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:52:49] Read 657716 bytes from JSON
+[03:52:49] Loaded 2426 games
+[03:52:50] Selecting system: psp, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_psp_full.json
+[03:52:50] Read 233705 bytes from JSON
+[03:52:50] Loaded 800 games
+[03:53:09] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:53:09] Read 657716 bytes from JSON
+[03:53:09] Loaded 2426 games
+[03:53:10] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:53:10] Read 844415 bytes from JSON
+[03:53:10] Loaded 2978 games
+[03:53:16] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:53:16] Read 657716 bytes from JSON
+[03:53:16] Loaded 2426 games
+[03:53:25] Selecting system: psp, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_psp_full.json
+[03:53:25] Read 233705 bytes from JSON
+[03:53:25] Loaded 800 games
+[03:54:47] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[03:54:47] Read 657716 bytes from JSON
+[03:54:47] Loaded 2426 games
+[03:54:52] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[03:54:52] Read 844415 bytes from JSON
+[03:54:52] Loaded 2978 games
+[04:01:00] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[04:01:00] Read 657716 bytes from JSON
+[04:01:00] Loaded 2426 games
+[04:01:00] Selecting system: psp, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_psp_full.json
+[04:01:00] Read 233705 bytes from JSON
+[04:01:00] Loaded 800 games
+[04:01:00] Selecting system: wii, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_wii_full.json
+[04:01:00] Read 531046 bytes from JSON
+[04:01:00] Loaded 1633 games
+[04:01:00] Selecting system: gc, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_gc_full.json
+[04:01:00] Read 220438 bytes from JSON
+[04:01:00] Loaded 693 games
+[04:01:01] Selecting system: 3ds, JSON: C:\projects\emubuddy\1g1rsets\3ds.json
+[04:01:01] Read 190288 bytes from JSON
+[04:01:01] Loaded 616 games
+[04:01:01] Selecting system: ds, JSON: C:\projects\emubuddy\1g1rsets\ds.json
+[04:01:01] Read 826485 bytes from JSON
+[04:01:01] Loaded 2733 games
+[04:01:01] Selecting system: gba, JSON: C:\projects\emubuddy\1g1rsets\gba.json
+[04:01:01] Read 366657 bytes from JSON
+[04:01:01] Loaded 1266 games
+[04:01:01] Selecting system: gbc, JSON: C:\projects\emubuddy\1g1rsets\gbc.json
+[04:01:01] Read 200610 bytes from JSON
+[04:01:01] Loaded 684 games
+[04:01:01] Selecting system: gb, JSON: C:\projects\emubuddy\1g1rsets\gb.json
+[04:01:01] Read 187931 bytes from JSON
+[04:01:01] Loaded 713 games
+[04:01:02] Selecting system: gbc, JSON: C:\projects\emubuddy\1g1rsets\gbc.json
+[04:01:02] Read 200610 bytes from JSON
+[04:01:02] Loaded 684 games
+[04:01:02] Selecting system: gba, JSON: C:\projects\emubuddy\1g1rsets\gba.json
+[04:01:02] Read 366657 bytes from JSON
+[04:01:02] Loaded 1266 games
+[04:01:02] Selecting system: ds, JSON: C:\projects\emubuddy\1g1rsets\ds.json
+[04:01:02] Read 826485 bytes from JSON
+[04:01:02] Loaded 2733 games
+[04:01:03] Selecting system: 3ds, JSON: C:\projects\emubuddy\1g1rsets\3ds.json
+[04:01:03] Read 190288 bytes from JSON
+[04:01:03] Loaded 616 games
+[04:01:03] Selecting system: gc, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_gc_full.json
+[04:01:03] Read 220438 bytes from JSON
+[04:01:03] Loaded 693 games
+[04:01:03] Selecting system: wii, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_wii_full.json
+[04:01:03] Read 531046 bytes from JSON
+[04:01:03] Loaded 1633 games
+[04:01:03] Selecting system: psp, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_psp_full.json
+[04:01:03] Read 233705 bytes from JSON
+[04:01:03] Loaded 800 games
+[04:01:03] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[04:01:03] Read 657716 bytes from JSON
+[04:01:03] Loaded 2426 games
+[04:01:03] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[04:01:03] Read 844415 bytes from JSON
+[04:01:03] Loaded 2978 games
+[04:01:04] Selecting system: dreamcast, JSON: C:\projects\emubuddy\1g1rsets\dreamcast.json
+[04:01:04] Read 101125 bytes from JSON
+[04:01:04] Loaded 354 games
+[04:01:04] Selecting system: genesis, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_genesis.json
+[04:01:04] Read 263595 bytes from JSON
+[04:01:04] Loaded 904 games
+[04:01:04] Selecting system: sms, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_sms.json
+[04:01:04] Read 89414 bytes from JSON
+[04:01:04] Loaded 292 games
+[04:01:05] Selecting system: genesis, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_genesis.json
+[04:01:05] Read 263595 bytes from JSON
+[04:01:05] Loaded 904 games
+[04:01:05] Selecting system: dreamcast, JSON: C:\projects\emubuddy\1g1rsets\dreamcast.json
+[04:01:05] Read 101125 bytes from JSON
+[04:01:05] Loaded 354 games
+[04:01:05] Selecting system: ps2, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps2_full.json
+[04:01:05] Read 844415 bytes from JSON
+[04:01:05] Loaded 2978 games
+[04:01:05] Selecting system: ps1, JSON: C:\projects\emubuddy\1g1rsets\games_1g1r_english_ps1_full.json
+[04:01:05] Read 657716 bytes from JSON
+[04:01:05] Loaded 2426 games
