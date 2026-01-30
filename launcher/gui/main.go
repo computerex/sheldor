@@ -44,6 +44,41 @@ func isWindowFocused(windowTitle string) bool {
 	return strings.Contains(title, windowTitle)
 }
 
+// DoubleTappableList wraps a widget.List to add double-tap support
+type DoubleTappableList struct {
+	widget.BaseWidget
+	List          *widget.List
+	OnDoubleTap   func()
+	lastTapTime   time.Time
+}
+
+func NewDoubleTappableList(list *widget.List, onDoubleTap func()) *DoubleTappableList {
+	d := &DoubleTappableList{
+		List:        list,
+		OnDoubleTap: onDoubleTap,
+	}
+	d.ExtendBaseWidget(d)
+	return d
+}
+
+func (d *DoubleTappableList) CreateRenderer() fyne.WidgetRenderer {
+	return widget.NewSimpleRenderer(d.List)
+}
+
+func (d *DoubleTappableList) Tapped(e *fyne.PointEvent) {
+	now := time.Now()
+	if now.Sub(d.lastTapTime) < 400*time.Millisecond {
+		if d.OnDoubleTap != nil {
+			d.OnDoubleTap()
+		}
+		d.lastTapTime = time.Time{} // Reset
+	} else {
+		d.lastTapTime = now
+	}
+}
+
+func (d *DoubleTappableList) TappedSecondary(e *fyne.PointEvent) {}
+
 type ROM struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
@@ -178,13 +213,14 @@ type App struct {
 	lastClickIdx  int
 
 	// UI elements
-	systemList   *widget.List
-	gameList     *widget.List
-	statusBar    *widget.Label
-	searchEntry  *widget.Entry
-	searchQuery  string
-	instructions *widget.Label
-	favsCheck    *widget.Check
+	systemList        *widget.List
+	gameList          *widget.List
+	tappableGameList  *DoubleTappableList
+	statusBar         *widget.Label
+	searchEntry       *widget.Entry
+	searchQuery       string
+	instructions      *widget.Label
+	favsCheck         *widget.Check
 	
 	// Emulator choice UI
 	emulatorList *widget.List
@@ -289,26 +325,17 @@ func (a *App) buildUI() {
 	)
 
 	a.gameList.OnSelected = func(id widget.ListItemID) {
-		now := time.Now()
-		
-		// Always update the selection first
 		a.selectedGameIdx = id
 		a.focusOnGames = true
-		
-		// Check for double-click (same item clicked within 500ms)
-		if id == a.lastClickIdx && now.Sub(a.lastClickTime) < 500*time.Millisecond {
-			// Double-click detected - launch the game
-			a.launchSelected()
-			a.lastClickTime = time.Time{} // Reset to prevent triple-click
-			return
-		}
-		
-		a.lastClickIdx = id
-		a.lastClickTime = now
 		a.updateStatus()
 		a.gameList.Refresh()
 		a.systemList.Refresh()
 	}
+	
+	// Wrap game list with double-tap support
+	a.tappableGameList = NewDoubleTappableList(a.gameList, func() {
+		a.launchSelected()
+	})
 
 	// Search box
 	a.searchEntry = widget.NewEntry()
@@ -376,7 +403,7 @@ func (a *App) buildUI() {
 	)
 	a.gamePanel = container.NewBorder(
 		gameHeader, nil, nil, nil,
-		a.gameList,
+		a.tappableGameList,
 	)
 
 	// Emulator choice panel

@@ -241,3 +241,48 @@
 [04:10:14] Selecting system: n64, JSON: C:\projects\emubuddy\1g1rsets\n64.json
 [04:10:14] Read 101515 bytes from JSON
 [04:10:14] Loaded 366 games
+[04:13:05] Selecting system: nes, JSON: C:\projects\emubuddy\1g1rsets\nes.json
+[04:13:05] Read 294111 bytes from JSON
+[04:13:05] Loaded 994 games
+[04:13:12] Selecting system: snes, JSON: C:\projects\emubuddy\1g1rsets\snes.json
+[04:13:12] Read 294260 bytes from JSON
+[04:13:12] Loaded 1020 games
+[04:13:12] Selecting system: n64, JSON: C:\projects\emubuddy\1g1rsets\n64.json
+[04:13:12] Read 101515 bytes from JSON
+[04:13:12] Loaded 366 games
+[04:13:12] Selecting system: gb, JSON: C:\projects\emubuddy\1g1rsets\gb.json
+[04:13:12] Read 187931 bytes from JSON
+[04:13:12] Loaded 713 games
+[04:13:12] Selecting system: gbc, JSON: C:\projects\emubuddy\1g1rsets\gbc.json
+[04:13:12] Read 200610 bytes from JSON
+[04:13:12] Loaded 684 games
+[04:13:12] Selecting system: gba, JSON: C:\projects\emubuddy\1g1rsets\gba.json
+[04:13:12] Read 366657 bytes from JSON
+[04:13:12] Loaded 1266 games
+[04:13:13] Selecting system: ds, JSON: C:\projects\emubuddy\1g1rsets\ds.json
+[04:13:13] Read 826485 bytes from JSON
+[04:13:13] Loaded 2733 games
+[04:13:13] Selecting system: 3ds, JSON: C:\projects\emubuddy\1g1rsets\3ds.json
+[04:13:13] Read 190288 bytes from JSON
+[04:13:13] Loaded 616 games
+[04:13:13] Selecting system: ds, JSON: C:\projects\emubuddy\1g1rsets\ds.json
+[04:13:13] Read 826485 bytes from JSON
+[04:13:13] Loaded 2733 games
+[04:13:14] Selecting system: gba, JSON: C:\projects\emubuddy\1g1rsets\gba.json
+[04:13:14] Read 366657 bytes from JSON
+[04:13:14] Loaded 1266 games
+[04:13:14] Selecting system: gbc, JSON: C:\projects\emubuddy\1g1rsets\gbc.json
+[04:13:14] Read 200610 bytes from JSON
+[04:13:14] Loaded 684 games
+[04:13:14] Selecting system: gb, JSON: C:\projects\emubuddy\1g1rsets\gb.json
+[04:13:14] Read 187931 bytes from JSON
+[04:13:14] Loaded 713 games
+[04:13:14] Selecting system: n64, JSON: C:\projects\emubuddy\1g1rsets\n64.json
+[04:13:14] Read 101515 bytes from JSON
+[04:13:14] Loaded 366 games
+[04:13:15] Selecting system: snes, JSON: C:\projects\emubuddy\1g1rsets\snes.json
+[04:13:15] Read 294260 bytes from JSON
+[04:13:15] Loaded 1020 games
+[04:13:15] Selecting system: n64, JSON: C:\projects\emubuddy\1g1rsets\n64.json
+[04:13:15] Read 101515 bytes from JSON
+[04:13:15] Loaded 366 games
