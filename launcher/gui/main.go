@@ -638,15 +638,37 @@ func (a *App) selectSystem(sysID string) {
 
 	// Load ROM JSON
 	jsonFile := filepath.Join(baseDir, "1g1rsets", config.RomJsonFile)
+	
+	// Debug logging
+	logFile, _ := os.OpenFile(filepath.Join(baseDir, "launcher_debug.log"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if logFile != nil {
+		logFile.WriteString(fmt.Sprintf("[%s] Selecting system: %s, JSON: %s\n", time.Now().Format("15:04:05"), sysID, jsonFile))
+		defer logFile.Close()
+	}
+	
 	data, err := os.ReadFile(jsonFile)
 	if err != nil {
 		a.statusBar.SetText(fmt.Sprintf("Error: %v", err))
+		if logFile != nil {
+			logFile.WriteString(fmt.Sprintf("[%s] ERROR reading file: %v\n", time.Now().Format("15:04:05"), err))
+		}
 		return
+	}
+	
+	if logFile != nil {
+		logFile.WriteString(fmt.Sprintf("[%s] Read %d bytes from JSON\n", time.Now().Format("15:04:05"), len(data)))
 	}
 
 	if err := json.Unmarshal(data, &a.allGames); err != nil {
 		a.statusBar.SetText(fmt.Sprintf("Error: %v", err))
+		if logFile != nil {
+			logFile.WriteString(fmt.Sprintf("[%s] ERROR parsing JSON: %v\n", time.Now().Format("15:04:05"), err))
+		}
 		return
+	}
+	
+	if logFile != nil {
+		logFile.WriteString(fmt.Sprintf("[%s] Loaded %d games\n", time.Now().Format("15:04:05"), len(a.allGames)))
 	}
 
 	// Build ROM cache
