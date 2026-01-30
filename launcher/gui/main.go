@@ -184,6 +184,7 @@ type App struct {
 	searchEntry  *widget.Entry
 	searchQuery  string
 	instructions *widget.Label
+	favsCheck    *widget.Check
 	
 	// Emulator choice UI
 	emulatorList *widget.List
@@ -290,6 +291,10 @@ func (a *App) buildUI() {
 	a.gameList.OnSelected = func(id widget.ListItemID) {
 		now := time.Now()
 		
+		// Always update the selection first
+		a.selectedGameIdx = id
+		a.focusOnGames = true
+		
 		// Check for double-click (same item clicked within 500ms)
 		if id == a.lastClickIdx && now.Sub(a.lastClickTime) < 500*time.Millisecond {
 			// Double-click detected - launch the game
@@ -300,8 +305,6 @@ func (a *App) buildUI() {
 		
 		a.lastClickIdx = id
 		a.lastClickTime = now
-		a.selectedGameIdx = id
-		a.focusOnGames = true
 		a.updateStatus()
 		a.gameList.Refresh()
 		a.systemList.Refresh()
@@ -358,9 +361,16 @@ func (a *App) buildUI() {
 		a.emulatorList.Refresh()
 	}
 
-	// Game panel with header and search
+	// Favorites checkbox
+	a.favsCheck = widget.NewCheck("Favorites Only", func(checked bool) {
+		a.showFavsOnly = checked
+		a.filterGames()
+	})
+	
+	// Game panel with header, favorites checkbox, and search
+	gamesLabel := widget.NewLabel("GAMES")
 	gameHeader := container.NewBorder(nil, nil,
-		widget.NewLabel("GAMES"),
+		container.NewHBox(gamesLabel, a.favsCheck),
 		nil,
 		a.searchEntry,
 	)
@@ -700,6 +710,7 @@ func (a *App) pollController() {
 		// Start button (bit 7) - Toggle favorites view
 		if justPressed&128 != 0 {
 			a.showFavsOnly = !a.showFavsOnly
+			a.favsCheck.SetChecked(a.showFavsOnly) // Sync checkbox
 			a.filterGames()
 		}
 
