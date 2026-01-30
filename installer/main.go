@@ -62,12 +62,12 @@ var emulators = []Emulator{
 		Name: "PPSSPP (PSP)",
 		URLs: EmulatorURL{
 			Windows: "https://www.ppsspp.org/files/1_19_3/ppsspp_win.zip",
-			Linux:   "", // Flatpak - installed separately
+			Linux:   "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/PPSSPP-v1.19.3-anylinux-x86_64.AppImage",
 			MacOS:   "https://www.ppsspp.org/files/1_19_3/PPSSPP_macOS.dmg",
 		},
 		ArchiveName: map[string]string{
 			"windows": "ppsspp.zip",
-			"linux":   "",
+			"linux":   "ppsspp.AppImage",
 			"darwin":  "ppsspp.dmg",
 		},
 		ExtractDir: "PPSSPP",
@@ -87,32 +87,32 @@ var emulators = []Emulator{
 		ExtractDir: "Dolphin",
 	},
 	{
-		Name: "DeSmuME (Nintendo DS)",
+		Name: "melonDS (Nintendo DS)",
 		URLs: EmulatorURL{
-			Windows: "https://github.com/TASEmulators/desmume/releases/download/release_0_9_13/desmume-0.9.13-win64.zip",
-			Linux:   "", // Snap - installed separately
-			MacOS:   "https://github.com/TASEmulators/desmume/releases/download/release_0_9_13/desmume-0.9.13-macOS.dmg",
+			Windows: "https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-windows-x86_64.zip",
+			Linux:   "https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-appimage-x86_64.zip",
+			MacOS:   "https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-macOS-universal.zip",
 		},
 		ArchiveName: map[string]string{
-			"windows": "desmume.zip",
-			"linux":   "",
-			"darwin":  "desmume.dmg",
+			"windows": "melonds.zip",
+			"linux":   "melonds.zip",
+			"darwin":  "melonds.zip",
 		},
-		ExtractDir: "DeSmuME",
+		ExtractDir: "melonDS",
 	},
 	{
 		Name: "Azahar (Nintendo 3DS)",
 		URLs: EmulatorURL{
 			Windows: "https://github.com/azahar-emu/azahar/releases/download/2124.3/azahar-2124.3-windows-msvc.zip",
-			Linux:   "", // Not available
+			Linux:   "https://github.com/azahar-emu/azahar/releases/download/2124.3/azahar.AppImage",
 			MacOS:   "https://github.com/azahar-emu/azahar/releases/download/2124.3/azahar-2124.3-macos-universal.zip",
 		},
 		ArchiveName: map[string]string{
 			"windows": "azahar.zip",
-			"linux":   "",
+			"linux":   "azahar.AppImage",
 			"darwin":  "azahar.zip",
 		},
-		ExtractDir: "Lime3DS",
+		ExtractDir: "Azahar",
 	},
 	{
 		Name: "mGBA (Game Boy Advance)",
@@ -290,16 +290,8 @@ func main() {
 	}
 	if len(linuxManualInstalls) > 0 {
 		fmt.Println()
-		printInfo("Linux: Install these via package manager:")
-		for _, name := range linuxManualInstalls {
-			if strings.Contains(name, "PPSSPP") {
-				printInfo("  • PPSSPP: flatpak install flathub org.ppsspp.PPSSPP")
-			} else if strings.Contains(name, "DeSmuME") {
-				printInfo("  • DeSmuME: sudo snap install desmume-emulator")
-			} else if strings.Contains(name, "Azahar") {
-				printInfo("  • Azahar: Not available for Linux (compile from source)")
-			}
-		}
+		printInfo("Linux: Some emulators downloaded as Flatpak packages:")
+		printInfo("  Install with: flatpak install <path-to-flatpak-file>")
 	}
 
 	// Download RetroArch cores

@@ -132,9 +132,9 @@
         "name": "RetroArch"
       },
       "standaloneEmulator": {
-        "path": "Emulators/DeSmuME/DeSmuME_0.9.13_x64.exe",
+        "path": "Emulators/melonDS/melonDS.exe",
         "args": [],
-        "name": "DeSmuME Standalone"
+        "name": "melonDS Standalone"
       },
       "fileExtensions": [".nds", ".zip"],
       "needsExtract": true
@@ -154,10 +154,10 @@
         "name": "RetroArch"
       },
       "standaloneEmulator": {
-        "path": "Emulators/Lime3DS/azahar.exe",
+        "path": "Emulators/Azahar/azahar.exe",
         "args": [],
         "cores": [],
-        "name": "Lime3DS (Azahar)"
+        "name": "Azahar (3DS Emulator)"
       },
       "fileExtensions": [".3ds", ".cci", ".cxi", ".app"],
       "needsExtract": true
