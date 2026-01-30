@@ -11,14 +11,38 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+	"syscall"
 	"time"
+	"unsafe"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
+	"github.com/0xcafed00d/joystick"
 )
+
+var (
+	user32                  = syscall.NewLazyDLL("user32.dll")
+	procGetForegroundWindow = user32.NewProc("GetForegroundWindow")
+	procGetWindowTextW      = user32.NewProc("GetWindowTextW")
+)
+
+func isWindowFocused(windowTitle string) bool {
+	hwnd, _, _ := procGetForegroundWindow.Call()
+	if hwnd == 0 {
+		return false
+	}
+	
+	buf := make([]uint16, 256)
+	procGetWindowTextW.Call(hwnd, uintptr(unsafe.Pointer(&buf[0])), 256)
+	title := syscall.UTF16ToString(buf)
+	
+	return strings.Contains(title, windowTitle)
+}
 
 type ROM struct {
 	Name string `json:"name"`
@@ -27,21 +51,28 @@ type ROM struct {
 	Date string `json:"date"`
 }
 
+type CoreConfig struct {
+	Name string `json:"name"`
+	Dll  string `json:"dll"`
+}
+
 type EmulatorConfig struct {
-	Path string   `json:"path"`
-	Args []string `json:"args"`
-	Name string   `json:"name"`
+	Path  string       `json:"path"`
+	Args  []string     `json:"args"`
+	Cores []CoreConfig `json:"cores"`
+	Name  string       `json:"name"`
 }
 
 type SystemConfig struct {
-	ID                 string           `json:"id"`
-	Name               string           `json:"name"`
-	Dir                string           `json:"dir"`
-	RomJsonFile        string           `json:"romJsonFile"`
-	Emulator           EmulatorConfig   `json:"emulator"`
-	StandaloneEmulator *EmulatorConfig  `json:"standaloneEmulator"`
-	FileExtensions     []string         `json:"fileExtensions"`
-	NeedsExtract       bool             `json:"needsExtract"`
+	ID                 string          `json:"id"`
+	Name               string          `json:"name"`
+	Dir                string          `json:"dir"`
+	RomJsonFile        string          `json:"romJsonFile"`
+	LibretroName       string          `json:"libretroName"`
+	Emulator           EmulatorConfig  `json:"emulator"`
+	StandaloneEmulator *EmulatorConfig `json:"standaloneEmulator"`
+	FileExtensions     []string        `json:"fileExtensions"`
+	NeedsExtract       bool            `json:"needsExtract"`
 }
 
 type SystemsConfig struct {
@@ -49,12 +80,11 @@ type SystemsConfig struct {
 }
 
 var systems map[string]SystemConfig
-var systemsListCache []SystemListItem
+var systemsList []string
 var favorites map[string]map[string]bool
 
 var baseDir string
 var romsDir string
-var romgetPath string
 var favoritesPath string
 
 func init() {
@@ -62,36 +92,29 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	
-	// Get the directory containing the executable
+
 	exeDir := filepath.Dir(exe)
-	
-	// Check if we're running from the root (EmuBuddyLauncher.exe is in root)
-	// or from a subdirectory during development
+
 	if fileExists(filepath.Join(exeDir, "1g1rsets")) {
-		// Executable is in the root directory
 		baseDir = exeDir
 	} else if fileExists(filepath.Join(filepath.Dir(exeDir), "1g1rsets")) {
-		// One level up (e.g., launcher/EmuBuddyLauncher.exe)
 		baseDir = filepath.Dir(exeDir)
 	} else if fileExists(filepath.Join(filepath.Dir(filepath.Dir(exeDir)), "1g1rsets")) {
-		// Two levels up (e.g., launcher/gui/EmuBuddyLauncher.exe)
 		baseDir = filepath.Dir(filepath.Dir(exeDir))
 	} else {
-		// Fallback: assume exe is in root
 		baseDir = exeDir
 	}
-	
+
 	romsDir = filepath.Join(baseDir, "roms")
-	romgetPath = filepath.Join(baseDir, "Tools", "romget", "romget")
-	if runtime.GOOS == "windows" {
-		romgetPath += ".exe"
-	}
 	favoritesPath = filepath.Join(baseDir, "favorites.json")
 
-	// Load systems configuration and favorites
 	loadSystemsConfig()
 	loadFavorites()
+}
+
+func fileExists(path string) bool {
+	_, err := os.Stat(path)
+	return err == nil
 }
 
 func loadSystemsConfig() {
@@ -106,15 +129,11 @@ func loadSystemsConfig() {
 		panic(fmt.Sprintf("Failed to parse systems.json: %v", err))
 	}
 
-	// Build the systems map and list
 	systems = make(map[string]SystemConfig)
-	systemsListCache = make([]SystemListItem, 0, len(config.Systems))
+	systemsList = make([]string, 0, len(config.Systems))
 	for _, sys := range config.Systems {
 		systems[sys.ID] = sys
-		systemsListCache = append(systemsListCache, SystemListItem{
-			Key:  sys.ID,
-			Name: sys.Name,
-		})
+		systemsList = append(systemsList, sys.ID)
 	}
 }
 
@@ -122,24 +141,580 @@ func loadFavorites() {
 	favorites = make(map[string]map[string]bool)
 	data, err := os.ReadFile(favoritesPath)
 	if err != nil {
-		// File doesn't exist yet, that's ok
 		return
 	}
-
-	if err := json.Unmarshal(data, &favorites); err != nil {
-		fmt.Println("Failed to parse favorites.json:", err)
-	}
+	json.Unmarshal(data, &favorites)
 }
 
 func saveFavorites() {
-	data, err := json.Marshal(favorites)
+	data, _ := json.Marshal(favorites)
+	os.WriteFile(favoritesPath, data, 0644)
+}
+
+// App holds the application state
+type App struct {
+	window          fyne.Window
+	windowFocused   bool
+	currentSystem   string
+	allGames        []ROM
+	filteredGames   []ROM
+	showFavsOnly    bool
+	romCache        map[string]bool
+	selectedGameIdx int
+	selectedSysIdx  int
+	focusOnGames    bool // true = game list focused, false = system list focused
+	dialogOpen      bool
+
+	// Emulator choice state
+	choosingEmulator    bool
+	emulatorChoices     []string
+	emulatorPaths       []string
+	emulatorArgs        [][]string
+	selectedEmulatorIdx int
+	pendingGame         ROM
+
+	// UI elements
+	systemList   *widget.List
+	gameList     *widget.List
+	statusBar    *widget.Label
+	searchEntry  *widget.Entry
+	searchQuery  string
+	instructions *widget.Label
+	
+	// Emulator choice UI
+	emulatorList *widget.List
+	mainSplit    *container.Split
+	gamePanel    *fyne.Container
+	emulatorPanel *fyne.Container
+}
+
+func main() {
+	myApp := app.New()
+	myApp.Settings().SetTheme(theme.DarkTheme())
+
+	myWindow := myApp.NewWindow("EmuBuddy")
+	myWindow.Resize(fyne.NewSize(1000, 600))
+
+	appState := &App{
+		window:        myWindow,
+		romCache:      make(map[string]bool),
+		windowFocused: true,
+	}
+
+	appState.buildUI()
+	go appState.pollController()
+	myWindow.ShowAndRun()
+}
+
+func (a *App) buildUI() {
+	// System list on left
+	a.systemList = widget.NewList(
+		func() int { return len(systemsList) },
+		func() fyne.CanvasObject {
+			return widget.NewLabel("System Name Here")
+		},
+		func(id widget.ListItemID, item fyne.CanvasObject) {
+			if id >= len(systemsList) {
+				return
+			}
+			label := item.(*widget.Label)
+			sysID := systemsList[id]
+			name := systems[sysID].Name
+			if !a.focusOnGames && id == a.selectedSysIdx {
+				name = "> " + name
+			}
+			label.SetText(name)
+		},
+	)
+
+	a.systemList.OnSelected = func(id widget.ListItemID) {
+		a.selectedSysIdx = id
+		a.focusOnGames = false
+		a.selectSystem(systemsList[id])
+		a.systemList.Refresh()
+	}
+
+	// Game list on right
+	a.gameList = widget.NewList(
+		func() int { return len(a.filteredGames) },
+		func() fyne.CanvasObject {
+			nameLabel := widget.NewLabel("Game Name Here")
+			statusLabel := widget.NewLabel("Status")
+			sizeLabel := widget.NewLabel("Size")
+			return container.NewBorder(nil, nil, nil,
+				container.NewHBox(statusLabel, sizeLabel),
+				nameLabel,
+			)
+		},
+		func(id widget.ListItemID, item fyne.CanvasObject) {
+			if id >= len(a.filteredGames) {
+				return
+			}
+			game := a.filteredGames[id]
+			box := item.(*fyne.Container)
+
+			nameLabel := box.Objects[0].(*widget.Label)
+			rightBox := box.Objects[1].(*fyne.Container)
+			statusLabel := rightBox.Objects[0].(*widget.Label)
+			sizeLabel := rightBox.Objects[1].(*widget.Label)
+
+			// Name with favorite indicator
+			name := strings.TrimSuffix(game.Name, ".zip")
+			name = strings.TrimSuffix(name, ".chd")
+			if a.isFavorite(game.Name) {
+				name = "[FAV] " + name
+			}
+			if a.focusOnGames && id == a.selectedGameIdx {
+				name = "> " + name
+			}
+			if len(name) > 60 {
+				name = name[:57] + "..."
+			}
+			nameLabel.SetText(name)
+
+			// Status
+			if a.romCache[game.Name] {
+				statusLabel.SetText("[Ready]")
+			} else {
+				statusLabel.SetText("[DL]")
+			}
+
+			sizeLabel.SetText(game.Size)
+		},
+	)
+
+	a.gameList.OnSelected = func(id widget.ListItemID) {
+		a.selectedGameIdx = id
+		a.focusOnGames = true
+		a.updateStatus()
+		a.gameList.Refresh()
+		a.systemList.Refresh()
+	}
+
+	// Search box
+	a.searchEntry = widget.NewEntry()
+	a.searchEntry.SetPlaceHolder("Type to search...")
+	a.searchEntry.OnChanged = func(s string) {
+		a.searchQuery = s
+		a.filterGames()
+	}
+
+	// Status bar
+	a.statusBar = widget.NewLabel("Select a system")
+
+	// Instructions
+	a.instructions = widget.NewLabel("L-Stick=Systems | R-Stick=Games (hold=fast) | Bottom=Select | Right=Back | Left=Download | Top=Favorite | Start=Favs")
+	a.instructions.TextStyle = fyne.TextStyle{Italic: true}
+
+	// Title
+	title := canvas.NewText("EmuBuddy", theme.ForegroundColor())
+	title.TextSize = 24
+	title.TextStyle = fyne.TextStyle{Bold: true}
+
+	// System panel with header
+	systemHeader := widget.NewLabel("SYSTEMS")
+	systemHeader.TextStyle = fyne.TextStyle{Bold: true}
+	systemPanel := container.NewBorder(
+		systemHeader, nil, nil, nil,
+		a.systemList,
+	)
+
+	// Emulator choice list
+	a.emulatorList = widget.NewList(
+		func() int { return len(a.emulatorChoices) },
+		func() fyne.CanvasObject {
+			return widget.NewLabel("Emulator Option")
+		},
+		func(id widget.ListItemID, item fyne.CanvasObject) {
+			if id >= len(a.emulatorChoices) {
+				return
+			}
+			label := item.(*widget.Label)
+			name := a.emulatorChoices[id]
+			if id == a.selectedEmulatorIdx {
+				name = "> " + name
+			}
+			label.SetText(name)
+		},
+	)
+	a.emulatorList.OnSelected = func(id widget.ListItemID) {
+		a.selectedEmulatorIdx = id
+		a.emulatorList.Refresh()
+	}
+
+	// Game panel with header and search
+	gameHeader := container.NewBorder(nil, nil,
+		widget.NewLabel("GAMES"),
+		nil,
+		a.searchEntry,
+	)
+	a.gamePanel = container.NewBorder(
+		gameHeader, nil, nil, nil,
+		a.gameList,
+	)
+
+	// Emulator choice panel
+	emulatorHeader := widget.NewLabel("CHOOSE EMULATOR (A=Select, B=Cancel)")
+	emulatorHeader.TextStyle = fyne.TextStyle{Bold: true}
+	a.emulatorPanel = container.NewBorder(
+		emulatorHeader, nil, nil, nil,
+		a.emulatorList,
+	)
+
+	// Split view
+	a.mainSplit = container.NewHSplit(systemPanel, a.gamePanel)
+	a.mainSplit.SetOffset(0.2)
+
+	// Bottom bar
+	bottomBar := container.NewBorder(nil, nil, nil, a.statusBar, a.instructions)
+
+	// Main layout
+	content := container.NewBorder(
+		container.NewPadded(title),
+		bottomBar,
+		nil, nil,
+		a.mainSplit,
+	)
+
+	a.window.SetContent(content)
+
+	// Select first system
+	if len(systemsList) > 0 {
+		a.systemList.Select(0)
+	}
+}
+
+func (a *App) pollController() {
+	// Try to find a working joystick
+	var js joystick.Joystick
+	var err error
+	
+	for i := 0; i < 4; i++ {
+		js, err = joystick.Open(i)
+		if err == nil {
+			break
+		}
+	}
+	
 	if err != nil {
-		fmt.Println("Failed to save favorites:", err)
+		// No controller found, that's fine
+		return
+	}
+	defer js.Close()
+
+	var lastButtons uint32
+	var lastLeftY, lastRightY int
+	leftRepeatTimer := time.Now()
+	rightRepeatTimer := time.Now()
+	rightHoldStart := time.Time{}
+	const initialDelay = 300 * time.Millisecond
+	const repeatDelay = 150 * time.Millisecond
+	const fastRepeatDelay = 50 * time.Millisecond
+	const fastScrollThreshold = 500 * time.Millisecond
+	const deadzone = 10000
+
+	for {
+		time.Sleep(16 * time.Millisecond) // ~60fps polling
+
+		// Only process controller input when EmuBuddy window is focused
+		if !isWindowFocused("EmuBuddy") {
+			continue
+		}
+
+		state, err := js.Read()
+		if err != nil {
+			continue
+		}
+
+		// Skip if dialog is open
+		if a.dialogOpen {
+			lastButtons = state.Buttons
+			continue
+		}
+
+		buttons := state.Buttons
+
+		// Left stick Y axis (axis 1) - controls system list
+		leftY := 0
+		// Right stick Y axis (axis 3 on most controllers) - controls game list
+		rightY := 0
+		
+		if len(state.AxisData) >= 2 {
+			if state.AxisData[1] > deadzone {
+				leftY = 1
+			} else if state.AxisData[1] < -deadzone {
+				leftY = -1
+			}
+		}
+		
+		if len(state.AxisData) >= 4 {
+			if state.AxisData[3] > deadzone {
+				rightY = 1
+			} else if state.AxisData[3] < -deadzone {
+				rightY = -1
+			}
+		}
+
+		// Check for new button presses
+		justPressed := buttons &^ lastButtons
+
+		// Handle emulator choice mode
+		if a.choosingEmulator {
+			// A button - confirm choice
+			if justPressed&1 != 0 {
+				a.confirmEmulatorChoice()
+			}
+			// B button - cancel
+			if justPressed&2 != 0 {
+				a.cancelEmulatorChoice()
+			}
+			// Right stick or D-pad to navigate emulator list
+			if rightY != 0 && (rightY != lastRightY || time.Since(rightRepeatTimer) > repeatDelay) {
+				newIdx := a.selectedEmulatorIdx + rightY
+				if newIdx >= 0 && newIdx < len(a.emulatorChoices) {
+					a.selectedEmulatorIdx = newIdx
+					a.emulatorList.Select(newIdx)
+					a.emulatorList.Refresh()
+				}
+				rightRepeatTimer = time.Now()
+			}
+			// D-pad up/down
+			if justPressed&4096 != 0 && a.selectedEmulatorIdx > 0 {
+				a.selectedEmulatorIdx--
+				a.emulatorList.Select(a.selectedEmulatorIdx)
+				a.emulatorList.Refresh()
+			}
+			if justPressed&8192 != 0 && a.selectedEmulatorIdx < len(a.emulatorChoices)-1 {
+				a.selectedEmulatorIdx++
+				a.emulatorList.Select(a.selectedEmulatorIdx)
+				a.emulatorList.Refresh()
+			}
+			
+			lastButtons = buttons
+			lastLeftY = leftY
+			lastRightY = rightY
+			continue
+		}
+
+		// A button (bit 0) - Select/Launch
+		if justPressed&1 != 0 {
+			if a.focusOnGames {
+				a.launchSelected()
+			} else {
+				a.focusOnGames = true
+				if len(a.filteredGames) > 0 {
+					a.gameList.Select(0)
+				}
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+		}
+
+		// B button (bit 1) - Back
+		if justPressed&2 != 0 {
+			if a.focusOnGames {
+				a.focusOnGames = false
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+		}
+
+		// X button (bit 2) - Download
+		if justPressed&4 != 0 && a.focusOnGames {
+			a.downloadSelected()
+		}
+
+		// Y button (bit 3) - Favorite
+		if justPressed&8 != 0 && a.focusOnGames {
+			a.toggleSelectedFavorite()
+		}
+
+		// Start button (bit 7) - Toggle favorites view
+		if justPressed&128 != 0 {
+			a.showFavsOnly = !a.showFavsOnly
+			a.filterGames()
+		}
+
+		// Left stick - navigate systems
+		if leftY != 0 {
+			// Just started moving or repeat timer elapsed
+			if leftY != lastLeftY || time.Since(leftRepeatTimer) > repeatDelay {
+				newIdx := a.selectedSysIdx + leftY
+				if newIdx >= 0 && newIdx < len(systemsList) {
+					a.selectedSysIdx = newIdx
+					a.systemList.Select(newIdx)
+				}
+				leftRepeatTimer = time.Now()
+			}
+		}
+
+		// Right stick - navigate games with fast scroll
+		if rightY != 0 {
+			// Track how long stick has been held
+			if rightY != lastRightY {
+				rightHoldStart = time.Now()
+			}
+			
+			holdDuration := time.Since(rightHoldStart)
+			currentRepeatDelay := repeatDelay
+			scrollAmount := 1
+			
+			// Fast scroll after holding for a bit
+			if holdDuration > fastScrollThreshold {
+				currentRepeatDelay = fastRepeatDelay
+				scrollAmount = 5 // Jump 5 items at a time
+			}
+			
+			// Just started moving or repeat timer elapsed
+			if rightY != lastRightY || time.Since(rightRepeatTimer) > currentRepeatDelay {
+				a.focusOnGames = true
+				newIdx := a.selectedGameIdx + (rightY * scrollAmount)
+				if newIdx < 0 {
+					newIdx = 0
+				}
+				if newIdx >= len(a.filteredGames) {
+					newIdx = len(a.filteredGames) - 1
+				}
+				if newIdx >= 0 && newIdx < len(a.filteredGames) {
+					a.selectedGameIdx = newIdx
+					a.gameList.Select(newIdx)
+					a.updateStatus()
+				}
+				rightRepeatTimer = time.Now()
+				a.systemList.Refresh()
+				a.gameList.Refresh()
+			}
+		} else {
+			rightHoldStart = time.Time{}
+		}
+
+		// D-pad navigation as fallback
+		// D-pad Up (bit 12)
+		if justPressed&4096 != 0 {
+			a.navigate(-1)
+		}
+		// D-pad Down (bit 13)
+		if justPressed&8192 != 0 {
+			a.navigate(1)
+		}
+		// D-pad Left (bit 14)
+		if justPressed&16384 != 0 {
+			if a.selectedSysIdx > 0 {
+				a.systemList.Select(a.selectedSysIdx - 1)
+			}
+		}
+		// D-pad Right (bit 15)
+		if justPressed&32768 != 0 {
+			if a.selectedSysIdx < len(systemsList)-1 {
+				a.systemList.Select(a.selectedSysIdx + 1)
+			}
+		}
+
+		lastButtons = buttons
+		lastLeftY = leftY
+		lastRightY = rightY
+	}
+}
+
+func (a *App) navigate(delta int) {
+	if a.focusOnGames {
+		newIdx := a.selectedGameIdx + delta
+		if newIdx >= 0 && newIdx < len(a.filteredGames) {
+			a.selectedGameIdx = newIdx
+			a.gameList.Select(newIdx)
+			a.updateStatus()
+		}
+	} else {
+		newIdx := a.selectedSysIdx + delta
+		if newIdx >= 0 && newIdx < len(systemsList) {
+			a.systemList.Select(newIdx)
+		}
+	}
+}
+
+func (a *App) selectSystem(sysID string) {
+	a.currentSystem = sysID
+	config := systems[sysID]
+
+	// Load ROM JSON
+	jsonFile := filepath.Join(baseDir, "1g1rsets", config.RomJsonFile)
+	data, err := os.ReadFile(jsonFile)
+	if err != nil {
+		a.statusBar.SetText(fmt.Sprintf("Error: %v", err))
 		return
 	}
 
-	if err := os.WriteFile(favoritesPath, data, 0644); err != nil {
-		fmt.Println("Failed to write favorites.json:", err)
+	if err := json.Unmarshal(data, &a.allGames); err != nil {
+		a.statusBar.SetText(fmt.Sprintf("Error: %v", err))
+		return
+	}
+
+	// Build ROM cache
+	a.buildROMCache()
+	a.filterGames()
+}
+
+func (a *App) buildROMCache() {
+	a.romCache = make(map[string]bool)
+	config := systems[a.currentSystem]
+	romDir := filepath.Join(romsDir, config.Dir)
+
+	entries, err := os.ReadDir(romDir)
+	if err != nil {
+		return
+	}
+
+	existingFiles := make(map[string]bool)
+	for _, entry := range entries {
+		if !entry.IsDir() {
+			existingFiles[strings.ToLower(entry.Name())] = true
+		}
+	}
+
+	for _, game := range a.allGames {
+		exists := false
+		baseName := strings.TrimSuffix(game.Name, ".zip")
+
+		for _, ext := range config.FileExtensions {
+			if existingFiles[strings.ToLower(baseName+ext)] {
+				exists = true
+				break
+			}
+		}
+
+		if !exists && !config.NeedsExtract {
+			if existingFiles[strings.ToLower(game.Name)] {
+				exists = true
+			}
+		}
+
+		a.romCache[game.Name] = exists
+	}
+}
+
+func (a *App) filterGames() {
+	a.filteredGames = []ROM{}
+	query := strings.ToLower(a.searchQuery)
+
+	for _, game := range a.allGames {
+		// Search filter
+		if query != "" && !strings.Contains(strings.ToLower(game.Name), query) {
+			continue
+		}
+
+		// Favorites filter
+		if a.showFavsOnly && !a.isFavorite(game.Name) {
+			continue
+		}
+
+		a.filteredGames = append(a.filteredGames, game)
+	}
+
+	a.gameList.Refresh()
+	a.statusBar.SetText(fmt.Sprintf("%d games", len(a.filteredGames)))
+
+	if len(a.filteredGames) > 0 {
+		a.gameList.Select(0)
 	}
 }
 
@@ -150,282 +725,251 @@ func (a *App) isFavorite(gameName string) bool {
 	return favorites[a.currentSystem][gameName]
 }
 
-func (a *App) toggleFavorite(gameName string) {
+func (a *App) toggleSelectedFavorite() {
+	if a.selectedGameIdx < 0 || a.selectedGameIdx >= len(a.filteredGames) {
+		return
+	}
+
+	game := a.filteredGames[a.selectedGameIdx]
 	if favorites[a.currentSystem] == nil {
 		favorites[a.currentSystem] = make(map[string]bool)
 	}
-	
-	if favorites[a.currentSystem][gameName] {
-		delete(favorites[a.currentSystem], gameName)
+
+	if favorites[a.currentSystem][game.Name] {
+		delete(favorites[a.currentSystem], game.Name)
+		a.statusBar.SetText("Removed from favorites")
 	} else {
-		favorites[a.currentSystem][gameName] = true
+		favorites[a.currentSystem][game.Name] = true
+		a.statusBar.SetText("Added to favorites")
 	}
-	
 	saveFavorites()
+	a.gameList.Refresh()
 }
 
-func fileExists(path string) bool {
-	_, err := os.Stat(path)
-	return err == nil
-}
-
-type App struct {
-	window          fyne.Window
-	currentSystem   string
-	allGames        []ROM
-	filteredGames   []ROM
-	gamesList       *widget.List
-	searchEntry     *widget.Entry
-	statusLabel     *widget.Label
-	showFavoritesOnly bool
-	favoritesToggle *widget.Check
-}
-
-func main() {
-	myApp := app.New()
-	myWindow := myApp.NewWindow("EmuBuddy Launcher")
-	myWindow.Resize(fyne.NewSize(1200, 700))
-
-	appState := &App{
-		window:    myWindow,
-		allGames:  []ROM{},
-		statusLabel: widget.NewLabel("Select a system to get started"),
+func (a *App) updateStatus() {
+	if a.selectedGameIdx < 0 || a.selectedGameIdx >= len(a.filteredGames) {
+		return
 	}
+	game := a.filteredGames[a.selectedGameIdx]
+	name := strings.TrimSuffix(game.Name, ".zip")
+	name = strings.TrimSuffix(name, ".chd")
 
-	// System list
-	systemsList := widget.NewList(
-		func() int {
-			return len(getSystemList())
-		},
-		func() fyne.CanvasObject {
-			return widget.NewLabel("System Name")
-		},
-		func(id widget.ListItemID, obj fyne.CanvasObject) {
-			systems := getSystemList()
-			obj.(*widget.Label).SetText(systems[id].Name)
-		},
-	)
-
-	systemsList.OnSelected = func(id widget.ListItemID) {
-		systems := getSystemList()
-		appState.selectSystem(systems[id].Key)
+	if a.romCache[game.Name] {
+		a.statusBar.SetText(fmt.Sprintf("Ready: %s", name))
+	} else {
+		a.statusBar.SetText(fmt.Sprintf("Not downloaded: %s (%s)", name, game.Size))
 	}
-
-	// Search bar
-	appState.searchEntry = widget.NewEntry()
-	appState.searchEntry.SetPlaceHolder("Search games...")
-	appState.searchEntry.OnChanged = func(query string) {
-		appState.filterGames(query)
-	}
-
-	// Favorites toggle
-	appState.favoritesToggle = widget.NewCheck("Show Favorites Only", func(checked bool) {
-		appState.showFavoritesOnly = checked
-		appState.filterGames(appState.searchEntry.Text)
-	})
-
-	// Games list
-	appState.gamesList = widget.NewList(
-		func() int {
-			return len(appState.filteredGames)
-		},
-		func() fyne.CanvasObject {
-			nameLabel := widget.NewLabel("Game Name")
-			nameLabel.Wrapping = fyne.TextTruncate
-			sizeLabel := widget.NewLabel("Size")
-			statusBadge := widget.NewLabel("Status")
-			favBtn := widget.NewButton("+", nil)
-
-			downloadBtn := widget.NewButton("Download", nil)
-			playBtn := widget.NewButton("Play", nil)
-			buttonsBox := container.NewHBox(downloadBtn, playBtn)
-
-			return container.NewBorder(
-				nil, nil,
-				container.NewVBox(statusBadge, sizeLabel, favBtn),
-				buttonsBox,
-				nameLabel,
-			)
-		},
-		func(id widget.ListItemID, obj fyne.CanvasObject) {
-			if id >= len(appState.filteredGames) {
-				return
-			}
-
-			game := appState.filteredGames[id]
-			border := obj.(*fyne.Container)
-
-			nameLabel := border.Objects[0].(*widget.Label)
-			leftBox := border.Objects[1].(*fyne.Container)
-			buttonsBox := border.Objects[2].(*fyne.Container)
-
-			statusBadge := leftBox.Objects[0].(*widget.Label)
-			sizeLabel := leftBox.Objects[1].(*widget.Label)
-			favBtn := leftBox.Objects[2].(*widget.Button)
-
-			// Set content
-			nameLabel.SetText(game.Name)
-			sizeLabel.SetText(game.Size)
-
-			// Update favorite button
-			isFav := appState.isFavorite(game.Name)
-			if isFav {
-				favBtn.SetText("-")
-			} else {
-				favBtn.SetText("+")
-			}
-			favBtn.OnTapped = func() {
-				appState.toggleFavorite(game.Name)
-				appState.gamesList.Refresh()
-			}
-
-			// Check ROM status
-			exists := appState.checkROMExists(game.Name)
-			if exists {
-				statusBadge.SetText("Downloaded")
-				// Only show play button when downloaded
-				playBtn := widget.NewButton("Play", func() {
-					appState.launchGame(game)
-				})
-				buttonsBox.Objects = []fyne.CanvasObject{playBtn}
-			} else {
-				statusBadge.SetText("Not Downloaded")
-				// Only show download button when not downloaded
-				downloadBtn := widget.NewButton("Download", func() {
-					appState.downloadGame(game)
-				})
-				buttonsBox.Objects = []fyne.CanvasObject{downloadBtn}
-			}
-			buttonsBox.Refresh()
-		},
-	)
-
-	// Layout
-	leftPanel := container.NewBorder(
-		widget.NewLabelWithStyle("Systems", fyne.TextAlignCenter, fyne.TextStyle{Bold: true}),
-		nil, nil, nil,
-		systemsList,
-	)
-
-	rightPanel := container.NewBorder(
-		container.NewVBox(
-			appState.statusLabel,
-			appState.searchEntry,
-			appState.favoritesToggle,
-		),
-		nil, nil, nil,
-		appState.gamesList,
-	)
-
-	content := container.NewHSplit(
-		leftPanel,
-		rightPanel,
-	)
-	content.SetOffset(0.25)
-
-	myWindow.SetContent(content)
-	myWindow.ShowAndRun()
 }
 
-type SystemListItem struct {
-	Key  string
-	Name string
-}
-
-func getSystemList() []SystemListItem {
-	return systemsListCache
-}
-
-func (a *App) selectSystem(systemKey string) {
-	a.currentSystem = systemKey
-	config := systems[systemKey]
-	a.statusLabel.SetText(fmt.Sprintf("Loading %s...", config.Name))
-
-	// Load the ROM JSON file specified in config
-	jsonFile := filepath.Join(baseDir, "1g1rsets", config.RomJsonFile)
-	data, err := os.ReadFile(jsonFile)
-	if err != nil {
-		dialog.ShowError(err, a.window)
+func (a *App) launchSelected() {
+	if a.selectedGameIdx < 0 || a.selectedGameIdx >= len(a.filteredGames) {
+		a.statusBar.SetText("No game selected")
 		return
 	}
 
-	if err := json.Unmarshal(data, &a.allGames); err != nil {
-		dialog.ShowError(err, a.window)
+	game := a.filteredGames[a.selectedGameIdx]
+	if !a.romCache[game.Name] {
+		a.statusBar.SetText("Game not downloaded yet")
 		return
 	}
 
-	a.filteredGames = a.allGames
-	a.gamesList.Refresh()
-	a.statusLabel.SetText(fmt.Sprintf("%s - %d games", systems[systemKey].Name, len(a.allGames)))
-	a.searchEntry.SetText("")
+	a.launchGame(game)
 }
 
-func (a *App) filterGames(query string) {
-	filtered := []ROM{}
+func (a *App) downloadSelected() {
+	if a.selectedGameIdx < 0 || a.selectedGameIdx >= len(a.filteredGames) {
+		a.statusBar.SetText("No game selected")
+		return
+	}
+
+	game := a.filteredGames[a.selectedGameIdx]
+	if a.romCache[game.Name] {
+		a.statusBar.SetText("Already downloaded")
+		return
+	}
+
+	a.downloadGame(game)
+}
+
+func (a *App) launchGame(game ROM) {
+	config := systems[a.currentSystem]
+
+	// Count total options
+	totalOptions := 0
 	
-	for _, game := range a.allGames {
-		// Apply search filter
-		if query != "" {
-			queryLower := strings.ToLower(query)
-			if !strings.Contains(strings.ToLower(game.Name), queryLower) {
-				continue
-			}
-		}
-		
-		// Apply favorites filter
-		if a.showFavoritesOnly && !a.isFavorite(game.Name) {
-			continue
-		}
-		
-		filtered = append(filtered, game)
+	// Main emulator: either has cores or is standalone
+	if len(config.Emulator.Cores) > 0 {
+		totalOptions += len(config.Emulator.Cores)
+	} else if config.Emulator.Path != "" {
+		totalOptions++
 	}
 	
-	a.filteredGames = filtered
-	a.gamesList.Refresh()
-	a.statusLabel.SetText(fmt.Sprintf("%s - %d games", systems[a.currentSystem].Name, len(a.filteredGames)))
+	// Standalone emulator: either has cores or is standalone
+	if config.StandaloneEmulator != nil {
+		if len(config.StandaloneEmulator.Cores) > 0 {
+			totalOptions += len(config.StandaloneEmulator.Cores)
+		} else if config.StandaloneEmulator.Path != "" {
+			totalOptions++
+		}
+	}
+
+	if totalOptions > 1 {
+		a.showEmulatorChoice(game, config)
+	} else {
+		// Single option - launch directly
+		args := config.Emulator.Args
+		if len(config.Emulator.Cores) == 1 {
+			args = []string{"-L", config.Emulator.Cores[0].Dll}
+		}
+		a.launchWithEmulator(game, config.Emulator.Path, args)
+	}
 }
 
-func (a *App) checkROMExists(romName string) bool {
+func (a *App) showEmulatorChoice(game ROM, config SystemConfig) {
+	a.emulatorChoices = []string{}
+	a.emulatorPaths = []string{}
+	a.emulatorArgs = [][]string{}
+
+	// Add main emulator options
+	if len(config.Emulator.Cores) > 0 {
+		// Has cores - add each core as an option
+		for _, core := range config.Emulator.Cores {
+			a.emulatorChoices = append(a.emulatorChoices, fmt.Sprintf("RetroArch (%s)", core.Name))
+			a.emulatorPaths = append(a.emulatorPaths, config.Emulator.Path)
+			a.emulatorArgs = append(a.emulatorArgs, []string{"-L", core.Dll})
+		}
+	} else if config.Emulator.Path != "" {
+		// Standalone emulator (no cores)
+		name := config.Emulator.Name
+		if name == "" {
+			name = "Default Emulator"
+		}
+		a.emulatorChoices = append(a.emulatorChoices, name)
+		a.emulatorPaths = append(a.emulatorPaths, config.Emulator.Path)
+		a.emulatorArgs = append(a.emulatorArgs, config.Emulator.Args)
+	}
+
+	// Add standalone emulator options
+	if config.StandaloneEmulator != nil {
+		if len(config.StandaloneEmulator.Cores) > 0 {
+			// Has cores - add each core as an option
+			for _, core := range config.StandaloneEmulator.Cores {
+				a.emulatorChoices = append(a.emulatorChoices, fmt.Sprintf("RetroArch (%s)", core.Name))
+				a.emulatorPaths = append(a.emulatorPaths, config.StandaloneEmulator.Path)
+				a.emulatorArgs = append(a.emulatorArgs, []string{"-L", core.Dll})
+			}
+		} else if config.StandaloneEmulator.Path != "" {
+			// Standalone (no cores)
+			name := config.StandaloneEmulator.Name
+			if name == "" {
+				name = "Standalone"
+			}
+			a.emulatorChoices = append(a.emulatorChoices, name)
+			a.emulatorPaths = append(a.emulatorPaths, config.StandaloneEmulator.Path)
+			a.emulatorArgs = append(a.emulatorArgs, config.StandaloneEmulator.Args)
+		}
+	}
+
+	if len(a.emulatorChoices) == 0 {
+		return
+	}
+
+	// Store pending game and switch to emulator choice mode
+	a.pendingGame = game
+	a.selectedEmulatorIdx = 0
+	a.choosingEmulator = true
+	
+	// Swap game panel for emulator panel
+	a.mainSplit.Trailing = a.emulatorPanel
+	a.mainSplit.Refresh()
+	a.emulatorList.Select(0)
+	a.emulatorList.Refresh()
+	
+	a.statusBar.SetText(fmt.Sprintf("Choose emulator for: %s", game.Name))
+}
+
+func (a *App) cancelEmulatorChoice() {
+	a.choosingEmulator = false
+	a.mainSplit.Trailing = a.gamePanel
+	a.mainSplit.Refresh()
+	a.updateStatus()
+}
+
+func (a *App) confirmEmulatorChoice() {
+	if a.selectedEmulatorIdx >= 0 && a.selectedEmulatorIdx < len(a.emulatorPaths) {
+		a.choosingEmulator = false
+		a.mainSplit.Trailing = a.gamePanel
+		a.mainSplit.Refresh()
+		a.launchWithEmulator(a.pendingGame, a.emulatorPaths[a.selectedEmulatorIdx], a.emulatorArgs[a.selectedEmulatorIdx])
+	}
+}
+
+func (a *App) launchWithEmulator(game ROM, emuPath string, emuArgs []string) {
 	config := systems[a.currentSystem]
 	romDir := filepath.Join(romsDir, config.Dir)
+	emuPath = filepath.Join(baseDir, emuPath)
+	emuDir := filepath.Dir(emuPath)
 
-	// If system needs extraction, check for extracted ROM files (not ZIP)
+	// Find ROM file
+	var romPath string
 	if config.NeedsExtract {
-		// Get base name without .zip extension
-		baseName := strings.TrimSuffix(romName, ".zip")
-
-		// Check for any matching ROM file with valid extensions
+		baseName := strings.TrimSuffix(game.Name, ".zip")
 		for _, ext := range config.FileExtensions {
-			romPath := filepath.Join(romDir, baseName+ext)
-			if _, err := os.Stat(romPath); err == nil {
-				return true
+			testPath := filepath.Join(romDir, baseName+ext)
+			if fileExists(testPath) {
+				romPath = testPath
+				break
 			}
 		}
 
-		// Also check for any file starting with baseName (handles multiple files in ZIP)
-		entries, err := os.ReadDir(romDir)
-		if err == nil {
+		// If not found, look for any file starting with baseName
+		if romPath == "" {
+			entries, _ := os.ReadDir(romDir)
 			for _, entry := range entries {
-				if !entry.IsDir() {
-					name := entry.Name()
-					// Check if file starts with game name and has valid extension
-					if strings.HasPrefix(name, baseName) {
-						for _, ext := range config.FileExtensions {
-							if strings.HasSuffix(strings.ToLower(name), strings.ToLower(ext)) {
-								return true
-							}
+				if strings.HasPrefix(entry.Name(), baseName) {
+					for _, ext := range config.FileExtensions {
+						if strings.HasSuffix(strings.ToLower(entry.Name()), strings.ToLower(ext)) {
+							romPath = filepath.Join(romDir, entry.Name())
+							break
 						}
+					}
+					if romPath != "" {
+						break
 					}
 				}
 			}
 		}
-		return false
 	}
 
-	// For systems that support ZIP directly
-	romPath := filepath.Join(romDir, romName)
-	_, err := os.Stat(romPath)
-	return err == nil
+	if romPath == "" {
+		romPath = filepath.Join(romDir, game.Name)
+	}
+
+	if !fileExists(romPath) {
+		a.statusBar.SetText("ROM not found: " + game.Name)
+		return
+	}
+
+	// Build args
+	args := []string{}
+	for _, arg := range emuArgs {
+		if strings.Contains(arg, "/") || strings.Contains(arg, "\\") {
+			args = append(args, filepath.Join(emuDir, arg))
+		} else {
+			args = append(args, arg)
+		}
+	}
+	args = append(args, romPath)
+
+	cmd := exec.Command(emuPath, args...)
+	cmd.Dir = emuDir
+
+	if err := cmd.Start(); err != nil {
+		a.statusBar.SetText(fmt.Sprintf("Launch failed: %v", err))
+		return
+	}
+
+	a.statusBar.SetText("Launched: " + game.Name)
 }
 
 func (a *App) downloadGame(game ROM) {
@@ -435,11 +979,9 @@ func (a *App) downloadGame(game ROM) {
 
 	outputPath := filepath.Join(romDir, game.Name)
 
-	// Create progress bar UI
 	progressBar := widget.NewProgressBar()
-	progressBar.Min = 0
-	progressBar.Max = 100
 	progressLabel := widget.NewLabel("Starting download...")
+
 	progressContent := container.NewVBox(
 		widget.NewLabel(game.Name),
 		progressBar,
@@ -454,78 +996,47 @@ func (a *App) downloadGame(game ROM) {
 	progressDialog.Show()
 
 	go func() {
-		// Download with progress using HTTP directly
 		err := downloadWithProgress(game.URL, outputPath, func(downloaded, total int64) {
 			if cancelled {
 				return
 			}
 			if total > 0 {
-				percent := float64(downloaded) / float64(total) * 100
-				progressBar.SetValue(percent)
-				progressLabel.SetText(fmt.Sprintf("%s / %s (%.1f%%)",
-					formatBytes(downloaded), formatBytes(total), percent))
-			} else {
-				progressLabel.SetText(fmt.Sprintf("Downloaded: %s", formatBytes(downloaded)))
+				pct := float64(downloaded) / float64(total)
+				progressBar.SetValue(pct)
+				progressLabel.SetText(fmt.Sprintf("%.1f MB / %.1f MB", float64(downloaded)/1024/1024, float64(total)/1024/1024))
 			}
 		})
 
 		if cancelled {
 			os.Remove(outputPath)
-			os.Remove(outputPath + ".tmp")
 			return
 		}
 
 		if err != nil {
 			progressDialog.Hide()
-			dialog.ShowError(fmt.Errorf("Download failed: %v", err), a.window)
+			dialog.ShowError(err, a.window)
 			return
 		}
 
-		// Extract ZIP if needed
-		if config.NeedsExtract && strings.HasSuffix(strings.ToLower(game.Name), ".zip") {
+		// Extract if needed
+		if config.NeedsExtract && strings.HasSuffix(game.Name, ".zip") {
 			progressLabel.SetText("Extracting...")
-			progressBar.SetValue(0)
-
-			extractedFile, err := extractROMZip(outputPath, romDir)
-			if err != nil {
-				progressDialog.Hide()
-				dialog.ShowError(fmt.Errorf("Extraction failed: %v", err), a.window)
-				return
-			}
-
-			// Remove the ZIP after extraction
+			extractZip(outputPath, romDir)
 			os.Remove(outputPath)
-
-			progressDialog.Hide()
-			dialog.ShowInformation("Done", fmt.Sprintf("Installed: %s", filepath.Base(extractedFile)), a.window)
-		} else {
-			progressDialog.Hide()
-			dialog.ShowInformation("Done", fmt.Sprintf("Downloaded: %s", game.Name), a.window)
 		}
 
-		a.gamesList.Refresh()
+		progressDialog.Hide()
+		a.romCache[game.Name] = true
+		a.gameList.Refresh()
+		a.statusBar.SetText("Downloaded: " + game.Name)
 	}()
 }
 
 func downloadWithProgress(url, outputPath string, progress func(downloaded, total int64)) error {
-	// Create HTTP client
-	client := &http.Client{
-		Timeout: 0, // No timeout for large downloads
-	}
-
+	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
-	}
-
-	// Set headers for myrient compatibility
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-	req.Header.Set("Accept", "*/*")
-
-	// Infer referer from URL
-	if strings.Contains(url, "myrient.erista.me") {
-		dir := filepath.Dir(strings.ReplaceAll(url, "https://myrient.erista.me", ""))
-		req.Header.Set("Referer", "https://myrient.erista.me"+dir+"/")
 	}
 
 	resp, err := client.Do(req)
@@ -534,59 +1045,38 @@ func downloadWithProgress(url, outputPath string, progress func(downloaded, tota
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("HTTP %d: %s", resp.StatusCode, resp.Status)
+	if resp.StatusCode != 200 {
+		return fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
 
-	total := resp.ContentLength
-
-	// Create temp file
-	tempPath := outputPath + ".tmp"
-	out, err := os.Create(tempPath)
+	out, err := os.Create(outputPath)
 	if err != nil {
 		return err
 	}
+	defer out.Close()
 
-	// Download with progress updates
+	total := resp.ContentLength
 	var downloaded int64
-	buf := make([]byte, 64*1024)
-	lastUpdate := time.Now()
 
+	buf := make([]byte, 32*1024)
 	for {
-		n, readErr := resp.Body.Read(buf)
+		n, err := resp.Body.Read(buf)
 		if n > 0 {
-			_, writeErr := out.Write(buf[:n])
-			if writeErr != nil {
-				out.Close()
-				os.Remove(tempPath)
-				return writeErr
-			}
+			out.Write(buf[:n])
 			downloaded += int64(n)
-
-			// Update progress every 100ms
-			if time.Since(lastUpdate) > 100*time.Millisecond {
-				progress(downloaded, total)
-				lastUpdate = time.Now()
-			}
+			progress(downloaded, total)
 		}
-		if readErr != nil {
-			if readErr == io.EOF {
-				break
-			}
-			out.Close()
-			os.Remove(tempPath)
-			return readErr
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
 		}
 	}
-
-	out.Close()
-	progress(downloaded, total)
-
-	// Move to final location
-	return os.Rename(tempPath, outputPath)
+	return nil
 }
 
-func extractROMZip(zipPath, destDir string) (string, error) {
+func extractZip(zipPath, destDir string) (string, error) {
 	r, err := zip.OpenReader(zipPath)
 	if err != nil {
 		return "", err
@@ -594,223 +1084,37 @@ func extractROMZip(zipPath, destDir string) (string, error) {
 	defer r.Close()
 
 	var extractedFile string
-
 	for _, f := range r.File {
 		if f.FileInfo().IsDir() {
 			continue
 		}
 
-		// Skip macOS metadata files
-		if strings.HasPrefix(f.Name, "__MACOSX") || strings.HasPrefix(filepath.Base(f.Name), ".") {
-			continue
-		}
+		destPath := filepath.Join(destDir, f.Name)
+		os.MkdirAll(filepath.Dir(destPath), 0755)
 
-		// Get just the filename, ignore any directory structure in ZIP
-		name := filepath.Base(f.Name)
-		fpath := filepath.Join(destDir, name)
-
-		// Create file
-		outFile, err := os.OpenFile(fpath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
+		outFile, err := os.Create(destPath)
 		if err != nil {
-			return "", err
+			continue
 		}
 
 		rc, err := f.Open()
 		if err != nil {
 			outFile.Close()
-			return "", err
+			continue
 		}
 
-		_, err = io.Copy(outFile, rc)
+		io.Copy(outFile, rc)
 		outFile.Close()
 		rc.Close()
 
-		if err != nil {
-			return "", err
-		}
-
-		// Keep track of the first extracted file (usually the ROM)
-		if extractedFile == "" {
-			extractedFile = fpath
-		}
+		extractedFile = destPath
 	}
-
 	return extractedFile, nil
 }
 
-func formatBytes(bytes int64) string {
-	const unit = 1024
-	if bytes < unit {
-		return fmt.Sprintf("%d B", bytes)
+// Ensure Windows doesn't need console
+func init() {
+	if runtime.GOOS == "windows" {
+		// Hide console on Windows - handled by ldflags
 	}
-	div, exp := int64(unit), 0
-	for n := bytes / unit; n >= unit; n /= unit {
-		div *= unit
-		exp++
-	}
-	return fmt.Sprintf("%.1f %cB", float64(bytes)/float64(div), "KMGTPE"[exp])
-}
-
-func (a *App) launchGame(game ROM) {
-	config := systems[a.currentSystem]
-
-	// Check if standalone emulator option is available
-	hasStandalone := config.StandaloneEmulator != nil && config.StandaloneEmulator.Path != ""
-
-	if hasStandalone {
-		// Show choice dialog
-		a.showEmulatorChoice(game, config)
-		return
-	}
-
-	// Launch with default emulator
-	a.launchWithEmulator(game, config.Emulator.Path, config.Emulator.Args)
-}
-
-func (a *App) showEmulatorChoice(game ROM, config SystemConfig) {
-	// Get emulator names
-	defaultName := config.Emulator.Name
-	if defaultName == "" {
-		defaultName = "RetroArch"
-	}
-
-	standaloneName := ""
-	if config.StandaloneEmulator != nil {
-		standaloneName = config.StandaloneEmulator.Name
-	}
-	if standaloneName == "" {
-		standaloneName = "Standalone"
-	}
-
-	// Create choice dialog
-	message := widget.NewLabel(fmt.Sprintf("Choose emulator for %s:", game.Name))
-	
-	var dlg dialog.Dialog
-	defaultBtn := widget.NewButton(defaultName, func() {
-		a.launchWithEmulator(game, config.Emulator.Path, config.Emulator.Args)
-		dlg.Hide()
-	})
-	standaloneBtn := widget.NewButton(standaloneName, func() {
-		a.launchWithEmulator(game, config.StandaloneEmulator.Path, config.StandaloneEmulator.Args)
-		dlg.Hide()
-	})
-
-	content := container.NewVBox(
-		message,
-		defaultBtn,
-		standaloneBtn,
-	)
-
-	dlg = dialog.NewCustom("Choose Emulator", "Cancel", content, a.window)
-	dlg.Show()
-}
-
-func (a *App) launchWithEmulator(game ROM, emuPath string, emuArgs []string) {
-	config := systems[a.currentSystem]
-	romDir := filepath.Join(romsDir, config.Dir)
-	emuPath = filepath.Join(baseDir, emuPath)
-
-	// Find the ROM file
-	var romPath string
-
-	if config.NeedsExtract {
-		// Look for extracted ROM file
-		baseName := strings.TrimSuffix(game.Name, ".zip")
-
-		// First, try exact match with known extensions
-		for _, ext := range config.FileExtensions {
-			testPath := filepath.Join(romDir, baseName+ext)
-			if _, err := os.Stat(testPath); err == nil {
-				romPath = testPath
-				break
-			}
-		}
-
-		// If not found, scan directory for matching files
-		if romPath == "" {
-			entries, err := os.ReadDir(romDir)
-			if err == nil {
-				for _, entry := range entries {
-					if !entry.IsDir() {
-						name := entry.Name()
-						// Check if file starts with game name and has valid extension
-						if strings.HasPrefix(name, baseName) {
-							for _, ext := range config.FileExtensions {
-								if strings.HasSuffix(strings.ToLower(name), strings.ToLower(ext)) {
-									romPath = filepath.Join(romDir, name)
-									break
-								}
-							}
-						}
-						if romPath != "" {
-							break
-						}
-					}
-				}
-			}
-		}
-	} else {
-		// For systems that support ZIP directly
-		romPath = filepath.Join(romDir, game.Name)
-	}
-
-	if romPath == "" {
-		dialog.ShowError(fmt.Errorf("ROM not found. Try downloading it again."), a.window)
-		return
-	}
-
-	if _, err := os.Stat(romPath); os.IsNotExist(err) {
-		dialog.ShowError(fmt.Errorf("ROM not found: %s", romPath), a.window)
-		return
-	}
-
-	if _, err := os.Stat(emuPath); os.IsNotExist(err) {
-		dialog.ShowError(fmt.Errorf("Emulator not found: %s", emuPath), a.window)
-		return
-	}
-
-	// Build arguments - resolve relative paths for RetroArch cores
-	var args []string
-	emuDir := filepath.Dir(emuPath)
-	for _, arg := range emuArgs {
-		if strings.HasSuffix(arg, ".dll") || strings.HasSuffix(arg, ".so") {
-			// This is a core path - make it absolute
-			corePath := filepath.Join(emuDir, arg)
-			if _, err := os.Stat(corePath); os.IsNotExist(err) {
-				dialog.ShowError(fmt.Errorf("Emulator core not found: %s\n\nRetroArch cores need to be installed separately.", corePath), a.window)
-				return
-			}
-			args = append(args, corePath)
-		} else {
-			args = append(args, arg)
-		}
-	}
-	args = append(args, romPath)
-
-	cmd := exec.Command(emuPath, args...)
-	cmd.Dir = emuDir
-
-	// Capture stderr for debugging
-	stderr, _ := cmd.StderrPipe()
-
-	if err := cmd.Start(); err != nil {
-		dialog.ShowError(fmt.Errorf("Failed to start: %v", err), a.window)
-		return
-	}
-
-	// Check for early exit errors in background
-	go func() {
-		errOutput, _ := io.ReadAll(stderr)
-		err := cmd.Wait()
-		if err != nil {
-			// Process exited with error
-			errMsg := string(errOutput)
-			if errMsg == "" {
-				errMsg = err.Error()
-			}
-			dialog.ShowError(fmt.Errorf("Emulator error: %s", errMsg), a.window)
-		}
-	}()
-
-	dialog.ShowInformation("Launched", filepath.Base(romPath), a.window)
 }

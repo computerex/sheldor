@@ -150,6 +150,18 @@ var retroarchCores = EmulatorURL{
 	MacOS:   "", // Cores included in DMG
 }
 
+// Additional cores that need to be downloaded separately (not in the main cores pack)
+var additionalCores = []RetroArchCore{
+	{
+		Name: "Citra (3DS)",
+		URLs: EmulatorURL{
+			Windows: "https://buildbot.libretro.com/nightly/windows/x86_64/latest/citra_libretro.dll.zip",
+			Linux:   "https://buildbot.libretro.com/nightly/linux/x86_64/latest/citra_libretro.so.zip",
+			MacOS:   "",
+		},
+	},
+}
+
 func main() {
 	printHeader()
 
@@ -315,6 +327,45 @@ func main() {
 				printSuccess("RetroArch cores already installed")
 			}
 		}
+
+		// Download additional cores (like Citra) that aren't in the main pack
+		printInfo("Downloading additional cores...")
+		coresDir := filepath.Join(emuDir, "RetroArch", "RetroArch-Win64", "cores")
+		if platform == "linux" {
+			coresDir = filepath.Join(emuDir, "RetroArch", "RetroArch-Linux-x86_64", "cores")
+		}
+		os.MkdirAll(coresDir, 0755)
+
+		for _, core := range additionalCores {
+			coreURL := getURLForPlatform(core.URLs, platform)
+			if coreURL == "" {
+				continue
+			}
+			
+			// Determine expected dll/so name from URL
+			coreName := filepath.Base(coreURL)
+			coreName = strings.TrimSuffix(coreName, ".zip")
+			coreFile := filepath.Join(coresDir, coreName)
+			
+			if fileExists(coreFile) {
+				printSuccess(fmt.Sprintf("  ✓ %s already installed", core.Name))
+				continue
+			}
+			
+			printInfo(fmt.Sprintf("  Downloading %s core...", core.Name))
+			coreArchive := filepath.Join(downloadDir, filepath.Base(coreURL))
+			if err := downloadFile(coreURL, coreArchive); err != nil {
+				printWarning(fmt.Sprintf("  Failed to download %s: %s", core.Name, err.Error()))
+				continue
+			}
+			
+			// Extract the core zip directly to cores folder
+			if err := extractZipToDir(coreArchive, coresDir); err != nil {
+				printWarning(fmt.Sprintf("  Failed to extract %s: %s", core.Name, err.Error()))
+			} else {
+				printSuccess(fmt.Sprintf("  ✓ %s core installed", core.Name))
+			}
+		}
 	} else {
 		printSection("Step 3: RetroArch Cores")
 		printSuccess("Cores included in RetroArch Metal DMG")
@@ -351,8 +402,7 @@ func main() {
 	fmt.Println()
 	printInfo("Next steps:")
 	if platform == "windows" {
-		printInfo("  1. Run: start_launcher.bat (web interface)")
-		printInfo("  2. Or run: start_gui.bat (desktop app)")
+		printInfo("  Launching EmuBuddy...")
 	} else if platform == "linux" {
 		printInfo("  1. Run: ./start_launcher.sh (web interface)")
 		printInfo("  2. Or run: ./start_gui.sh (desktop app)")
@@ -361,10 +411,17 @@ func main() {
 		printInfo("  2. Or run: ./start_gui.sh (desktop app)")
 		printInfo("  3. Mount DMG files and drag apps to Applications folder")
 	}
-	printInfo("  3. Download ROMs and start gaming!")
 	fmt.Println()
 
-	waitForExit(0)
+	// Launch the GUI on Windows
+	if platform == "windows" {
+		launcherPath := filepath.Join(baseDir, "EmuBuddyLauncher.exe")
+		if fileExists(launcherPath) {
+			exec.Command(launcherPath).Start()
+		}
+	}
+
+	os.Exit(0)
 }
 
 func getPlatformName(platform string) string {
@@ -558,6 +615,47 @@ func extract7z(sevenZipPath, archivePath, destDir string) error {
 	cmd.Stdout = nil
 	cmd.Stderr = os.Stderr
 	return cmd.Run()
+}
+
+// extractZipToDir extracts a zip file directly to destDir without stripping root folders
+// Used for simple core zip files that contain just the dll/so file
+func extractZipToDir(zipPath, destDir string) error {
+	r, err := zip.OpenReader(zipPath)
+	if err != nil {
+		return err
+	}
+	defer r.Close()
+
+	os.MkdirAll(destDir, 0755)
+
+	for _, f := range r.File {
+		if f.FileInfo().IsDir() {
+			continue
+		}
+		
+		// Just use the base filename, ignore any folder structure in the zip
+		destPath := filepath.Join(destDir, filepath.Base(f.Name))
+		
+		rc, err := f.Open()
+		if err != nil {
+			return err
+		}
+		
+		outFile, err := os.Create(destPath)
+		if err != nil {
+			rc.Close()
+			return err
+		}
+		
+		_, err = io.Copy(outFile, rc)
+		outFile.Close()
+		rc.Close()
+		
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func extractZip(zipPath, destDir string) error {

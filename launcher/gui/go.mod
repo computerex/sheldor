@@ -6,6 +6,7 @@ require fyne.io/fyne/v2 v2.2.0
 
 require (
 	fyne.io/systray v1.9.1-0.20220523202515-bb6f1d955cff // indirect
+	github.com/0xcafed00d/joystick v1.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fredbi/uri v0.0.0-20181227131451-3dcfdacbaaf3 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect

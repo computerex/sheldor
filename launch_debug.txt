@@ -1,0 +1,1 @@
+CMD: C:\projects\emubuddy\Emulators\RetroArch\RetroArch-Win64\retroarch.exe [-L C:\projects\emubuddy\Emulators\RetroArch\RetroArch-Win64\cores\citra_libretro.dll C:\projects\emubuddy\roms\3ds\Pokemon Alpha Sapphire (USA) (En,Ja,Fr,De,Es,It,Ko) (Rev 2).3ds]
