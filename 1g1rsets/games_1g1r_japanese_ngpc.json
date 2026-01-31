@@ -1,282 +1,277 @@
-{
-  "system": "Neo Geo Pocket Color",
-  "source": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/",
-  "total_games": 55,
-  "games": [
-    {
-      "name": "Bakumatsu Rouman Tokubetsu Hen - Gekka no Kenshi - Tsuki ni Saku Hana, Chiri Yuku Hana (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bakumatsu%20Rouman%20Tokubetsu%20Hen%20-%20Gekka%20no%20Kenshi%20-%20Tsuki%20ni%20Saku%20Hana%2C%20Chiri%20Yuku%20Hana%20%28Japan%29.zip",
-      "size": "1008.8 KiB"
-    },
-    {
-      "name": "Big Bang Pro Wrestling (Japan) (En,Ja).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Big%20Bang%20Pro%20Wrestling%20%28Japan%29%20%28En%2CJa%29.zip",
-      "size": "1.0 MiB"
-    },
-    {
-      "name": "Bikkuriman 2000 - Viva! Pocket Festival! (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bikkuriman%202000%20-%20Viva%21%20Pocket%20Festival%21%20%28Japan%29.zip",
-      "size": "724.1 KiB"
-    },
-    {
-      "name": "Biomotor Unitron (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Biomotor%20Unitron%20%28Japan%29.zip",
-      "size": "597.5 KiB"
-    },
-    {
-      "name": "Cool Cool Jam (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Cool%20Cool%20Jam%20%28Japan%29.zip",
-      "size": "695.7 KiB"
-    },
-    {
-      "name": "Delta Warp (Japan) (En,Ja).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Delta%20Warp%20%28Japan%29%20%28En%2CJa%29.zip",
-      "size": "147.7 KiB"
-    },
-    {
-      "name": "Densetsu no Ogre Battle Gaiden - Zenobia no Ouji (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Densetsu%20no%20Ogre%20Battle%20Gaiden%20-%20Zenobia%20no%20Ouji%20%28Japan%29.zip",
-      "size": "694.5 KiB"
-    },
-    {
-      "name": "Densha de Go! 2 on NeoGeo Pocket (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Densha%20de%20Go%21%202%20on%20NeoGeo%20Pocket%20%28Japan%29.zip",
-      "size": "940.4 KiB"
-    },
-    {
-      "name": "Dive Alert - Burn Hen (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Burn%20Hen%20%28Japan%29.zip",
-      "size": "588.7 KiB"
-    },
-    {
-      "name": "Dive Alert - Rebecca Hen (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Rebecca%20Hen%20%28Japan%29.zip",
-      "size": "588.7 KiB"
-    },
-    {
-      "name": "Dokodemo Mahjong (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dokodemo%20Mahjong%20%28Japan%29.zip",
-      "size": "182.3 KiB"
-    },
-    {
-      "name": "Fantastic Night Dreams - Cotton (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fantastic%20Night%20Dreams%20-%20Cotton%20%28Japan%29.zip",
-      "size": "339.4 KiB"
-    },
-    {
-      "name": "Faselei! (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Faselei%21%20%28Japan%29.zip",
-      "size": "987.7 KiB"
-    },
-    {
-      "name": "Infinity Cure (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Infinity%20Cure%20%28Japan%29.zip",
-      "size": "579.7 KiB"
-    },
-    {
-      "name": "Kikou Seiki Unitron - Sono Tsuide. Hikari Umareru Chi Yori. (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Kikou%20Seiki%20Unitron%20-%20Sono%20Tsuide.%20Hikari%20Umareru%20Chi%20Yori.%20%28Japan%29.zip",
-      "size": "1.1 MiB"
-    },
-    {
-      "name": "King of Fighters R-2 - Pocket Fighting Series (Japan) (En,Ja) (Demo 1).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%20R-2%20-%20Pocket%20Fighting%20Series%20%28Japan%29%20%28En%2CJa%29%20%28Demo%201%29.zip",
-      "size": "777.6 KiB"
-    },
-    {
-      "name": "King of Fighters, The - Battle de Paradise (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%2C%20The%20-%20Battle%20de%20Paradise%20%28Japan%29.zip",
-      "size": "740.3 KiB"
-    },
-    {
-      "name": "Koi Koi Mahjong (Japan) (v08).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Koi%20Koi%20Mahjong%20%28Japan%29%20%28v08%29.zip",
-      "size": "199.9 KiB"
-    },
-    {
-      "name": "Magical Drop Pocket (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Magical%20Drop%20Pocket%20%28Japan%29.zip",
-      "size": "266.0 KiB"
-    },
-    {
-      "name": "Memories Off - Pure (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Memories%20Off%20-%20Pure%20%28Japan%29.zip",
-      "size": "270.6 KiB"
-    },
-    {
-      "name": "Mezase! Kanji Ou (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Mezase%21%20Kanji%20Ou%20%28Japan%29.zip",
-      "size": "400.3 KiB"
-    },
-    {
-      "name": "Mizuki Shigeru no Youkai Shashinkan (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Mizuki%20Shigeru%20no%20Youkai%20Shashinkan%20%28Japan%29.zip",
-      "size": "557.3 KiB"
-    },
-    {
-      "name": "Neo Derby Champ Daiyosou (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Derby%20Champ%20Daiyosou%20%28Japan%29.zip",
-      "size": "499.7 KiB"
-    },
-    {
-      "name": "Neo Poke Pro Yakyuu (Japan) (v1F).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Poke%20Pro%20Yakyuu%20%28Japan%29%20%28v1F%29.zip",
-      "size": "436.6 KiB"
-    },
-    {
-      "name": "Nige-ron-pa (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Nige-ron-pa%20%28Japan%29.zip",
-      "size": "508.6 KiB"
-    },
-    {
-      "name": "Oekaki Puzzle (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Oekaki%20Puzzle%20%28Japan%29.zip",
-      "size": "113.0 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku - Porcano 2 (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20-%20Porcano%202%20%28Japan%29.zip",
-      "size": "164.1 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Azteca (Japan) (v03).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Azteca%20%28Japan%29%20%28v03%29.zip",
-      "size": "140.1 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Dekahel 2 (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Dekahel%202%20%28Japan%29.zip",
-      "size": "391.0 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Delsol 2 (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Delsol%202%20%28Japan%29.zip",
-      "size": "248.2 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - e-CUP (Japan) (v03).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20e-CUP%20%28Japan%29%20%28v03%29.zip",
-      "size": "354.6 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Hanabi (Japan) (v03).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Hanabi%20%28Japan%29%20%28v03%29.zip",
-      "size": "111.6 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Ohanabi (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Ohanabi%20%28Japan%29.zip",
-      "size": "186.7 KiB"
-    },
-    {
-      "name": "Pachi-Slot Aruze Oukoku Pocket - Ward of Lights (Japan) (v03).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Ward%20of%20Lights%20%28Japan%29%20%28v03%29.zip",
-      "size": "143.7 KiB"
-    },
-    {
-      "name": "Pachinko Hisshou Guide - Pocket Parlor (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachinko%20Hisshou%20Guide%20-%20Pocket%20Parlor%20%28Japan%29.zip",
-      "size": "297.8 KiB"
-    },
-    {
-      "name": "Party Mail (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Party%20Mail%20%28Japan%29.zip",
-      "size": "201.8 KiB"
-    },
-    {
-      "name": "Pocket Love - if (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Love%20-%20if%20%28Japan%29.zip",
-      "size": "973.8 KiB"
-    },
-    {
-      "name": "Pocket Reversi (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Reversi%20%28Japan%29.zip",
-      "size": "121.0 KiB"
-    },
-    {
-      "name": "PP-AA01 - Pusher - Program - Hontai Controller Gawa (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/PP-AA01%20-%20Pusher%20-%20Program%20-%20Hontai%20Controller%20Gawa%20%28Japan%29.zip",
-      "size": "39.5 KiB"
-    },
-    {
-      "name": "Puyo Pop (Japan) (En,Ja) (v05).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puyo%20Pop%20%28Japan%29%20%28En%2CJa%29%20%28v05%29.zip",
-      "size": "551.5 KiB"
-    },
-    {
-      "name": "Puzzle Bobble Mini (Japan) (En).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Bobble%20Mini%20%28Japan%29%20%28En%29.zip",
-      "size": "425.4 KiB"
-    },
-    {
-      "name": "Renketsu Puzzle Tsunagete Pon! Color (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Renketsu%20Puzzle%20Tsunagete%20Pon%21%20Color%20%28Japan%29.zip",
-      "size": "151.2 KiB"
-    },
-    {
-      "name": "Rockman - Battle & Fighters (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Rockman%20-%20Battle%20%26%20Fighters%20%28Japan%29.zip",
-      "size": "954.9 KiB"
-    },
-    {
-      "name": "Shinki Sekai Evolution - Hateshinai Dungeon (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shinki%20Sekai%20Evolution%20-%20Hateshinai%20Dungeon%20%28Japan%29.zip",
-      "size": "603.6 KiB"
-    },
-    {
-      "name": "Shougi no Tatsujin Color (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shougi%20no%20Tatsujin%20Color%20%28Japan%29.zip",
-      "size": "154.4 KiB"
-    },
-    {
-      "name": "SNK Gals' Fighters (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20Gals%27%20Fighters%20%28Japan%29.zip",
-      "size": "895.6 KiB"
-    },
-    {
-      "name": "SNK vs. Capcom - Card Fighters 2 - Expand Edition (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters%202%20-%20Expand%20Edition%20%28Japan%29.zip",
-      "size": "976.0 KiB"
-    },
-    {
-      "name": "SNK vs. Capcom - Gekitotsu Card Fighters (Japan) (Demo).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20%28Japan%29%20%28Demo%29.zip",
-      "size": "809.5 KiB"
-    },
-    {
-      "name": "SNK vs. Capcom - Gekitotsu Card Fighters - Capcom Supporter Version (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20-%20Capcom%20Supporter%20Version%20%28Japan%29.zip",
-      "size": "893.7 KiB"
-    },
-    {
-      "name": "SNK vs. Capcom - Gekitotsu Card Fighters - SNK Supporter Version (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20-%20SNK%20Supporter%20Version%20%28Japan%29.zip",
-      "size": "893.7 KiB"
-    },
-    {
-      "name": "SNK vs. Capcom - The Match of the Millennium (Japan) (Demo).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20The%20Match%20of%20the%20Millennium%20%28Japan%29%20%28Demo%29.zip",
-      "size": "887.4 KiB"
-    },
-    {
-      "name": "Soreike!! Hanafuda Doujou (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Soreike%21%21%20Hanafuda%20Doujou%20%28Japan%29.zip",
-      "size": "80.3 KiB"
-    },
-    {
-      "name": "Super Real Mahjong - Premium Collection (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Super%20Real%20Mahjong%20-%20Premium%20Collection%20%28Japan%29.zip",
-      "size": "874.8 KiB"
-    },
-    {
-      "name": "Tsunagete Pon! 2 (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Tsunagete%20Pon%21%202%20%28Japan%29.zip",
-      "size": "342.0 KiB"
-    },
-    {
-      "name": "Wrestling Madness (Japan) (En) (Beta).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Wrestling%20Madness%20%28Japan%29%20%28En%29%20%28Beta%29.zip",
-      "size": "914.8 KiB"
-    }
-  ]
-}
+[
+  {
+    "name": "Bakumatsu Rouman Tokubetsu Hen - Gekka no Kenshi - Tsuki ni Saku Hana, Chiri Yuku Hana (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bakumatsu%20Rouman%20Tokubetsu%20Hen%20-%20Gekka%20no%20Kenshi%20-%20Tsuki%20ni%20Saku%20Hana%2C%20Chiri%20Yuku%20Hana%20%28Japan%29.zip",
+    "size": "1008.8 KiB"
+  },
+  {
+    "name": "Big Bang Pro Wrestling (Japan) (En,Ja).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Big%20Bang%20Pro%20Wrestling%20%28Japan%29%20%28En%2CJa%29.zip",
+    "size": "1.0 MiB"
+  },
+  {
+    "name": "Bikkuriman 2000 - Viva! Pocket Festival! (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bikkuriman%202000%20-%20Viva%21%20Pocket%20Festival%21%20%28Japan%29.zip",
+    "size": "724.1 KiB"
+  },
+  {
+    "name": "Biomotor Unitron (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Biomotor%20Unitron%20%28Japan%29.zip",
+    "size": "597.5 KiB"
+  },
+  {
+    "name": "Cool Cool Jam (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Cool%20Cool%20Jam%20%28Japan%29.zip",
+    "size": "695.7 KiB"
+  },
+  {
+    "name": "Delta Warp (Japan) (En,Ja).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Delta%20Warp%20%28Japan%29%20%28En%2CJa%29.zip",
+    "size": "147.7 KiB"
+  },
+  {
+    "name": "Densetsu no Ogre Battle Gaiden - Zenobia no Ouji (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Densetsu%20no%20Ogre%20Battle%20Gaiden%20-%20Zenobia%20no%20Ouji%20%28Japan%29.zip",
+    "size": "694.5 KiB"
+  },
+  {
+    "name": "Densha de Go! 2 on NeoGeo Pocket (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Densha%20de%20Go%21%202%20on%20NeoGeo%20Pocket%20%28Japan%29.zip",
+    "size": "940.4 KiB"
+  },
+  {
+    "name": "Dive Alert - Burn Hen (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Burn%20Hen%20%28Japan%29.zip",
+    "size": "588.7 KiB"
+  },
+  {
+    "name": "Dive Alert - Rebecca Hen (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Rebecca%20Hen%20%28Japan%29.zip",
+    "size": "588.7 KiB"
+  },
+  {
+    "name": "Dokodemo Mahjong (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dokodemo%20Mahjong%20%28Japan%29.zip",
+    "size": "182.3 KiB"
+  },
+  {
+    "name": "Fantastic Night Dreams - Cotton (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fantastic%20Night%20Dreams%20-%20Cotton%20%28Japan%29.zip",
+    "size": "339.4 KiB"
+  },
+  {
+    "name": "Faselei! (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Faselei%21%20%28Japan%29.zip",
+    "size": "987.7 KiB"
+  },
+  {
+    "name": "Infinity Cure (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Infinity%20Cure%20%28Japan%29.zip",
+    "size": "579.7 KiB"
+  },
+  {
+    "name": "Kikou Seiki Unitron - Sono Tsuide. Hikari Umareru Chi Yori. (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Kikou%20Seiki%20Unitron%20-%20Sono%20Tsuide.%20Hikari%20Umareru%20Chi%20Yori.%20%28Japan%29.zip",
+    "size": "1.1 MiB"
+  },
+  {
+    "name": "King of Fighters R-2 - Pocket Fighting Series (Japan) (En,Ja) (Demo 1).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%20R-2%20-%20Pocket%20Fighting%20Series%20%28Japan%29%20%28En%2CJa%29%20%28Demo%201%29.zip",
+    "size": "777.6 KiB"
+  },
+  {
+    "name": "King of Fighters, The - Battle de Paradise (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%2C%20The%20-%20Battle%20de%20Paradise%20%28Japan%29.zip",
+    "size": "740.3 KiB"
+  },
+  {
+    "name": "Koi Koi Mahjong (Japan) (v08).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Koi%20Koi%20Mahjong%20%28Japan%29%20%28v08%29.zip",
+    "size": "199.9 KiB"
+  },
+  {
+    "name": "Magical Drop Pocket (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Magical%20Drop%20Pocket%20%28Japan%29.zip",
+    "size": "266.0 KiB"
+  },
+  {
+    "name": "Memories Off - Pure (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Memories%20Off%20-%20Pure%20%28Japan%29.zip",
+    "size": "270.6 KiB"
+  },
+  {
+    "name": "Mezase! Kanji Ou (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Mezase%21%20Kanji%20Ou%20%28Japan%29.zip",
+    "size": "400.3 KiB"
+  },
+  {
+    "name": "Mizuki Shigeru no Youkai Shashinkan (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Mizuki%20Shigeru%20no%20Youkai%20Shashinkan%20%28Japan%29.zip",
+    "size": "557.3 KiB"
+  },
+  {
+    "name": "Neo Derby Champ Daiyosou (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Derby%20Champ%20Daiyosou%20%28Japan%29.zip",
+    "size": "499.7 KiB"
+  },
+  {
+    "name": "Neo Poke Pro Yakyuu (Japan) (v1F).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Poke%20Pro%20Yakyuu%20%28Japan%29%20%28v1F%29.zip",
+    "size": "436.6 KiB"
+  },
+  {
+    "name": "Nige-ron-pa (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Nige-ron-pa%20%28Japan%29.zip",
+    "size": "508.6 KiB"
+  },
+  {
+    "name": "Oekaki Puzzle (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Oekaki%20Puzzle%20%28Japan%29.zip",
+    "size": "113.0 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku - Porcano 2 (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20-%20Porcano%202%20%28Japan%29.zip",
+    "size": "164.1 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Azteca (Japan) (v03).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Azteca%20%28Japan%29%20%28v03%29.zip",
+    "size": "140.1 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Dekahel 2 (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Dekahel%202%20%28Japan%29.zip",
+    "size": "391.0 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Delsol 2 (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Delsol%202%20%28Japan%29.zip",
+    "size": "248.2 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - e-CUP (Japan) (v03).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20e-CUP%20%28Japan%29%20%28v03%29.zip",
+    "size": "354.6 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Hanabi (Japan) (v03).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Hanabi%20%28Japan%29%20%28v03%29.zip",
+    "size": "111.6 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Ohanabi (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Ohanabi%20%28Japan%29.zip",
+    "size": "186.7 KiB"
+  },
+  {
+    "name": "Pachi-Slot Aruze Oukoku Pocket - Ward of Lights (Japan) (v03).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachi-Slot%20Aruze%20Oukoku%20Pocket%20-%20Ward%20of%20Lights%20%28Japan%29%20%28v03%29.zip",
+    "size": "143.7 KiB"
+  },
+  {
+    "name": "Pachinko Hisshou Guide - Pocket Parlor (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pachinko%20Hisshou%20Guide%20-%20Pocket%20Parlor%20%28Japan%29.zip",
+    "size": "297.8 KiB"
+  },
+  {
+    "name": "Party Mail (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Party%20Mail%20%28Japan%29.zip",
+    "size": "201.8 KiB"
+  },
+  {
+    "name": "Pocket Love - if (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Love%20-%20if%20%28Japan%29.zip",
+    "size": "973.8 KiB"
+  },
+  {
+    "name": "Pocket Reversi (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Reversi%20%28Japan%29.zip",
+    "size": "121.0 KiB"
+  },
+  {
+    "name": "PP-AA01 - Pusher - Program - Hontai Controller Gawa (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/PP-AA01%20-%20Pusher%20-%20Program%20-%20Hontai%20Controller%20Gawa%20%28Japan%29.zip",
+    "size": "39.5 KiB"
+  },
+  {
+    "name": "Puyo Pop (Japan) (En,Ja) (v05).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puyo%20Pop%20%28Japan%29%20%28En%2CJa%29%20%28v05%29.zip",
+    "size": "551.5 KiB"
+  },
+  {
+    "name": "Puzzle Bobble Mini (Japan) (En).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Bobble%20Mini%20%28Japan%29%20%28En%29.zip",
+    "size": "425.4 KiB"
+  },
+  {
+    "name": "Renketsu Puzzle Tsunagete Pon! Color (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Renketsu%20Puzzle%20Tsunagete%20Pon%21%20Color%20%28Japan%29.zip",
+    "size": "151.2 KiB"
+  },
+  {
+    "name": "Rockman - Battle & Fighters (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Rockman%20-%20Battle%20%26%20Fighters%20%28Japan%29.zip",
+    "size": "954.9 KiB"
+  },
+  {
+    "name": "Shinki Sekai Evolution - Hateshinai Dungeon (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shinki%20Sekai%20Evolution%20-%20Hateshinai%20Dungeon%20%28Japan%29.zip",
+    "size": "603.6 KiB"
+  },
+  {
+    "name": "Shougi no Tatsujin Color (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shougi%20no%20Tatsujin%20Color%20%28Japan%29.zip",
+    "size": "154.4 KiB"
+  },
+  {
+    "name": "SNK Gals' Fighters (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20Gals%27%20Fighters%20%28Japan%29.zip",
+    "size": "895.6 KiB"
+  },
+  {
+    "name": "SNK vs. Capcom - Card Fighters 2 - Expand Edition (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters%202%20-%20Expand%20Edition%20%28Japan%29.zip",
+    "size": "976.0 KiB"
+  },
+  {
+    "name": "SNK vs. Capcom - Gekitotsu Card Fighters (Japan) (Demo).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20%28Japan%29%20%28Demo%29.zip",
+    "size": "809.5 KiB"
+  },
+  {
+    "name": "SNK vs. Capcom - Gekitotsu Card Fighters - Capcom Supporter Version (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20-%20Capcom%20Supporter%20Version%20%28Japan%29.zip",
+    "size": "893.7 KiB"
+  },
+  {
+    "name": "SNK vs. Capcom - Gekitotsu Card Fighters - SNK Supporter Version (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Gekitotsu%20Card%20Fighters%20-%20SNK%20Supporter%20Version%20%28Japan%29.zip",
+    "size": "893.7 KiB"
+  },
+  {
+    "name": "SNK vs. Capcom - The Match of the Millennium (Japan) (Demo).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20The%20Match%20of%20the%20Millennium%20%28Japan%29%20%28Demo%29.zip",
+    "size": "887.4 KiB"
+  },
+  {
+    "name": "Soreike!! Hanafuda Doujou (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Soreike%21%21%20Hanafuda%20Doujou%20%28Japan%29.zip",
+    "size": "80.3 KiB"
+  },
+  {
+    "name": "Super Real Mahjong - Premium Collection (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Super%20Real%20Mahjong%20-%20Premium%20Collection%20%28Japan%29.zip",
+    "size": "874.8 KiB"
+  },
+  {
+    "name": "Tsunagete Pon! 2 (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Tsunagete%20Pon%21%202%20%28Japan%29.zip",
+    "size": "342.0 KiB"
+  },
+  {
+    "name": "Wrestling Madness (Japan) (En) (Beta).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Wrestling%20Madness%20%28Japan%29%20%28En%29%20%28Beta%29.zip",
+    "size": "914.8 KiB"
+  }
+]

@@ -251,18 +251,12 @@ def create_1g1r_set(system_name: str, myrient_url: str, output_prefix: str):
     # Filter to 1G1R
     results = filter_1g1r(games)
     
-    # Save JSON files
+    # Save JSON files (flat array format, compatible with EmuBuddy launcher)
     for lang in ['english', 'japanese', 'other']:
         if results[lang]:
             filename = f"1g1rsets/games_1g1r_{lang}_{output_prefix}.json"
-            output_data = {
-                "system": system_name,
-                "source": myrient_url,
-                "total_games": len(results[lang]),
-                "games": results[lang]
-            }
             with open(filename, 'w', encoding='utf-8') as f:
-                json.dump(output_data, f, indent=2, ensure_ascii=False)
+                json.dump(results[lang], f, indent=2, ensure_ascii=False)
             print(f"  Saved {len(results[lang])} {lang} games to {filename}")
     
     # Summary

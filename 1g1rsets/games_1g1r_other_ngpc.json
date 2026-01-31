@@ -1,12 +1,7 @@
-{
-  "system": "Neo Geo Pocket Color",
-  "source": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/",
-  "total_games": 1,
-  "games": [
-    {
-      "name": "Ganbare Neo Poke-kun (Kari) (Japan).zip",
-      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Ganbare%20Neo%20Poke-kun%20%28Kari%29%20%28Japan%29.zip",
-      "size": "813.5 KiB"
-    }
-  ]
-}
+[
+  {
+    "name": "Ganbare Neo Poke-kun (Kari) (Japan).zip",
+    "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Ganbare%20Neo%20Poke-kun%20%28Kari%29%20%28Japan%29.zip",
+    "size": "813.5 KiB"
+  }
+]
