@@ -2152,8 +2152,9 @@ func (a *App) downloadWiiUGame(game ROM) {
 
 // Parallel download configuration
 const (
-	numDownloadWorkers = 8              // Number of parallel connections
-	minChunkSize       = 2 * 1024 * 1024 // 2MB minimum chunk size
+	numDownloadWorkers = 4               // Number of parallel connections (reduced to avoid rate limiting)
+	minChunkSize       = 4 * 1024 * 1024 // 4MB minimum chunk size
+	maxChunkRetries    = 3               // Retries per chunk on failure
 )
 
 func downloadWithProgress(url, outputPath string, progress func(downloaded, total int64)) error {
@@ -2273,6 +2274,23 @@ func downloadParallel(client *http.Client, url, outputPath string, totalSize int
 }
 
 func downloadChunk(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(int64)) error {
+	var lastErr error
+	
+	for attempt := 0; attempt < maxChunkRetries; attempt++ {
+		if attempt > 0 {
+			time.Sleep(time.Duration(attempt) * time.Second) // Backoff: 1s, 2s
+		}
+		
+		err := downloadChunkAttempt(client, url, out, start, end, updateProgress)
+		if err == nil {
+			return nil
+		}
+		lastErr = err
+	}
+	return fmt.Errorf("chunk %d-%d failed after %d retries: %w", start, end, maxChunkRetries, lastErr)
+}
+
+func downloadChunkAttempt(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(int64)) error {
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
