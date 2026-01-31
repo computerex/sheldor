@@ -2214,16 +2214,19 @@ func downloadParallel(client *http.Client, url, outputPath string, totalSize int
 		return err
 	}
 
-	// Progress tracking
-	var downloadedBytes int64
+	// Progress tracking - track per-chunk progress to handle retries correctly
+	chunkProgress := make(map[int64]int64) // start position -> bytes downloaded
 	var progressMu sync.Mutex
 	
-	updateProgress := func(n int64) {
+	updateProgress := func(chunkStart int64, totalForChunk int64) {
 		progressMu.Lock()
-		downloadedBytes += n
-		current := downloadedBytes
+		chunkProgress[chunkStart] = totalForChunk
+		var total int64
+		for _, v := range chunkProgress {
+			total += v
+		}
 		progressMu.Unlock()
-		progress(current, totalSize)
+		progress(total, totalSize)
 	}
 
 	// Create worker pool
@@ -2273,12 +2276,14 @@ func downloadParallel(client *http.Client, url, outputPath string, totalSize int
 	return nil
 }
 
-func downloadChunk(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(int64)) error {
+func downloadChunk(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(chunkStart int64, totalForChunk int64)) error {
 	var lastErr error
 	
 	for attempt := 0; attempt < maxChunkRetries; attempt++ {
 		if attempt > 0 {
 			time.Sleep(time.Duration(attempt) * time.Second) // Backoff: 1s, 2s
+			// Reset progress for this chunk on retry
+			updateProgress(start, 0)
 		}
 		
 		err := downloadChunkAttempt(client, url, out, start, end, updateProgress)
@@ -2290,7 +2295,7 @@ func downloadChunk(client *http.Client, url string, out *os.File, start, end int
 	return fmt.Errorf("chunk %d-%d failed after %d retries: %w", start, end, maxChunkRetries, lastErr)
 }
 
-func downloadChunkAttempt(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(int64)) error {
+func downloadChunkAttempt(client *http.Client, url string, out *os.File, start, end int64, updateProgress func(chunkStart int64, totalForChunk int64)) error {
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
@@ -2310,6 +2315,7 @@ func downloadChunkAttempt(client *http.Client, url string, out *os.File, start, 
 
 	buf := make([]byte, 256*1024) // 256KB read buffer
 	pos := start
+	var chunkDownloaded int64
 	for {
 		n, err := resp.Body.Read(buf)
 		if n > 0 {
@@ -2318,7 +2324,8 @@ func downloadChunkAttempt(client *http.Client, url string, out *os.File, start, 
 				return writeErr
 			}
 			pos += int64(n)
-			updateProgress(int64(n))
+			chunkDownloaded += int64(n)
+			updateProgress(start, chunkDownloaded)
 		}
 		if err == io.EOF {
 			break
