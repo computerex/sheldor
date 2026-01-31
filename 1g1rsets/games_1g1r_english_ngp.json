@@ -1,0 +1,32 @@
+{
+  "system": "Neo Geo Pocket",
+  "source": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/",
+  "total_games": 5,
+  "games": [
+    {
+      "name": "Baseball Stars - Pocket Sports Series (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Baseball%20Stars%20-%20Pocket%20Sports%20Series%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "298.3 KiB"
+    },
+    {
+      "name": "King of Fighters R-1 - Pocket Fighting Series (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/King%20of%20Fighters%20R-1%20-%20Pocket%20Fighting%20Series%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "833.1 KiB"
+    },
+    {
+      "name": "NeoGeo Cup '98 (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/NeoGeo%20Cup%20%2798%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "436.8 KiB"
+    },
+    {
+      "name": "Pocket Tennis - Pocket Sports Series (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Pocket%20Tennis%20-%20Pocket%20Sports%20Series%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "156.0 KiB"
+    },
+    {
+      "name": "Samurai Shodown! - Pocket Fighting Series (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Samurai%20Shodown%21%20-%20Pocket%20Fighting%20Series%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "832.3 KiB"
+    }
+  ]
+}

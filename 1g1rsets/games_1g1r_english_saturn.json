@@ -1,0 +1,1777 @@
+{
+  "system": "Sega Saturn",
+  "source": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/",
+  "total_games": 354,
+  "games": [
+    {
+      "name": "3D Baseball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/3D%20Baseball%20%28USA%29.zip",
+      "size": "144.6 MiB"
+    },
+    {
+      "name": "3D Lemmings (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/3D%20Lemmings%20%28Europe%29.zip",
+      "size": "386.3 MiB"
+    },
+    {
+      "name": "Actua Golf (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Actua%20Golf%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "346.4 MiB"
+    },
+    {
+      "name": "Actua Soccer - Club Edition (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Actua%20Soccer%20-%20Club%20Edition%20%28Europe%29.zip",
+      "size": "106.3 MiB"
+    },
+    {
+      "name": "Albert Odyssey - Legend of Eldean (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Albert%20Odyssey%20-%20Legend%20of%20Eldean%20%28USA%29%20%28RE%29.zip",
+      "size": "525.9 MiB"
+    },
+    {
+      "name": "Alien Trilogy (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Alien%20Trilogy%20%28USA%29.zip",
+      "size": "384.5 MiB"
+    },
+    {
+      "name": "All-Star Baseball '97 Featuring Frank Thomas (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/All-Star%20Baseball%20%2797%20Featuring%20Frank%20Thomas%20%28USA%29.zip",
+      "size": "350.9 MiB"
+    },
+    {
+      "name": "Alone in the Dark - Jack Is Back (Europe) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Alone%20in%20the%20Dark%20-%20Jack%20Is%20Back%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "140.5 MiB"
+    },
+    {
+      "name": "Alone in the Dark - One-Eyed Jack's Revenge (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Alone%20in%20the%20Dark%20-%20One-Eyed%20Jack%27s%20Revenge%20%28USA%29.zip",
+      "size": "111.4 MiB"
+    },
+    {
+      "name": "Amok (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Amok%20%28USA%29.zip",
+      "size": "499.5 MiB"
+    },
+    {
+      "name": "Andretti Racing (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Andretti%20Racing%20%28USA%29.zip",
+      "size": "463.7 MiB"
+    },
+    {
+      "name": "Arcade's Greatest Hits (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Arcade%27s%20Greatest%20Hits%20%28USA%29.zip",
+      "size": "483.4 MiB"
+    },
+    {
+      "name": "Arcade's Greatest Hits - The Atari Collection 1 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Arcade%27s%20Greatest%20Hits%20-%20The%20Atari%20Collection%201%20%28USA%29.zip",
+      "size": "372.3 MiB"
+    },
+    {
+      "name": "Area 51 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Area%2051%20%28USA%29.zip",
+      "size": "266.7 MiB"
+    },
+    {
+      "name": "Astal (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Astal%20%28USA%29%20%281S%29.zip",
+      "size": "529.7 MiB"
+    },
+    {
+      "name": "Athlete Kings (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Athlete%20Kings%20%28Europe%29.zip",
+      "size": "111.3 MiB"
+    },
+    {
+      "name": "Atlantis - The Lost Tales (Europe) (En,De,Es) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Atlantis%20-%20The%20Lost%20Tales%20%28Europe%29%20%28En%2CDe%2CEs%29%20%28Disc%201%29.zip",
+      "size": "551.9 MiB"
+    },
+    {
+      "name": "Atlantis - The Lost Tales (Europe) (En,De,Es) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Atlantis%20-%20The%20Lost%20Tales%20%28Europe%29%20%28En%2CDe%2CEs%29%20%28Disc%202%29.zip",
+      "size": "402.2 MiB"
+    },
+    {
+      "name": "Baku Baku Animal - World Zookeeper Contest (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Baku%20Baku%20Animal%20-%20World%20Zookeeper%20Contest%20%28USA%29.zip",
+      "size": "488.5 MiB"
+    },
+    {
+      "name": "Bases Loaded '96 - Double Header (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bases%20Loaded%20%2796%20-%20Double%20Header%20%28USA%29.zip",
+      "size": "96.1 MiB"
+    },
+    {
+      "name": "Batman Forever - The Arcade Game (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Batman%20Forever%20-%20The%20Arcade%20Game%20%28USA%29.zip",
+      "size": "15.9 MiB"
+    },
+    {
+      "name": "Battle Arena Toshinden Remix (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Battle%20Arena%20Toshinden%20Remix%20%28USA%29.zip",
+      "size": "319.1 MiB"
+    },
+    {
+      "name": "Battle Arena Toshinden URA - Ultimate Revenge Attack (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Battle%20Arena%20Toshinden%20URA%20-%20Ultimate%20Revenge%20Attack%20%28USA%29.zip",
+      "size": "395.8 MiB"
+    },
+    {
+      "name": "Battle Monsters (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Battle%20Monsters%20%28USA%29.zip",
+      "size": "35.4 MiB"
+    },
+    {
+      "name": "Battle Stations (USA) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Battle%20Stations%20%28USA%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "459.7 MiB"
+    },
+    {
+      "name": "BattleSport (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/BattleSport%20%28USA%29.zip",
+      "size": "421.6 MiB"
+    },
+    {
+      "name": "Bedlam (USA) (Proto) (1997-08-11).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bedlam%20%28USA%29%20%28Proto%29%20%281997-08-11%29.zip",
+      "size": "209.5 MiB"
+    },
+    {
+      "name": "Black Dawn (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Black%20Dawn%20%28USA%29.zip",
+      "size": "347.1 MiB"
+    },
+    {
+      "name": "BlackFire (USA) (2S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/BlackFire%20%28USA%29%20%282S%29.zip",
+      "size": "248.9 MiB"
+    },
+    {
+      "name": "Blam! Machinehead (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Blam%21%20Machinehead%20%28Europe%29.zip",
+      "size": "481.7 MiB"
+    },
+    {
+      "name": "Blast Chamber (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Blast%20Chamber%20%28USA%29.zip",
+      "size": "411.2 MiB"
+    },
+    {
+      "name": "Blazing Dragons (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Blazing%20Dragons%20%28USA%29.zip",
+      "size": "212.2 MiB"
+    },
+    {
+      "name": "Blazing Heroes (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Blazing%20Heroes%20%28USA%29.zip",
+      "size": "125.3 MiB"
+    },
+    {
+      "name": "Bootleg Sampler (USA) (15S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bootleg%20Sampler%20%28USA%29%20%2815S%29.zip",
+      "size": "357.8 MiB"
+    },
+    {
+      "name": "Bottom of the 9th (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bottom%20of%20the%209th%20%28USA%29.zip",
+      "size": "304.2 MiB"
+    },
+    {
+      "name": "BrainDead 13 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/BrainDead%2013%20%28USA%29.zip",
+      "size": "527.6 MiB"
+    },
+    {
+      "name": "Break Point (Europe) (En,Fr).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Break%20Point%20%28Europe%29%20%28En%2CFr%29.zip",
+      "size": "111.0 MiB"
+    },
+    {
+      "name": "Break Point Tennis (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Break%20Point%20Tennis%20%28USA%29.zip",
+      "size": "111.3 MiB"
+    },
+    {
+      "name": "Bubble Bobble also featuring Rainbow Islands (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bubble%20Bobble%20also%20featuring%20Rainbow%20Islands%20%28USA%29.zip",
+      "size": "52.6 MiB"
+    },
+    {
+      "name": "Bug Too! (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bug%20Too%21%20%28USA%29.zip",
+      "size": "541.7 MiB"
+    },
+    {
+      "name": "Bug! (USA) (R).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bug%21%20%28USA%29%20%28R%29.zip",
+      "size": "151.3 MiB"
+    },
+    {
+      "name": "Burning Rangers (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Burning%20Rangers%20%28USA%29.zip",
+      "size": "309.9 MiB"
+    },
+    {
+      "name": "Bust-A-Move 2 - Arcade Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bust-A-Move%202%20-%20Arcade%20Edition%20%28USA%29.zip",
+      "size": "277.6 MiB"
+    },
+    {
+      "name": "Bust-A-Move 3 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Bust-A-Move%203%20%28USA%29.zip",
+      "size": "256.0 MiB"
+    },
+    {
+      "name": "Casper (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Casper%20%28USA%29.zip",
+      "size": "218.5 MiB"
+    },
+    {
+      "name": "Center Ring Boxing (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Center%20Ring%20Boxing%20%28USA%29.zip",
+      "size": "123.3 MiB"
+    },
+    {
+      "name": "Chaos Control (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Chaos%20Control%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "490.2 MiB"
+    },
+    {
+      "name": "Christmas Nights into Dreams... (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Christmas%20Nights%20into%20Dreams...%20%28USA%29.zip",
+      "size": "549.3 MiB"
+    },
+    {
+      "name": "Cleaning Kit for Sega Saturn (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Cleaning%20Kit%20for%20Sega%20Saturn%20%28USA%29.zip",
+      "size": "13.5 MiB"
+    },
+    {
+      "name": "Clockwork Knight - Pepperouchau's Adventure (USA) (3S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Clockwork%20Knight%20-%20Pepperouchau%27s%20Adventure%20%28USA%29%20%283S%29.zip",
+      "size": "187.5 MiB"
+    },
+    {
+      "name": "Clockwork Knight 2 - Pepperouchau's Adventure (USA, Brazil).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Clockwork%20Knight%202%20-%20Pepperouchau%27s%20Adventure%20%28USA%2C%20Brazil%29.zip",
+      "size": "365.5 MiB"
+    },
+    {
+      "name": "College Slam (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/College%20Slam%20%28USA%29.zip",
+      "size": "239.5 MiB"
+    },
+    {
+      "name": "Command & Conquer (USA) (Disc 1) (GDI Disc).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Command%20%26%20Conquer%20%28USA%29%20%28Disc%201%29%20%28GDI%20Disc%29.zip",
+      "size": "512.8 MiB"
+    },
+    {
+      "name": "Command & Conquer (USA) (Disc 2) (NOD Disc).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Command%20%26%20Conquer%20%28USA%29%20%28Disc%202%29%20%28NOD%20Disc%29.zip",
+      "size": "517.6 MiB"
+    },
+    {
+      "name": "Congo - The Movie - The Lost City of Zinj (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Congo%20-%20The%20Movie%20-%20The%20Lost%20City%20of%20Zinj%20%28USA%29.zip",
+      "size": "433.5 MiB"
+    },
+    {
+      "name": "Contra - Legacy of War (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Contra%20-%20Legacy%20of%20War%20%28USA%29.zip",
+      "size": "369.6 MiB"
+    },
+    {
+      "name": "Core Demo Disc (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Core%20Demo%20Disc%20%28Europe%29.zip",
+      "size": "314.8 MiB"
+    },
+    {
+      "name": "Corpse Killer - Graveyard Edition (USA) (Disc 1) (R).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Corpse%20Killer%20-%20Graveyard%20Edition%20%28USA%29%20%28Disc%201%29%20%28R%29.zip",
+      "size": "553.6 MiB"
+    },
+    {
+      "name": "Corpse Killer - Graveyard Edition (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Corpse%20Killer%20-%20Graveyard%20Edition%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "544.3 MiB"
+    },
+    {
+      "name": "Courier Crisis - The Saga of the Modern Fatalist (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Courier%20Crisis%20-%20The%20Saga%20of%20the%20Modern%20Fatalist%20%28USA%29.zip",
+      "size": "228.2 MiB"
+    },
+    {
+      "name": "Creature Shock - Special Edition (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Creature%20Shock%20-%20Special%20Edition%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "452.3 MiB"
+    },
+    {
+      "name": "Creature Shock - Special Edition (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Creature%20Shock%20-%20Special%20Edition%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "458.8 MiB"
+    },
+    {
+      "name": "Crime Patrol (USA) (Proto) (1996-09-24).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Crime%20Patrol%20%28USA%29%20%28Proto%29%20%281996-09-24%29.zip",
+      "size": "440.0 MiB"
+    },
+    {
+      "name": "Crimewave (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Crimewave%20%28USA%29.zip",
+      "size": "49.2 MiB"
+    },
+    {
+      "name": "Criticom (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Criticom%20%28USA%29.zip",
+      "size": "342.7 MiB"
+    },
+    {
+      "name": "Croc - Legend of the Gobbos (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Croc%20-%20Legend%20of%20the%20Gobbos%20%28USA%29.zip",
+      "size": "456.2 MiB"
+    },
+    {
+      "name": "Crow, The - City of Angels (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Crow%2C%20The%20-%20City%20of%20Angels%20%28USA%29.zip",
+      "size": "206.3 MiB"
+    },
+    {
+      "name": "Crusader - No Remorse (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Crusader%20-%20No%20Remorse%20%28USA%29.zip",
+      "size": "420.1 MiB"
+    },
+    {
+      "name": "Crypt Killer (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Crypt%20Killer%20%28USA%29.zip",
+      "size": "383.4 MiB"
+    },
+    {
+      "name": "Cyber Speedway (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Cyber%20Speedway%20%28USA%29.zip",
+      "size": "378.4 MiB"
+    },
+    {
+      "name": "Cyberia (USA) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Cyberia%20%28USA%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "320.6 MiB"
+    },
+    {
+      "name": "D (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/D%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "465.3 MiB"
+    },
+    {
+      "name": "D (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/D%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "424.1 MiB"
+    },
+    {
+      "name": "Darius Gaiden (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Darius%20Gaiden%20%28USA%29.zip",
+      "size": "337.7 MiB"
+    },
+    {
+      "name": "Darius II (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Darius%20II%20%28Europe%29.zip",
+      "size": "406.6 MiB"
+    },
+    {
+      "name": "Dark Legend (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Dark%20Legend%20%28USA%29.zip",
+      "size": "522.5 MiB"
+    },
+    {
+      "name": "Dark Savior (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Dark%20Savior%20%28USA%29.zip",
+      "size": "287.9 MiB"
+    },
+    {
+      "name": "Darklight Conflict (USA) (En,Fr,De,Es,It,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Darklight%20Conflict%20%28USA%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CSv%29.zip",
+      "size": "377.6 MiB"
+    },
+    {
+      "name": "Daytona USA (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Daytona%20USA%20%28USA%29.zip",
+      "size": "362.4 MiB"
+    },
+    {
+      "name": "Daytona USA - Championship Circuit Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Daytona%20USA%20-%20Championship%20Circuit%20Edition%20%28USA%29.zip",
+      "size": "448.6 MiB"
+    },
+    {
+      "name": "Daytona USA C.C.E. Net Link Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Daytona%20USA%20C.C.E.%20Net%20Link%20Edition%20%28USA%29.zip",
+      "size": "454.3 MiB"
+    },
+    {
+      "name": "DecAthlete (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/DecAthlete%20%28USA%29.zip",
+      "size": "111.1 MiB"
+    },
+    {
+      "name": "Deep Fear (USA) (Disc 1) (Unl).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Deep%20Fear%20%28USA%29%20%28Disc%201%29%20%28Unl%29.zip",
+      "size": "488.2 MiB"
+    },
+    {
+      "name": "Deep Fear (USA) (Disc 2) (Unl).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Deep%20Fear%20%28USA%29%20%28Disc%202%29%20%28Unl%29.zip",
+      "size": "464.5 MiB"
+    },
+    {
+      "name": "Defcon 5 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Defcon%205%20%28Europe%29.zip",
+      "size": "256.5 MiB"
+    },
+    {
+      "name": "Defcon 5 - Peace Has a Price... (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Defcon%205%20-%20Peace%20Has%20a%20Price...%20%28USA%29.zip",
+      "size": "256.5 MiB"
+    },
+    {
+      "name": "Destruction Derby (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Destruction%20Derby%20%28Europe%29.zip",
+      "size": "561.6 MiB"
+    },
+    {
+      "name": "Die Hard Arcade (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Die%20Hard%20Arcade%20%28USA%29.zip",
+      "size": "519.1 MiB"
+    },
+    {
+      "name": "Die Hard Trilogy (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Die%20Hard%20Trilogy%20%28USA%29.zip",
+      "size": "441.9 MiB"
+    },
+    {
+      "name": "Digital Pinball (Europe) (4S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Digital%20Pinball%20%28Europe%29%20%284S%29.zip",
+      "size": "497.1 MiB"
+    },
+    {
+      "name": "Discworld II - Missing Presumed...! (Europe) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Discworld%20II%20-%20Missing%20Presumed...%21%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "417.5 MiB"
+    },
+    {
+      "name": "Doom (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Doom%20%28USA%29.zip",
+      "size": "559.8 MiB"
+    },
+    {
+      "name": "Double Switch (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Double%20Switch%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "537.0 MiB"
+    },
+    {
+      "name": "Double Switch (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Double%20Switch%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "449.6 MiB"
+    },
+    {
+      "name": "Dragon Force (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Dragon%20Force%20%28USA%29.zip",
+      "size": "274.6 MiB"
+    },
+    {
+      "name": "DragonHeart - Fire & Steel (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/DragonHeart%20-%20Fire%20%26%20Steel%20%28USA%29.zip",
+      "size": "363.6 MiB"
+    },
+    {
+      "name": "Duck Video Tools - Sega Saturn Demonstration Disk (USA) (Unl).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Duck%20Video%20Tools%20-%20Sega%20Saturn%20Demonstration%20Disk%20%28USA%29%20%28Unl%29.zip",
+      "size": "189.5 MiB"
+    },
+    {
+      "name": "Duke Nukem 3D (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Duke%20Nukem%203D%20%28USA%29.zip",
+      "size": "479.8 MiB"
+    },
+    {
+      "name": "Earthworm Jim 2 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Earthworm%20Jim%202%20%28USA%29.zip",
+      "size": "333.1 MiB"
+    },
+    {
+      "name": "Enemy Zero (USA) (Disc 0).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Enemy%20Zero%20%28USA%29%20%28Disc%200%29.zip",
+      "size": "246.2 MiB"
+    },
+    {
+      "name": "Enemy Zero (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Enemy%20Zero%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "480.2 MiB"
+    },
+    {
+      "name": "Enemy Zero (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Enemy%20Zero%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "556.8 MiB"
+    },
+    {
+      "name": "Enemy Zero (USA) (Disc 3).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Enemy%20Zero%20%28USA%29%20%28Disc%203%29.zip",
+      "size": "394.7 MiB"
+    },
+    {
+      "name": "Exhumed (Europe) (En,Fr,De,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Exhumed%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%29.zip",
+      "size": "462.3 MiB"
+    },
+    {
+      "name": "F-1 Challenge (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/F-1%20Challenge%20%28Europe%29.zip",
+      "size": "370.3 MiB"
+    },
+    {
+      "name": "F1 Challenge (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/F1%20Challenge%20%28USA%29.zip",
+      "size": "372.7 MiB"
+    },
+    {
+      "name": "FIFA - Road to World Cup 98 (USA) (En,Fr,De,Es,It,Nl,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/FIFA%20-%20Road%20to%20World%20Cup%2098%20%28USA%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CNl%2CSv%29.zip",
+      "size": "367.7 MiB"
+    },
+    {
+      "name": "FIFA 97 (Europe) (En,Fr,De,Es,It,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/FIFA%2097%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CSv%29.zip",
+      "size": "500.4 MiB"
+    },
+    {
+      "name": "FIFA Soccer 96 (USA) (En,Fr,De,Es,It,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/FIFA%20Soccer%2096%20%28USA%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CSv%29.zip",
+      "size": "495.4 MiB"
+    },
+    {
+      "name": "FIFA Soccer 97 (USA) (En,Fr,De,Es,It,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/FIFA%20Soccer%2097%20%28USA%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CSv%29.zip",
+      "size": "500.4 MiB"
+    },
+    {
+      "name": "Fighters Megamix (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Fighters%20Megamix%20%28USA%29%20%28RE%29.zip",
+      "size": "511.0 MiB"
+    },
+    {
+      "name": "Fighting Vipers (USA) (5S, 6S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Fighting%20Vipers%20%28USA%29%20%285S%2C%206S%29.zip",
+      "size": "332.0 MiB"
+    },
+    {
+      "name": "Firestorm - Thunderhawk 2 (Europe) (En,Fr).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Firestorm%20-%20Thunderhawk%202%20%28Europe%29%20%28En%2CFr%29.zip",
+      "size": "486.0 MiB"
+    },
+    {
+      "name": "Formula Karts - Special Edition (Europe) (En,Fr,De,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Formula%20Karts%20-%20Special%20Edition%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%29.zip",
+      "size": "490.0 MiB"
+    },
+    {
+      "name": "Frank Thomas Big Hurt Baseball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Frank%20Thomas%20Big%20Hurt%20Baseball%20%28USA%29.zip",
+      "size": "259.8 MiB"
+    },
+    {
+      "name": "Frankenstein - Through the Eyes of the Monster (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Frankenstein%20-%20Through%20the%20Eyes%20of%20the%20Monster%20%28Europe%29.zip",
+      "size": "401.2 MiB"
+    },
+    {
+      "name": "Galactic Attack (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Galactic%20Attack%20%28USA%29.zip",
+      "size": "453.4 MiB"
+    },
+    {
+      "name": "Galaxy Fight (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Galaxy%20Fight%20%28USA%29.zip",
+      "size": "542.3 MiB"
+    },
+    {
+      "name": "Gex (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Gex%20%28USA%29.zip",
+      "size": "184.2 MiB"
+    },
+    {
+      "name": "Ghen War (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Ghen%20War%20%28USA%29.zip",
+      "size": "369.0 MiB"
+    },
+    {
+      "name": "Golden Axe - The Duel (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Golden%20Axe%20-%20The%20Duel%20%28USA%29.zip",
+      "size": "483.6 MiB"
+    },
+    {
+      "name": "Grand Slam (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Grand%20Slam%20%28USA%29.zip",
+      "size": "99.4 MiB"
+    },
+    {
+      "name": "Gremlin Interactive Demo Disc (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Gremlin%20Interactive%20Demo%20Disc%20%28Europe%29.zip",
+      "size": "124.0 MiB"
+    },
+    {
+      "name": "Gremlin Interactive Demo Disk (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Gremlin%20Interactive%20Demo%20Disk%20%28Europe%29.zip",
+      "size": "155.2 MiB"
+    },
+    {
+      "name": "Grid Run (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Grid%20Run%20%28Europe%29.zip",
+      "size": "419.9 MiB"
+    },
+    {
+      "name": "Grid Runner (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Grid%20Runner%20%28USA%29.zip",
+      "size": "424.7 MiB"
+    },
+    {
+      "name": "Guardian Heroes (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Guardian%20Heroes%20%28USA%29.zip",
+      "size": "489.0 MiB"
+    },
+    {
+      "name": "Gun Griffon (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Gun%20Griffon%20%28Europe%29.zip",
+      "size": "442.8 MiB"
+    },
+    {
+      "name": "Gungriffon (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Gungriffon%20%28USA%29.zip",
+      "size": "442.8 MiB"
+    },
+    {
+      "name": "Hang On GP '96 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hang%20On%20GP%20%2796%20%28Europe%29.zip",
+      "size": "419.2 MiB"
+    },
+    {
+      "name": "Hang-On GP (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hang-On%20GP%20%28USA%29.zip",
+      "size": "419.2 MiB"
+    },
+    {
+      "name": "Hardcore 4x4 (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hardcore%204x4%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "287.2 MiB"
+    },
+    {
+      "name": "Hebereke's Popoitto (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hebereke%27s%20Popoitto%20%28Europe%29.zip",
+      "size": "473.5 MiB"
+    },
+    {
+      "name": "Heir of Zendor - The Legend and the Land (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Heir%20of%20Zendor%20-%20The%20Legend%20and%20the%20Land%20%28USA%29.zip",
+      "size": "530.4 MiB"
+    },
+    {
+      "name": "Herc's Adventures (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Herc%27s%20Adventures%20%28USA%29%20%28RE%29.zip",
+      "size": "433.1 MiB"
+    },
+    {
+      "name": "Hexen (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hexen%20%28USA%29.zip",
+      "size": "513.1 MiB"
+    },
+    {
+      "name": "Hi-Octane (Europe) (En,Fr,De,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hi-Octane%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%29.zip",
+      "size": "296.1 MiB"
+    },
+    {
+      "name": "Hi-Octane - The Track Fights Back! (USA) (En,Fr,De,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hi-Octane%20-%20The%20Track%20Fights%20Back%21%20%28USA%29%20%28En%2CFr%2CDe%2CEs%29.zip",
+      "size": "296.1 MiB"
+    },
+    {
+      "name": "High Velocity - Mountain Racing Challenge (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/High%20Velocity%20-%20Mountain%20Racing%20Challenge%20%28USA%29.zip",
+      "size": "298.6 MiB"
+    },
+    {
+      "name": "Highway 2000 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Highway%202000%20%28USA%29.zip",
+      "size": "338.9 MiB"
+    },
+    {
+      "name": "Horde, The (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Horde%2C%20The%20%28USA%29.zip",
+      "size": "564.0 MiB"
+    },
+    {
+      "name": "House of the Dead, The (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/House%20of%20the%20Dead%2C%20The%20%28USA%29.zip",
+      "size": "367.8 MiB"
+    },
+    {
+      "name": "Hyper 3-D Pinball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Hyper%203-D%20Pinball%20%28USA%29.zip",
+      "size": "185.6 MiB"
+    },
+    {
+      "name": "Impact Racing (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Impact%20Racing%20%28USA%29.zip",
+      "size": "459.7 MiB"
+    },
+    {
+      "name": "In the Hunt (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/In%20the%20Hunt%20%28USA%29.zip",
+      "size": "417.9 MiB"
+    },
+    {
+      "name": "Incredible Hulk, The - The Pantheon Saga (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Incredible%20Hulk%2C%20The%20-%20The%20Pantheon%20Saga%20%28USA%29.zip",
+      "size": "488.4 MiB"
+    },
+    {
+      "name": "Independence Day (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Independence%20Day%20%28USA%29.zip",
+      "size": "346.6 MiB"
+    },
+    {
+      "name": "Independence Day - The Game (Europe) (En,Fr,De,Es,It,Sv).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Independence%20Day%20-%20The%20Game%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CSv%29.zip",
+      "size": "335.9 MiB"
+    },
+    {
+      "name": "International Victory Goal (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/International%20Victory%20Goal%20%28Europe%29.zip",
+      "size": "415.8 MiB"
+    },
+    {
+      "name": "Iron Man & X-O Manowar in Heavy Metal (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Iron%20Man%20%26%20X-O%20Manowar%20in%20Heavy%20Metal%20%28USA%29.zip",
+      "size": "430.5 MiB"
+    },
+    {
+      "name": "Iron Storm (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Iron%20Storm%20%28USA%29.zip",
+      "size": "271.2 MiB"
+    },
+    {
+      "name": "Jewels of the Oracle (Europe) (En,Ja,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Jewels%20of%20the%20Oracle%20%28Europe%29%20%28En%2CJa%2CFr%2CDe%29.zip",
+      "size": "372.5 MiB"
+    },
+    {
+      "name": "Johnny Bazookatone (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Johnny%20Bazookatone%20%28USA%29.zip",
+      "size": "483.9 MiB"
+    },
+    {
+      "name": "Jonah Lomu Rugby (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Jonah%20Lomu%20Rugby%20%28Europe%29.zip",
+      "size": "319.3 MiB"
+    },
+    {
+      "name": "Keio Flying Squadron 2 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Keio%20Flying%20Squadron%202%20%28Europe%29.zip",
+      "size": "461.6 MiB"
+    },
+    {
+      "name": "King of Fighters '95, The (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/King%20of%20Fighters%20%2795%2C%20The%20%28Europe%29.zip",
+      "size": "473.4 MiB"
+    },
+    {
+      "name": "Krazy Ivan (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Krazy%20Ivan%20%28Europe%29.zip",
+      "size": "456.3 MiB"
+    },
+    {
+      "name": "Last Bronx (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Last%20Bronx%20%28USA%29.zip",
+      "size": "350.8 MiB"
+    },
+    {
+      "name": "Last Gladiators - Digital Pinball (USA) (3S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Last%20Gladiators%20-%20Digital%20Pinball%20%28USA%29%20%283S%29.zip",
+      "size": "497.3 MiB"
+    },
+    {
+      "name": "Legend of Oasis, The (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Legend%20of%20Oasis%2C%20The%20%28USA%29.zip",
+      "size": "55.6 MiB"
+    },
+    {
+      "name": "Loaded (USA) (En,Fr).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Loaded%20%28USA%29%20%28En%2CFr%29.zip",
+      "size": "540.9 MiB"
+    },
+    {
+      "name": "Lost Vikings 2 - Norse by Norsewest (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Lost%20Vikings%202%20-%20Norse%20by%20Norsewest%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "163.0 MiB"
+    },
+    {
+      "name": "Lost World, The - Jurassic Park (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Lost%20World%2C%20The%20-%20Jurassic%20Park%20%28USA%29.zip",
+      "size": "449.2 MiB"
+    },
+    {
+      "name": "Lunacy (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Lunacy%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "537.1 MiB"
+    },
+    {
+      "name": "Lunacy (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Lunacy%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "552.9 MiB"
+    },
+    {
+      "name": "Machine Head (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Machine%20Head%20%28USA%29.zip",
+      "size": "481.2 MiB"
+    },
+    {
+      "name": "Madden NFL 97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Madden%20NFL%2097%20%28USA%29.zip",
+      "size": "377.0 MiB"
+    },
+    {
+      "name": "Madden NFL 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Madden%20NFL%2098%20%28USA%29.zip",
+      "size": "453.8 MiB"
+    },
+    {
+      "name": "Magic Carpet (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Magic%20Carpet%20%28USA%29.zip",
+      "size": "368.9 MiB"
+    },
+    {
+      "name": "Magic Knight Rayearth (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Magic%20Knight%20Rayearth%20%28USA%29.zip",
+      "size": "473.6 MiB"
+    },
+    {
+      "name": "Mansion of Hidden Souls, The (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mansion%20of%20Hidden%20Souls%2C%20The%20%28USA%29.zip",
+      "size": "356.9 MiB"
+    },
+    {
+      "name": "Manx TT SuperBike (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Manx%20TT%20SuperBike%20%28USA%29.zip",
+      "size": "232.0 MiB"
+    },
+    {
+      "name": "Marvel Super Heroes (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Marvel%20Super%20Heroes%20%28USA%29.zip",
+      "size": "488.2 MiB"
+    },
+    {
+      "name": "Mass Destruction (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mass%20Destruction%20%28USA%29.zip",
+      "size": "403.6 MiB"
+    },
+    {
+      "name": "Maximum Force (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Maximum%20Force%20%28USA%29.zip",
+      "size": "362.0 MiB"
+    },
+    {
+      "name": "MechWarrior 2 - 31st Century Combat - Arcade Combat Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/MechWarrior%202%20-%2031st%20Century%20Combat%20-%20Arcade%20Combat%20Edition%20%28USA%29.zip",
+      "size": "325.1 MiB"
+    },
+    {
+      "name": "Mega Man 8 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mega%20Man%208%20%28USA%29.zip",
+      "size": "259.7 MiB"
+    },
+    {
+      "name": "Mega Man X3 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mega%20Man%20X3%20%28Europe%29.zip",
+      "size": "513.7 MiB"
+    },
+    {
+      "name": "Mega Man X4 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mega%20Man%20X4%20%28USA%29.zip",
+      "size": "444.5 MiB"
+    },
+    {
+      "name": "Mighty Hits (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mighty%20Hits%20%28Europe%29.zip",
+      "size": "322.1 MiB"
+    },
+    {
+      "name": "Minnesota Fats - Pool Legend (USA) (R).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Minnesota%20Fats%20-%20Pool%20Legend%20%28USA%29%20%28R%29.zip",
+      "size": "405.6 MiB"
+    },
+    {
+      "name": "Mortal Kombat II (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mortal%20Kombat%20II%20%28USA%29.zip",
+      "size": "22.0 MiB"
+    },
+    {
+      "name": "Mortal Kombat Trilogy (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mortal%20Kombat%20Trilogy%20%28USA%29.zip",
+      "size": "435.3 MiB"
+    },
+    {
+      "name": "Mr. Bones (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mr.%20Bones%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "458.5 MiB"
+    },
+    {
+      "name": "Mr. Bones (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mr.%20Bones%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "460.1 MiB"
+    },
+    {
+      "name": "Myst (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Myst%20%28USA%29.zip",
+      "size": "387.1 MiB"
+    },
+    {
+      "name": "Mystaria - The Realms of Lore (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Mystaria%20-%20The%20Realms%20of%20Lore%20%28USA%29.zip",
+      "size": "239.3 MiB"
+    },
+    {
+      "name": "NASCAR 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NASCAR%2098%20%28USA%29.zip",
+      "size": "323.8 MiB"
+    },
+    {
+      "name": "NBA Action (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Action%20%28USA%29.zip",
+      "size": "374.8 MiB"
+    },
+    {
+      "name": "NBA Action 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Action%2098%20%28USA%29.zip",
+      "size": "228.0 MiB"
+    },
+    {
+      "name": "NBA Jam - Tournament Edition (USA) (3S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Jam%20-%20Tournament%20Edition%20%28USA%29%20%283S%29.zip",
+      "size": "323.3 MiB"
+    },
+    {
+      "name": "NBA Jam Extreme (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Jam%20Extreme%20%28USA%29.zip",
+      "size": "110.7 MiB"
+    },
+    {
+      "name": "NBA Live 97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Live%2097%20%28USA%29.zip",
+      "size": "268.3 MiB"
+    },
+    {
+      "name": "NBA Live 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NBA%20Live%2098%20%28USA%29.zip",
+      "size": "370.3 MiB"
+    },
+    {
+      "name": "NFL '97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NFL%20%2797%20%28USA%29.zip",
+      "size": "83.7 MiB"
+    },
+    {
+      "name": "NFL Quarterback Club '96 (USA) (5S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NFL%20Quarterback%20Club%20%2796%20%28USA%29%20%285S%29.zip",
+      "size": "108.2 MiB"
+    },
+    {
+      "name": "NFL Quarterback Club 96 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NFL%20Quarterback%20Club%2096%20%28Europe%29.zip",
+      "size": "108.2 MiB"
+    },
+    {
+      "name": "NFL Quarterback Club 97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NFL%20Quarterback%20Club%2097%20%28USA%29.zip",
+      "size": "107.0 MiB"
+    },
+    {
+      "name": "NHL 97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NHL%2097%20%28USA%29.zip",
+      "size": "414.5 MiB"
+    },
+    {
+      "name": "NHL 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NHL%2098%20%28USA%29.zip",
+      "size": "406.5 MiB"
+    },
+    {
+      "name": "NHL All-Star Hockey (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NHL%20All-Star%20Hockey%20%28USA%29%20%281S%29.zip",
+      "size": "417.5 MiB"
+    },
+    {
+      "name": "NHL All-Star Hockey 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NHL%20All-Star%20Hockey%2098%20%28USA%29.zip",
+      "size": "188.0 MiB"
+    },
+    {
+      "name": "NHL Powerplay '96 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/NHL%20Powerplay%20%2796%20%28USA%29.zip",
+      "size": "206.6 MiB"
+    },
+    {
+      "name": "Night Warriors - Darkstalkers' Revenge (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Night%20Warriors%20-%20Darkstalkers%27%20Revenge%20%28USA%29.zip",
+      "size": "421.3 MiB"
+    },
+    {
+      "name": "Nights into Dreams... (USA) (with 3D Control Pad) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Nights%20into%20Dreams...%20%28USA%29%20%28with%203D%20Control%20Pad%29%20%28RE%29.zip",
+      "size": "450.4 MiB"
+    },
+    {
+      "name": "Norse by Norsewest - The Return of the Lost Vikings (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Norse%20by%20Norsewest%20-%20The%20Return%20of%20the%20Lost%20Vikings%20%28USA%29.zip",
+      "size": "168.6 MiB"
+    },
+    {
+      "name": "Off-World Interceptor Extreme (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Off-World%20Interceptor%20Extreme%20%28USA%29.zip",
+      "size": "342.7 MiB"
+    },
+    {
+      "name": "Olympic Soccer (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Olympic%20Soccer%20%28USA%29.zip",
+      "size": "397.9 MiB"
+    },
+    {
+      "name": "P.T.O. - Pacific Theater of Operations II (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/P.T.O.%20-%20Pacific%20Theater%20of%20Operations%20II%20%28USA%29.zip",
+      "size": "294.2 MiB"
+    },
+    {
+      "name": "Pandemonium! (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Pandemonium%21%20%28USA%29.zip",
+      "size": "62.0 MiB"
+    },
+    {
+      "name": "Panzer Dragoon (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20%28USA%29%20%281S%29.zip",
+      "size": "545.9 MiB"
+    },
+    {
+      "name": "Panzer Dragoon II Zwei (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20II%20Zwei%20%28USA%29.zip",
+      "size": "389.7 MiB"
+    },
+    {
+      "name": "Panzer Dragoon Saga (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20Saga%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "474.1 MiB"
+    },
+    {
+      "name": "Panzer Dragoon Saga (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20Saga%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "413.0 MiB"
+    },
+    {
+      "name": "Panzer Dragoon Saga (USA) (Disc 3).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20Saga%20%28USA%29%20%28Disc%203%29.zip",
+      "size": "466.7 MiB"
+    },
+    {
+      "name": "Panzer Dragoon Saga (USA) (Disc 4).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Panzer%20Dragoon%20Saga%20%28USA%29%20%28Disc%204%29.zip",
+      "size": "476.7 MiB"
+    },
+    {
+      "name": "Parodius (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Parodius%20%28Europe%29.zip",
+      "size": "465.6 MiB"
+    },
+    {
+      "name": "Pebble Beach Golf Links (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Pebble%20Beach%20Golf%20Links%20%28USA%29.zip",
+      "size": "320.0 MiB"
+    },
+    {
+      "name": "PGA Tour 97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/PGA%20Tour%2097%20%28USA%29.zip",
+      "size": "251.1 MiB"
+    },
+    {
+      "name": "Photo CD Operating System (Europe) (En,Ja,Fr,De,Es,It) (2S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Photo%20CD%20Operating%20System%20%28Europe%29%20%28En%2CJa%2CFr%2CDe%2CEs%2CIt%29%20%282S%29.zip",
+      "size": "29.8 MiB"
+    },
+    {
+      "name": "Pinball Graffiti (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Pinball%20Graffiti%20%28Europe%29.zip",
+      "size": "554.7 MiB"
+    },
+    {
+      "name": "Powerslave (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Powerslave%20%28USA%29.zip",
+      "size": "463.6 MiB"
+    },
+    {
+      "name": "Preview Sega Saturn Vol. 1 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Preview%20Sega%20Saturn%20Vol.%201%20%28Europe%29.zip",
+      "size": "219.1 MiB"
+    },
+    {
+      "name": "Primal Rage (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Primal%20Rage%20%28USA%29.zip",
+      "size": "304.3 MiB"
+    },
+    {
+      "name": "Pro-Pinball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Pro-Pinball%20%28USA%29.zip",
+      "size": "284.6 MiB"
+    },
+    {
+      "name": "Pro-Pinball - The Web (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Pro-Pinball%20-%20The%20Web%20%28Europe%29.zip",
+      "size": "284.1 MiB"
+    },
+    {
+      "name": "Quake (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Quake%20%28USA%29.zip",
+      "size": "528.2 MiB"
+    },
+    {
+      "name": "Quarterback Attack (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Quarterback%20Attack%20%28USA%29.zip",
+      "size": "533.8 MiB"
+    },
+    {
+      "name": "Rampage - World Tour (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Rampage%20-%20World%20Tour%20%28USA%29.zip",
+      "size": "103.0 MiB"
+    },
+    {
+      "name": "Rayman (USA) (R2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Rayman%20%28USA%29%20%28R2%29.zip",
+      "size": "471.3 MiB"
+    },
+    {
+      "name": "Resident Evil (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Resident%20Evil%20%28USA%29.zip",
+      "size": "469.4 MiB"
+    },
+    {
+      "name": "Revolution X - Music Is the Weapon (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Revolution%20X%20-%20Music%20Is%20the%20Weapon%20%28USA%29%20%281S%29.zip",
+      "size": "549.1 MiB"
+    },
+    {
+      "name": "Rise 2 - Resurrection (USA) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Rise%202%20-%20Resurrection%20%28USA%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "402.1 MiB"
+    },
+    {
+      "name": "Riven - The Sequel to Myst (Europe) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Riven%20-%20The%20Sequel%20to%20Myst%20%28Europe%29%20%28Disc%201%29.zip",
+      "size": "385.3 MiB"
+    },
+    {
+      "name": "Riven - The Sequel to Myst (Europe) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Riven%20-%20The%20Sequel%20to%20Myst%20%28Europe%29%20%28Disc%202%29.zip",
+      "size": "381.8 MiB"
+    },
+    {
+      "name": "Riven - The Sequel to Myst (Europe) (Disc 3).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Riven%20-%20The%20Sequel%20to%20Myst%20%28Europe%29%20%28Disc%203%29.zip",
+      "size": "359.0 MiB"
+    },
+    {
+      "name": "Riven - The Sequel to Myst (Europe) (Disc 4).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Riven%20-%20The%20Sequel%20to%20Myst%20%28Europe%29%20%28Disc%204%29.zip",
+      "size": "321.6 MiB"
+    },
+    {
+      "name": "Road & Track Presents - The Need for Speed (USA) (En,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Road%20%26%20Track%20Presents%20-%20The%20Need%20for%20Speed%20%28USA%29%20%28En%2CDe%29.zip",
+      "size": "565.8 MiB"
+    },
+    {
+      "name": "Road Rash (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Road%20Rash%20%28USA%29.zip",
+      "size": "459.7 MiB"
+    },
+    {
+      "name": "Robo Pit (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Robo%20Pit%20%28USA%29.zip",
+      "size": "303.9 MiB"
+    },
+    {
+      "name": "Robotica (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Robotica%20%28USA%29.zip",
+      "size": "103.8 MiB"
+    },
+    {
+      "name": "Robotica - Cybernation Revolt (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Robotica%20-%20Cybernation%20Revolt%20%28Europe%29.zip",
+      "size": "103.8 MiB"
+    },
+    {
+      "name": "Romance of the Three Kingdoms IV - Wall of Fire (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Romance%20of%20the%20Three%20Kingdoms%20IV%20-%20Wall%20of%20Fire%20%28USA%29.zip",
+      "size": "427.5 MiB"
+    },
+    {
+      "name": "Saturn Bomberman (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Saturn%20Bomberman%20%28USA%29%20%281S%29.zip",
+      "size": "484.4 MiB"
+    },
+    {
+      "name": "Scorcher (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Scorcher%20%28USA%29%20%28RE%29.zip",
+      "size": "102.4 MiB"
+    },
+    {
+      "name": "Scud - The Disposable Assassin (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Scud%20-%20The%20Disposable%20Assassin%20%28USA%29.zip",
+      "size": "350.3 MiB"
+    },
+    {
+      "name": "Sea Bass Fishing (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sea%20Bass%20Fishing%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "187.3 MiB"
+    },
+    {
+      "name": "Sega Ages Volume 1 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Ages%20Volume%201%20%28USA%29.zip",
+      "size": "520.7 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 1 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%201%20%28Europe%29.zip",
+      "size": "280.2 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 2 (UK).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%202%20%28UK%29.zip",
+      "size": "342.5 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 3 (UK).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%203%20%28UK%29.zip",
+      "size": "445.3 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 4 (UK).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%204%20%28UK%29.zip",
+      "size": "486.0 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 5 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%205%20%28Europe%29.zip",
+      "size": "504.7 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 6 (UK).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%206%20%28UK%29.zip",
+      "size": "485.7 MiB"
+    },
+    {
+      "name": "Sega Flash Vol. 7 (UK).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Flash%20Vol.%207%20%28UK%29.zip",
+      "size": "533.5 MiB"
+    },
+    {
+      "name": "Sega Rally Championship (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Rally%20Championship%20%28USA%29.zip",
+      "size": "403.4 MiB"
+    },
+    {
+      "name": "Sega Rally Championship Plus Netlink Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Rally%20Championship%20Plus%20Netlink%20Edition%20%28USA%29.zip",
+      "size": "407.5 MiB"
+    },
+    {
+      "name": "Sega Saturn Bootleg II - On the Road (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Saturn%20Bootleg%20II%20-%20On%20the%20Road%20%28USA%29.zip",
+      "size": "479.0 MiB"
+    },
+    {
+      "name": "Sega Saturn Choice Cuts (USA) (R2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Saturn%20Choice%20Cuts%20%28USA%29%20%28R2%29.zip",
+      "size": "171.2 MiB"
+    },
+    {
+      "name": "Sega Screams Volume 2 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Screams%20Volume%202%20%28USA%29.zip",
+      "size": "384.0 MiB"
+    },
+    {
+      "name": "Sega Touring Car Championship (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Touring%20Car%20Championship%20%28USA%29.zip",
+      "size": "450.9 MiB"
+    },
+    {
+      "name": "Sega Worldwide Soccer '97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Worldwide%20Soccer%20%2797%20%28USA%29.zip",
+      "size": "472.5 MiB"
+    },
+    {
+      "name": "Sega Worldwide Soccer '98 - Club Edition (Europe) (En,Fr,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Worldwide%20Soccer%20%2798%20-%20Club%20Edition%20%28Europe%29%20%28En%2CFr%2CEs%29.zip",
+      "size": "319.2 MiB"
+    },
+    {
+      "name": "Sega Worldwide Soccer 97 (Europe) (Alt).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sega%20Worldwide%20Soccer%2097%20%28Europe%29%20%28Alt%29.zip",
+      "size": "472.5 MiB"
+    },
+    {
+      "name": "Shanghai - Triple-Threat (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shanghai%20-%20Triple-Threat%20%28USA%29.zip",
+      "size": "4.2 MiB"
+    },
+    {
+      "name": "Shellshock (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shellshock%20%28USA%29.zip",
+      "size": "470.0 MiB"
+    },
+    {
+      "name": "Shining Force III (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shining%20Force%20III%20%28USA%29.zip",
+      "size": "165.2 MiB"
+    },
+    {
+      "name": "Shining the Holy Ark (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shining%20the%20Holy%20Ark%20%28USA%29.zip",
+      "size": "180.7 MiB"
+    },
+    {
+      "name": "Shining Wisdom (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shining%20Wisdom%20%28USA%29.zip",
+      "size": "49.6 MiB"
+    },
+    {
+      "name": "Shinobi Legions (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shinobi%20Legions%20%28USA%29.zip",
+      "size": "395.2 MiB"
+    },
+    {
+      "name": "Shinobi-X - Shin Shinobi Den (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shinobi-X%20-%20Shin%20Shinobi%20Den%20%28Europe%29.zip",
+      "size": "422.7 MiB"
+    },
+    {
+      "name": "Shockwave Assault (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Shockwave%20Assault%20%28USA%29.zip",
+      "size": "524.4 MiB"
+    },
+    {
+      "name": "SimCity 2000 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/SimCity%202000%20%28USA%29.zip",
+      "size": "92.5 MiB"
+    },
+    {
+      "name": "Skeleton Warriors (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Skeleton%20Warriors%20%28USA%29.zip",
+      "size": "414.1 MiB"
+    },
+    {
+      "name": "Sky Target (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sky%20Target%20%28USA%29.zip",
+      "size": "492.4 MiB"
+    },
+    {
+      "name": "Slam 'n Jam '96 featuring Magic & Kareem - Signature Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Slam%20%27n%20Jam%20%2796%20featuring%20Magic%20%26%20Kareem%20-%20Signature%20Edition%20%28USA%29.zip",
+      "size": "100.6 MiB"
+    },
+    {
+      "name": "Solar Eclipse (USA) (2S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Solar%20Eclipse%20%28USA%29%20%282S%29.zip",
+      "size": "411.5 MiB"
+    },
+    {
+      "name": "Sonic 3D - Flickies' Island (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sonic%203D%20-%20Flickies%27%20Island%20%28Europe%29.zip",
+      "size": "571.5 MiB"
+    },
+    {
+      "name": "Sonic 3D Blast (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sonic%203D%20Blast%20%28USA%29.zip",
+      "size": "571.0 MiB"
+    },
+    {
+      "name": "Sonic Jam (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sonic%20Jam%20%28USA%29.zip",
+      "size": "449.9 MiB"
+    },
+    {
+      "name": "Sonic R (USA, Brazil).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Sonic%20R%20%28USA%2C%20Brazil%29.zip",
+      "size": "576.0 MiB"
+    },
+    {
+      "name": "Soviet Strike (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Soviet%20Strike%20%28USA%29.zip",
+      "size": "530.5 MiB"
+    },
+    {
+      "name": "Space Hulk - Vengeance of the Blood Angels (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Space%20Hulk%20-%20Vengeance%20of%20the%20Blood%20Angels%20%28USA%29.zip",
+      "size": "343.8 MiB"
+    },
+    {
+      "name": "Space Jam (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Space%20Jam%20%28USA%29.zip",
+      "size": "269.2 MiB"
+    },
+    {
+      "name": "Spot Goes to Hollywood (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Spot%20Goes%20to%20Hollywood%20%28USA%29.zip",
+      "size": "512.9 MiB"
+    },
+    {
+      "name": "Star Fighter (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Star%20Fighter%20%28USA%29.zip",
+      "size": "424.7 MiB"
+    },
+    {
+      "name": "Star Wars - Rebel Strike (USA) (Proto) (1997-01-30).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Star%20Wars%20-%20Rebel%20Strike%20%28USA%29%20%28Proto%29%20%281997-01-30%29.zip",
+      "size": "701.7 KiB"
+    },
+    {
+      "name": "StarFighter 3000 (Europe) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/StarFighter%203000%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "437.8 MiB"
+    },
+    {
+      "name": "Steep Slope Sliders (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Steep%20Slope%20Sliders%20%28USA%29.zip",
+      "size": "333.4 MiB"
+    },
+    {
+      "name": "Story of Thor 2, The (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Story%20of%20Thor%202%2C%20The%20%28Europe%29.zip",
+      "size": "55.6 MiB"
+    },
+    {
+      "name": "Street Fighter - The Movie (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Fighter%20-%20The%20Movie%20%28USA%29.zip",
+      "size": "524.6 MiB"
+    },
+    {
+      "name": "Street Fighter Alpha - Warriors' Dreams (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Fighter%20Alpha%20-%20Warriors%27%20Dreams%20%28USA%29.zip",
+      "size": "516.4 MiB"
+    },
+    {
+      "name": "Street Fighter Alpha 2 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Fighter%20Alpha%202%20%28USA%29.zip",
+      "size": "399.2 MiB"
+    },
+    {
+      "name": "Street Fighter Collection (USA) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Fighter%20Collection%20%28USA%29%20%28Disc%201%29.zip",
+      "size": "545.6 MiB"
+    },
+    {
+      "name": "Street Fighter Collection (USA) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Fighter%20Collection%20%28USA%29%20%28Disc%202%29.zip",
+      "size": "408.6 MiB"
+    },
+    {
+      "name": "Street Racer (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Street%20Racer%20%28Europe%29.zip",
+      "size": "345.4 MiB"
+    },
+    {
+      "name": "Striker 96 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Striker%2096%20%28USA%29.zip",
+      "size": "258.0 MiB"
+    },
+    {
+      "name": "Super Puzzle Fighter II Turbo (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Super%20Puzzle%20Fighter%20II%20Turbo%20%28USA%29.zip",
+      "size": "390.8 MiB"
+    },
+    {
+      "name": "Swagman (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Swagman%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "390.9 MiB"
+    },
+    {
+      "name": "Tempest 2000 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Tempest%202000%20%28USA%29.zip",
+      "size": "517.8 MiB"
+    },
+    {
+      "name": "Ten Pin Alley (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Ten%20Pin%20Alley%20%28USA%29.zip",
+      "size": "448.5 MiB"
+    },
+    {
+      "name": "Terry Pratchett's Discworld (Europe) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Terry%20Pratchett%27s%20Discworld%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "371.1 MiB"
+    },
+    {
+      "name": "Tetris Plus (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Tetris%20Plus%20%28USA%29.zip",
+      "size": "503.9 MiB"
+    },
+    {
+      "name": "Theme Park (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Theme%20Park%20%28USA%29.zip",
+      "size": "201.6 MiB"
+    },
+    {
+      "name": "Three Dirty Dwarves (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Three%20Dirty%20Dwarves%20%28USA%29%20%28RE%29.zip",
+      "size": "363.7 MiB"
+    },
+    {
+      "name": "Thunderstrike 2 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Thunderstrike%202%20%28USA%29.zip",
+      "size": "404.9 MiB"
+    },
+    {
+      "name": "Tilt! (Europe) (En,Fr,De).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Tilt%21%20%28Europe%29%20%28En%2CFr%2CDe%29.zip",
+      "size": "187.4 MiB"
+    },
+    {
+      "name": "Titan Wars (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Titan%20Wars%20%28Europe%29.zip",
+      "size": "412.5 MiB"
+    },
+    {
+      "name": "TNN Motor Sports HardCore 4X4 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/TNN%20Motor%20Sports%20HardCore%204X4%20%28USA%29.zip",
+      "size": "291.0 MiB"
+    },
+    {
+      "name": "Tomb Raider (USA) (2S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Tomb%20Raider%20%28USA%29%20%282S%29.zip",
+      "size": "368.3 MiB"
+    },
+    {
+      "name": "Torico (Europe) (Disc 1).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Torico%20%28Europe%29%20%28Disc%201%29.zip",
+      "size": "537.4 MiB"
+    },
+    {
+      "name": "Torico (Europe) (Disc 2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Torico%20%28Europe%29%20%28Disc%202%29.zip",
+      "size": "553.3 MiB"
+    },
+    {
+      "name": "Trash It (Europe) (En,Fr,De,Es,It).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Trash%20It%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.zip",
+      "size": "462.7 MiB"
+    },
+    {
+      "name": "True Pinball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/True%20Pinball%20%28USA%29.zip",
+      "size": "516.2 MiB"
+    },
+    {
+      "name": "Tunnel B1 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Tunnel%20B1%20%28USA%29.zip",
+      "size": "311.7 MiB"
+    },
+    {
+      "name": "UEFA Euro 96 - England (Europe) (En,Fr,De,Es,It,Pt).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/UEFA%20Euro%2096%20-%20England%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CPt%29.zip",
+      "size": "247.3 MiB"
+    },
+    {
+      "name": "Ultimate Mortal Kombat 3 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Ultimate%20Mortal%20Kombat%203%20%28USA%29.zip",
+      "size": "331.1 MiB"
+    },
+    {
+      "name": "Valora Valley Golf (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Valora%20Valley%20Golf%20%28USA%29.zip",
+      "size": "266.0 MiB"
+    },
+    {
+      "name": "Victory Boxing (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Victory%20Boxing%20%28Europe%29.zip",
+      "size": "123.3 MiB"
+    },
+    {
+      "name": "Virtua Cop (USA) (5S, 6S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Cop%20%28USA%29%20%285S%2C%206S%29.zip",
+      "size": "413.2 MiB"
+    },
+    {
+      "name": "Virtua Cop 2 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Cop%202%20%28USA%29.zip",
+      "size": "286.5 MiB"
+    },
+    {
+      "name": "Virtua Fighter (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Fighter%20%28USA%29.zip",
+      "size": "498.8 MiB"
+    },
+    {
+      "name": "Virtua Fighter 2 (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Fighter%202%20%28USA%29%20%28RE%29.zip",
+      "size": "547.6 MiB"
+    },
+    {
+      "name": "Virtua Fighter CG Portrait Collection (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Fighter%20CG%20Portrait%20Collection%20%28Europe%29.zip",
+      "size": "9.9 MiB"
+    },
+    {
+      "name": "Virtua Fighter Kids (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Fighter%20Kids%20%28USA%29.zip",
+      "size": "439.0 MiB"
+    },
+    {
+      "name": "Virtua Fighter Remix (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Fighter%20Remix%20%28USA%29.zip",
+      "size": "500.3 MiB"
+    },
+    {
+      "name": "Virtua Racing (USA) (12S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtua%20Racing%20%28USA%29%20%2812S%29.zip",
+      "size": "228.3 MiB"
+    },
+    {
+      "name": "Virtual Casino (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20Casino%20%28USA%29.zip",
+      "size": "372.7 MiB"
+    },
+    {
+      "name": "Virtual Golf (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20Golf%20%28Europe%29.zip",
+      "size": "231.0 MiB"
+    },
+    {
+      "name": "Virtual Hydlide (USA) (P4H).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20Hydlide%20%28USA%29%20%28P4H%29.zip",
+      "size": "303.3 MiB"
+    },
+    {
+      "name": "Virtual On - Cyber Troopers (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20On%20-%20Cyber%20Troopers%20%28USA%29.zip",
+      "size": "322.9 MiB"
+    },
+    {
+      "name": "Virtual On - Cyber Troopers Net Link Edition (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20On%20-%20Cyber%20Troopers%20Net%20Link%20Edition%20%28USA%29.zip",
+      "size": "344.3 MiB"
+    },
+    {
+      "name": "Virtual Open Tennis (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Virtual%20Open%20Tennis%20%28USA%29.zip",
+      "size": "464.1 MiB"
+    },
+    {
+      "name": "VR Golf '97 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/VR%20Golf%20%2797%20%28USA%29.zip",
+      "size": "303.1 MiB"
+    },
+    {
+      "name": "VR Soccer (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/VR%20Soccer%20%28USA%29.zip",
+      "size": "73.9 MiB"
+    },
+    {
+      "name": "WarCraft II - The Dark Saga (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/WarCraft%20II%20-%20The%20Dark%20Saga%20%28USA%29.zip",
+      "size": "461.0 MiB"
+    },
+    {
+      "name": "Whizz (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Whizz%20%28Europe%29.zip",
+      "size": "256.9 MiB"
+    },
+    {
+      "name": "Wing Arms (USA) (4S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Wing%20Arms%20%28USA%29%20%284S%29.zip",
+      "size": "368.6 MiB"
+    },
+    {
+      "name": "Winning Post (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Winning%20Post%20%28USA%29.zip",
+      "size": "286.0 MiB"
+    },
+    {
+      "name": "Winter Heat (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Winter%20Heat%20%28USA%29.zip",
+      "size": "331.4 MiB"
+    },
+    {
+      "name": "Wipeout (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Wipeout%20%28USA%29.zip",
+      "size": "536.6 MiB"
+    },
+    {
+      "name": "Wipeout 2097 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Wipeout%202097%20%28Europe%29.zip",
+      "size": "556.5 MiB"
+    },
+    {
+      "name": "World Cup Golf - Professional Edition (USA) (RE2).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/World%20Cup%20Golf%20-%20Professional%20Edition%20%28USA%29%20%28RE2%29.zip",
+      "size": "559.5 MiB"
+    },
+    {
+      "name": "World League Soccer '98 (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/World%20League%20Soccer%20%2798%20%28Europe%29.zip",
+      "size": "441.3 MiB"
+    },
+    {
+      "name": "World Series Baseball (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/World%20Series%20Baseball%20%28USA%29.zip",
+      "size": "80.2 MiB"
+    },
+    {
+      "name": "World Series Baseball 98 (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/World%20Series%20Baseball%2098%20%28USA%29.zip",
+      "size": "323.1 MiB"
+    },
+    {
+      "name": "World Series Baseball II (USA) (1S).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/World%20Series%20Baseball%20II%20%28USA%29%20%281S%29.zip",
+      "size": "257.0 MiB"
+    },
+    {
+      "name": "Worldwide Soccer '98 (USA) (En,Fr,Es).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Worldwide%20Soccer%20%2798%20%28USA%29%20%28En%2CFr%2CEs%29.zip",
+      "size": "318.4 MiB"
+    },
+    {
+      "name": "Worldwide Soccer - Sega International Victory Goal Edition (USA) (RE).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Worldwide%20Soccer%20-%20Sega%20International%20Victory%20Goal%20Edition%20%28USA%29%20%28RE%29.zip",
+      "size": "415.8 MiB"
+    },
+    {
+      "name": "Worms (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Worms%20%28USA%29.zip",
+      "size": "392.6 MiB"
+    },
+    {
+      "name": "WWF In Your House (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/WWF%20In%20Your%20House%20%28USA%29.zip",
+      "size": "389.5 MiB"
+    },
+    {
+      "name": "WWF WrestleMania - The Arcade Game (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/WWF%20WrestleMania%20-%20The%20Arcade%20Game%20%28USA%29.zip",
+      "size": "436.4 MiB"
+    },
+    {
+      "name": "X-Men - Children of the Atom (USA).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/X-Men%20-%20Children%20of%20the%20Atom%20%28USA%29.zip",
+      "size": "519.1 MiB"
+    },
+    {
+      "name": "Z (Europe).zip",
+      "url": "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/Z%20%28Europe%29.zip",
+      "size": "270.1 MiB"
+    }
+  ]
+}

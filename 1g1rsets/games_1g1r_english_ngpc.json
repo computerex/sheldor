@@ -1,248 +1,212 @@
-[
+{
+  "system": "Neo Geo Pocket Color",
+  "source": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/",
+  "total_games": 41,
+  "games": [
     {
-        "name":  "Baseball Stars Color - Pocket Sports Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Baseball%20Stars%20Color%20-%20Pocket%20Sports%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "370.9 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Baseball Stars Color - Pocket Sports Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Baseball%20Stars%20Color%20-%20Pocket%20Sports%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "370.9 KiB"
     },
     {
-        "name":  "Biomotor Unitron (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Biomotor%20Unitron%20(USA%2C%20Europe).zip",
-        "size":  "577.7 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Biomotor Unitron (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Biomotor%20Unitron%20%28USA%2C%20Europe%29.zip",
+      "size": "577.7 KiB"
     },
     {
-        "name":  "Bust-A-Move Pocket (USA).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bust-A-Move%20Pocket%20(USA).zip",
-        "size":  "215.8 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Bust-A-Move Pocket (USA).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Bust-A-Move%20Pocket%20%28USA%29.zip",
+      "size": "215.8 KiB"
     },
     {
-        "name":  "Cool Boarders Pocket (Japan, Europe) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Cool%20Boarders%20Pocket%20(Japan%2C%20Europe)%20(En%2CJa).zip",
-        "size":  "373.8 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Cool Boarders Pocket (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Cool%20Boarders%20Pocket%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "373.8 KiB"
     },
     {
-        "name":  "Crush Roller (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Crush%20Roller%20(World)%20(En%2CJa).zip",
-        "size":  "491.7 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Cool Cool Jam (USA) (Proto).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Cool%20Cool%20Jam%20%28USA%29%20%28Proto%29.zip",
+      "size": "221.0 KiB"
     },
     {
-        "name":  "Dark Arms - Beast Buster 1999 (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dark%20Arms%20-%20Beast%20Buster%201999%20(World)%20(En%2CJa).zip",
-        "size":  "626.3 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Crush Roller (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Crush%20Roller%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "491.7 KiB"
     },
     {
-        "name":  "Dive Alert - Becky\u0027s Version (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Becky\u0027s%20Version%20(USA%2C%20Europe).zip",
-        "size":  "523.9 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Dark Arms - Beast Buster 1999 (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dark%20Arms%20-%20Beast%20Buster%201999%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "626.3 KiB"
     },
     {
-        "name":  "Dive Alert - Matt\u0027s Version (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Matt\u0027s%20Version%20(USA%2C%20Europe).zip",
-        "size":  "523.9 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Dive Alert - Becky's Version (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Becky%27s%20Version%20%28USA%2C%20Europe%29.zip",
+      "size": "523.9 KiB"
     },
     {
-        "name":  "Dynamite Slugger (Japan, Europe) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dynamite%20Slugger%20(Japan%2C%20Europe)%20(En%2CJa).zip",
-        "size":  "441.7 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Dive Alert - Matt's Version (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dive%20Alert%20-%20Matt%27s%20Version%20%28USA%2C%20Europe%29.zip",
+      "size": "523.9 KiB"
     },
     {
-        "name":  "Evolution - Eternal Dungeons (Europe) (v03).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Evolution%20-%20Eternal%20Dungeons%20(Europe)%20(v03).zip",
-        "size":  "593.9 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Dynamite Slugger (Japan, Europe) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Dynamite%20Slugger%20%28Japan%2C%20Europe%29%20%28En%2CJa%29.zip",
+      "size": "441.7 KiB"
     },
     {
-        "name":  "Fantastic Night Dreams - Cotton (Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fantastic%20Night%20Dreams%20-%20Cotton%20(Europe).zip",
-        "size":  "326.8 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Evolution - Eternal Dungeons (Europe) (v03).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Evolution%20-%20Eternal%20Dungeons%20%28Europe%29%20%28v03%29.zip",
+      "size": "593.9 KiB"
     },
     {
-        "name":  "Faselei! (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Faselei!%20(USA%2C%20Europe).zip",
-        "size":  "975.7 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Fantastic Night Dreams - Cotton (Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fantastic%20Night%20Dreams%20-%20Cotton%20%28Europe%29.zip",
+      "size": "326.8 KiB"
     },
     {
-        "name":  "Fatal Fury F-Contact - Pocket Fighting Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fatal%20Fury%20F-Contact%20-%20Pocket%20Fighting%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "819.5 KiB",
-        "date":  "10-Mar-2023 05:08"
+      "name": "Faselei! (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Faselei%21%20%28USA%2C%20Europe%29.zip",
+      "size": "975.7 KiB"
     },
     {
-        "name":  "King of Fighters R-2 - Pocket Fighting Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%20R-2%20-%20Pocket%20Fighting%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "901.7 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Fatal Fury F-Contact - Pocket Fighting Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Fatal%20Fury%20F-Contact%20-%20Pocket%20Fighting%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "819.5 KiB"
     },
     {
-        "name":  "Last Blade, The - Beyond the Destiny (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Last%20Blade%2C%20The%20-%20Beyond%20the%20Destiny%20(USA%2C%20Europe).zip",
-        "size":  "1007.9 KiB",
-        "date":  "11-Jul-2025 09:12"
+      "name": "King of Fighters R-2 - Pocket Fighting Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/King%20of%20Fighters%20R-2%20-%20Pocket%20Fighting%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "901.7 KiB"
     },
     {
-        "name":  "Magical Drop Pocket (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Magical%20Drop%20Pocket%20(USA%2C%20Europe).zip",
-        "size":  "267.1 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Last Blade, The - Beyond the Destiny (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Last%20Blade%2C%20The%20-%20Beyond%20the%20Destiny%20%28USA%2C%20Europe%29.zip",
+      "size": "1007.9 KiB"
     },
     {
-        "name":  "Metal Slug - 1st Mission (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Metal%20Slug%20-%201st%20Mission%20(World)%20(En%2CJa).zip",
-        "size":  "620.3 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Magical Drop Pocket (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Magical%20Drop%20Pocket%20%28USA%2C%20Europe%29.zip",
+      "size": "267.1 KiB"
     },
     {
-        "name":  "Metal Slug - 2nd Mission (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Metal%20Slug%20-%202nd%20Mission%20(World)%20(En%2CJa).zip",
-        "size":  "1.3 MiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Metal Slug - 1st Mission (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Metal%20Slug%20-%201st%20Mission%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "620.3 KiB"
     },
     {
-        "name":  "Neo 21 - Pocket Casino Series (World).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%2021%20-%20Pocket%20Casino%20Series%20(World).zip",
-        "size":  "202.3 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Metal Slug - 2nd Mission (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Metal%20Slug%20-%202nd%20Mission%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "1.3 MiB"
     },
     {
-        "name":  "Neo Baccarat - Pocket Casino Series (Japan, Europe) (En) (v11).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Baccarat%20-%20Pocket%20Casino%20Series%20(Japan%2C%20Europe)%20(En)%20(v11).zip",
-        "size":  "139.5 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo 21 - Pocket Casino Series (World).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%2021%20-%20Pocket%20Casino%20Series%20%28World%29.zip",
+      "size": "202.3 KiB"
     },
     {
-        "name":  "Neo Cherry Master Color - Pocket Casino Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Cherry%20Master%20Color%20-%20Pocket%20Casino%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "141.5 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo Baccarat - Pocket Casino Series (Japan, Europe) (En) (v11).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Baccarat%20-%20Pocket%20Casino%20Series%20%28Japan%2C%20Europe%29%20%28En%29%20%28v11%29.zip",
+      "size": "139.5 KiB"
     },
     {
-        "name":  "Neo Dragon\u0027s Wild - Real Casino Series (World) (En,Ja) (v11).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Dragon\u0027s%20Wild%20-%20Real%20Casino%20Series%20(World)%20(En%2CJa)%20(v11).zip",
-        "size":  "235.1 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo Cherry Master Color - Pocket Casino Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Cherry%20Master%20Color%20-%20Pocket%20Casino%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "141.5 KiB"
     },
     {
-        "name":  "Neo Mystery Bonus - Pocket Casino Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Mystery%20Bonus%20-%20Pocket%20Casino%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "142.4 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo Dragon's Wild - Real Casino Series (World) (En,Ja) (v11).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Dragon%27s%20Wild%20-%20Real%20Casino%20Series%20%28World%29%20%28En%2CJa%29%20%28v11%29.zip",
+      "size": "235.1 KiB"
     },
     {
-        "name":  "Neo Turf Masters (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Turf%20Masters%20(World)%20(En%2CJa).zip",
-        "size":  "629.7 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo Mystery Bonus - Pocket Casino Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Mystery%20Bonus%20-%20Pocket%20Casino%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "142.4 KiB"
     },
     {
-        "name":  "NeoGeo Cup \u002798 Plus Color - Pocket Sports Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/NeoGeo%20Cup%20\u002798%20Plus%20Color%20-%20Pocket%20Sports%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "471.1 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Neo Turf Masters (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Neo%20Turf%20Masters%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "629.7 KiB"
     },
     {
-        "name":  "Pac-Man (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pac-Man%20(World)%20(En%2CJa).zip",
-        "size":  "34.0 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "NeoGeo Cup '98 Plus Color - Pocket Sports Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/NeoGeo%20Cup%20%2798%20Plus%20Color%20-%20Pocket%20Sports%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "471.1 KiB"
     },
     {
-        "name":  "Picture Puzzle (Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Picture%20Puzzle%20(Europe).zip",
-        "size":  "167.4 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Pac-Man (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pac-Man%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "34.0 KiB"
     },
     {
-        "name":  "Pocket Reversi (Europe) (v03).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Reversi%20(Europe)%20(v03).zip",
-        "size":  "116.7 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Picture Puzzle (Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Picture%20Puzzle%20%28Europe%29.zip",
+      "size": "167.4 KiB"
     },
     {
-        "name":  "Pocket Tennis Color - Pocket Sports Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Tennis%20Color%20-%20Pocket%20Sports%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "204.0 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Pocket Reversi (Europe) (v03).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Reversi%20%28Europe%29%20%28v03%29.zip",
+      "size": "116.7 KiB"
     },
     {
-        "name":  "Puyo Pop (USA) (En,Ja) (v06).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puyo%20Pop%20(USA)%20(En%2CJa)%20(v06).zip",
-        "size":  "574.9 KiB",
-        "date":  "11-Jul-2025 09:12"
+      "name": "Pocket Tennis Color - Pocket Sports Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Pocket%20Tennis%20Color%20-%20Pocket%20Sports%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "204.0 KiB"
     },
     {
-        "name":  "Puzzle Bobble Mini (Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Bobble%20Mini%20(Europe).zip",
-        "size":  "213.7 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Puyo Pop (USA) (En,Ja) (v06).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puyo%20Pop%20%28USA%29%20%28En%2CJa%29%20%28v06%29.zip",
+      "size": "574.9 KiB"
     },
     {
-        "name":  "Puzzle Link (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Link%20(USA%2C%20Europe).zip",
-        "size":  "148.9 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Puzzle Bobble Mini (Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Bobble%20Mini%20%28Europe%29.zip",
+      "size": "213.7 KiB"
     },
     {
-        "name":  "Puzzle Link 2 (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Link%202%20(USA%2C%20Europe).zip",
-        "size":  "335.6 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Puzzle Link (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Link%20%28USA%2C%20Europe%29.zip",
+      "size": "148.9 KiB"
     },
     {
-        "name":  "SNK Gals\u0027 Fighters (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20Gals\u0027%20Fighters%20(USA%2C%20Europe).zip",
-        "size":  "893.4 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Puzzle Link 2 (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Puzzle%20Link%202%20%28USA%2C%20Europe%29.zip",
+      "size": "335.6 KiB"
     },
     {
-        "name":  "SNK vs. Capcom - Card Fighters\u0027 Clash - Capcom Version (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters\u0027%20Clash%20-%20Capcom%20Version%20(USA%2C%20Europe).zip",
-        "size":  "892.4 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Samurai Shodown! 2 - Pocket Fighting Series (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Samurai%20Shodown%21%202%20-%20Pocket%20Fighting%20Series%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "932.2 KiB"
     },
     {
-        "name":  "SNK vs. Capcom - Card Fighters\u0027 Clash - SNK Version (USA, Europe).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters\u0027%20Clash%20-%20SNK%20Version%20(USA%2C%20Europe).zip",
-        "size":  "892.4 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "Shanghai Mini (World) (En,Ja) (Beta 1).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shanghai%20Mini%20%28World%29%20%28En%2CJa%29%20%28Beta%201%29.zip",
+      "size": "234.3 KiB"
     },
     {
-        "name":  "SNK vs. Capcom - The Match of the Millennium (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20The%20Match%20of%20the%20Millennium%20(World)%20(En%2CJa).zip",
-        "size":  "1.6 MiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "SNK Gals' Fighters (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20Gals%27%20Fighters%20%28USA%2C%20Europe%29.zip",
+      "size": "893.4 KiB"
     },
     {
-        "name":  "Samurai Shodown! 2 - Pocket Fighting Series (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Samurai%20Shodown!%202%20-%20Pocket%20Fighting%20Series%20(World)%20(En%2CJa).zip",
-        "size":  "932.2 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "SNK vs. Capcom - Card Fighters' Clash - Capcom Version (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters%27%20Clash%20-%20Capcom%20Version%20%28USA%2C%20Europe%29.zip",
+      "size": "892.4 KiB"
     },
     {
-        "name":  "Shanghai Mini (World) (En,Ja) (Beta 1).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Shanghai%20Mini%20(World)%20(En%2CJa)%20(Beta%201).zip",
-        "size":  "234.3 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "SNK vs. Capcom - Card Fighters' Clash - SNK Version (USA, Europe).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20Card%20Fighters%27%20Clash%20-%20SNK%20Version%20%28USA%2C%20Europe%29.zip",
+      "size": "892.4 KiB"
     },
     {
-        "name":  "Sonic The Hedgehog - Pocket Adventure (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Sonic%20The%20Hedgehog%20-%20Pocket%20Adventure%20(World)%20(En%2CJa).zip",
-        "size":  "674.5 KiB",
-        "date":  "10-Mar-2023 05:09"
+      "name": "SNK vs. Capcom - The Match of the Millennium (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/SNK%20vs.%20Capcom%20-%20The%20Match%20of%20the%20Millennium%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "1.6 MiB"
     },
     {
-        "name":  "[BIOS] SNK NeoGeo Pocket Color (World) (En,Ja).zip",
-        "url":  "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/%5BBIOS%5D%20SNK%20NeoGeo%20Pocket%20Color%20(World)%20(En%2CJa).zip",
-        "size":  "36.9 KiB",
-        "date":  "05-May-2023 11:34"
+      "name": "Sonic The Hedgehog - Pocket Adventure (World) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color/Sonic%20The%20Hedgehog%20-%20Pocket%20Adventure%20%28World%29%20%28En%2CJa%29.zip",
+      "size": "674.5 KiB"
     }
-]
+  ]
+}

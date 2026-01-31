@@ -1,0 +1,32 @@
+{
+  "system": "Neo Geo Pocket",
+  "source": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/",
+  "total_games": 5,
+  "games": [
+    {
+      "name": "King of Fighters R-1 - Pocket Kakutou Series & Melon-chan no Seichou Nikki (Japan) (Demo).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/King%20of%20Fighters%20R-1%20-%20Pocket%20Kakutou%20Series%20%26%20Melon-chan%20no%20Seichou%20Nikki%20%28Japan%29%20%28Demo%29.zip",
+      "size": "914.1 KiB"
+    },
+    {
+      "name": "Melon-chan no Seichou Nikki (Japan).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Melon-chan%20no%20Seichou%20Nikki%20%28Japan%29.zip",
+      "size": "541.9 KiB"
+    },
+    {
+      "name": "Neo Cherry Master - Real Casino Series (Japan) (En,Ja).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Neo%20Cherry%20Master%20-%20Real%20Casino%20Series%20%28Japan%29%20%28En%2CJa%29.zip",
+      "size": "114.0 KiB"
+    },
+    {
+      "name": "Renketsu Puzzle Tsunagete Pon! (Japan).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Renketsu%20Puzzle%20Tsunagete%20Pon%21%20%28Japan%29.zip",
+      "size": "136.5 KiB"
+    },
+    {
+      "name": "Shougi no Tatsujin (Japan).zip",
+      "url": "https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket/Shougi%20no%20Tatsujin%20%28Japan%29.zip",
+      "size": "183.3 KiB"
+    }
+  ]
+}

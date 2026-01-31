@@ -512,6 +512,43 @@
       "standaloneEmulator": null,
       "fileExtensions": [".wsc", ".zip"],
       "needsExtract": false
+    },
+    {
+      "id": "ngp",
+      "name": "Neo Geo Pocket",
+      "dir": "ngp",
+      "romJsonFile": "games_1g1r_english_ngp.json",
+      "libretroName": "SNK - Neo Geo Pocket",
+      "emulator": {
+        "path": "Emulators/RetroArch/RetroArch-Win64/retroarch.exe",
+        "cores": [
+          {"name": "Beetle NeoPop", "dll": "cores/mednafen_ngp_libretro.dll"},
+          {"name": "RACE", "dll": "cores/race_libretro.dll"}
+        ],
+        "name": "RetroArch"
+      },
+      "standaloneEmulator": null,
+      "fileExtensions": [".ngp", ".ngc", ".zip"],
+      "needsExtract": false
+    },
+    {
+      "id": "saturn",
+      "name": "Sega Saturn",
+      "dir": "saturn",
+      "romJsonFile": "games_1g1r_english_saturn.json",
+      "libretroName": "Sega - Saturn",
+      "emulator": {
+        "path": "Emulators/RetroArch/RetroArch-Win64/retroarch.exe",
+        "cores": [
+          {"name": "Beetle Saturn", "dll": "cores/mednafen_saturn_libretro.dll"},
+          {"name": "Kronos", "dll": "cores/kronos_libretro.dll"},
+          {"name": "YabaSanshiro", "dll": "cores/yabasanshiro_libretro.dll"}
+        ],
+        "name": "RetroArch"
+      },
+      "standaloneEmulator": null,
+      "fileExtensions": [".chd", ".cue", ".iso", ".bin", ".zip"],
+      "needsExtract": true
     }
   ]
 }
