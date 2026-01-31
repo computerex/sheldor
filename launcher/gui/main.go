@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -2150,11 +2151,25 @@ func (a *App) downloadWiiUGame(game ROM) {
 }
 
 func downloadWithProgress(url, outputPath string, progress func(downloaded, total int64)) error {
-	client := &http.Client{}
+	// Create optimized HTTP transport for large file downloads
+	transport := &http.Transport{
+		MaxIdleConns:        10,
+		MaxIdleConnsPerHost: 10,
+		IdleConnTimeout:     90 * time.Second,
+		WriteBufferSize:     1024 * 1024, // 1MB
+		ReadBufferSize:      1024 * 1024, // 1MB
+		DisableCompression:  true,        // Binary files don't compress well
+	}
+	client := &http.Client{Transport: transport}
+	
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
 	}
+	// Set headers to avoid throttling
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Connection", "keep-alive")
 
 	resp, err := client.Do(req)
 	if err != nil {
@@ -2171,15 +2186,20 @@ func downloadWithProgress(url, outputPath string, progress func(downloaded, tota
 		return err
 	}
 	defer out.Close()
+	
+	// Use buffered writer for better disk I/O
+	bufferedOut := bufio.NewWriterSize(out, 1024*1024) // 1MB buffer
+	defer bufferedOut.Flush()
 
 	total := resp.ContentLength
 	var downloaded int64
 
-	buf := make([]byte, 32*1024)
+	// Use large buffer for network reads (1MB)
+	buf := make([]byte, 1024*1024)
 	for {
 		n, err := resp.Body.Read(buf)
 		if n > 0 {
-			out.Write(buf[:n])
+			bufferedOut.Write(buf[:n])
 			downloaded += int64(n)
 			progress(downloaded, total)
 		}

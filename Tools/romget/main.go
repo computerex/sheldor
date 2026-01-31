@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"io"
@@ -15,7 +16,7 @@ import (
 const (
 	defaultReferer   = "https://myrient.erista.me/files/No-Intro/"
 	defaultUserAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"
-	chunkSize        = 64 * 1024 // 64KB chunks
+	bufferSize       = 1024 * 1024 // 1MB buffer for better throughput on large files
 )
 
 type ProgressWriter struct {
@@ -73,20 +74,11 @@ func createRequest(urlStr, referer, userAgent string) (*http.Request, error) {
 
 	// Set myrient-compatible headers
 	req.Header.Set("User-Agent", userAgent)
-	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("Accept-Language", "en-US,en;q=0.9")
-	req.Header.Set("Accept-Encoding", "gzip, deflate, br")
+	// Don't set Accept-Encoding - let Go handle it, avoids compression issues
 	req.Header.Set("Referer", referer)
-	req.Header.Set("DNT", "1")
 	req.Header.Set("Connection", "keep-alive")
-	req.Header.Set("Upgrade-Insecure-Requests", "1")
-	req.Header.Set("Sec-Fetch-Dest", "document")
-	req.Header.Set("Sec-Fetch-Mode", "navigate")
-	req.Header.Set("Sec-Fetch-Site", "same-origin")
-	req.Header.Set("Sec-Fetch-User", "?1")
-	req.Header.Set("sec-ch-ua", `"Chromium";v="140", "Not=A?Brand";v="24", "Microsoft Edge";v="140"`)
-	req.Header.Set("sec-ch-ua-mobile", "?0")
-	req.Header.Set("sec-ch-ua-platform", `"Linux"`)
 
 	return req, nil
 }
@@ -117,8 +109,7 @@ func downloadFile(urlStr, outputPath string, retries int, timeout time.Duration,
 }
 
 func downloadAttempt(urlStr, outputPath string, timeout time.Duration, referer, userAgent string, quiet bool) error {
-	// Create HTTP client WITHOUT total timeout - we only want connection/TLS timeout
-	// The timeout parameter will be used for transport-level timeouts, not the entire request
+	// Create HTTP client optimized for large file downloads
 	transport := &http.Transport{
 		DialContext: (&net.Dialer{
 			Timeout:   timeout,
@@ -127,6 +118,11 @@ func downloadAttempt(urlStr, outputPath string, timeout time.Duration, referer, 
 		TLSHandshakeTimeout:   timeout,
 		ResponseHeaderTimeout: timeout,
 		IdleConnTimeout:       90 * time.Second,
+		MaxIdleConns:          10,
+		MaxIdleConnsPerHost:   10,
+		WriteBufferSize:       bufferSize,
+		ReadBufferSize:        bufferSize,
+		DisableCompression:    true, // Avoid decompression overhead for binary files
 	}
 	client := &http.Client{
 		Transport: transport,
@@ -157,33 +153,43 @@ func downloadAttempt(urlStr, outputPath string, timeout time.Duration, referer, 
 		fmt.Fprintf(os.Stderr, "Size: %s\n", formatBytes(totalSize))
 	}
 
-	// Create temp file
+	// Create temp file with buffered writer for better disk I/O
 	tempPath := outputPath + ".tmp"
-	out, err := os.Create(tempPath)
+	file, err := os.Create(tempPath)
 	if err != nil {
 		return fmt.Errorf("create file: %w", err)
 	}
+	
+	// Use buffered writer to reduce disk I/O overhead
+	bufferedFile := bufio.NewWriterSize(file, bufferSize)
 
-	// Download with progress
-	var writer io.Writer = out
+	// Download with progress using large buffer for better throughput
+	var writer io.Writer = bufferedFile
 	if !quiet && totalSize > 0 {
 		pw := &ProgressWriter{
 			Total:     totalSize,
 			StartTime: time.Now(),
 			LastPrint: time.Now(),
 		}
-		writer = io.MultiWriter(out, pw)
+		writer = io.MultiWriter(bufferedFile, pw)
 	}
 
-	_, err = io.Copy(writer, resp.Body)
+	// Use large buffer for copying - significantly improves download speed
+	buf := make([]byte, bufferSize)
+	_, err = io.CopyBuffer(writer, resp.Body, buf)
 	if err != nil {
-		out.Close()
+		file.Close()
 		os.Remove(tempPath)
 		return fmt.Errorf("download: %w", err)
 	}
 
-	// Close file before rename (Windows requirement)
-	out.Close()
+	// Flush buffered writer and close file before rename
+	if err := bufferedFile.Flush(); err != nil {
+		file.Close()
+		os.Remove(tempPath)
+		return fmt.Errorf("flush: %w", err)
+	}
+	file.Close()
 
 	// Move temp to final location
 	err = os.Rename(tempPath, outputPath)
