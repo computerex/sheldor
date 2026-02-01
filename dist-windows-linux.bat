@@ -98,7 +98,12 @@ copy README.md "%WIN_DIR%\" >nul
 xcopy 1g1rsets\*.json "%WIN_DIR%\1g1rsets\" /q >nul
 
 cd dist
-powershell -Command "Compress-Archive -Path 'EmuBuddy-Windows-v%VERSION%' -DestinationPath 'EmuBuddy-Windows-v%VERSION%.zip' -Force"
+:: Use 7-Zip for better cross-platform ZIP compatibility
+if exist "C:\Program Files\7-Zip\7z.exe" (
+    "C:\Program Files\7-Zip\7z.exe" a -tzip "EmuBuddy-Windows-v%VERSION%.zip" "EmuBuddy-Windows-v%VERSION%" >nul
+) else (
+    powershell -Command "Compress-Archive -Path 'EmuBuddy-Windows-v%VERSION%' -DestinationPath 'EmuBuddy-Windows-v%VERSION%.zip' -Force"
+)
 cd ..
 echo   [OK] dist\EmuBuddy-Windows-v%VERSION%.zip
 
@@ -127,7 +132,12 @@ echo cd "$(dirname "$0")" >> "%LIN_DIR%\run-setup.sh"
 echo ./EmuBuddySetup-linux >> "%LIN_DIR%\run-setup.sh"
 
 cd dist
-powershell -Command "Compress-Archive -Path 'EmuBuddy-Linux-v%VERSION%' -DestinationPath 'EmuBuddy-Linux-v%VERSION%.zip' -Force"
+:: Use 7-Zip for better cross-platform ZIP compatibility
+if exist "C:\Program Files\7-Zip\7z.exe" (
+    "C:\Program Files\7-Zip\7z.exe" a -tzip "EmuBuddy-Linux-v%VERSION%.zip" "EmuBuddy-Linux-v%VERSION%" >nul
+) else (
+    powershell -Command "Compress-Archive -Path 'EmuBuddy-Linux-v%VERSION%' -DestinationPath 'EmuBuddy-Linux-v%VERSION%.zip' -Force"
+)
 cd ..
 echo   [OK] dist\EmuBuddy-Linux-v%VERSION%.zip
 
