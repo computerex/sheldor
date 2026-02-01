@@ -1139,8 +1139,10 @@ func (a *App) pollController() {
 
 	var lastButtons uint32
 	var lastLeftY, lastRightY int
+	var lastDpadX, lastDpadY int
 	leftRepeatTimer := time.Now()
 	rightRepeatTimer := time.Now()
+	dpadRepeatTimer := time.Now()
 	rightHoldStart := time.Time{}
 	const initialDelay = 300 * time.Millisecond
 	const repeatDelay = 150 * time.Millisecond
@@ -1166,7 +1168,7 @@ func (a *App) pollController() {
 
 		// Debug: Log button presses and axis movements
 		if state.Buttons != lastButtons {
-			logDebug("Buttons changed: 0x%08X (was 0x%08X)", state.Buttons, lastButtons)
+			logDebug("Buttons RAW: 0x%08X (was 0x%08X)", state.Buttons, lastButtons)
 		}
 
 		// Skip if dialog is open
@@ -1181,9 +1183,13 @@ func (a *App) pollController() {
 		leftY := 0
 		// Right stick Y axis (axis 3 on most controllers) - controls game list
 		rightY := 0
+		// D-pad on Linux (axes 6 and 7)
+		dpadX := 0
+		dpadY := 0
 
 		if len(state.AxisData) >= 2 {
-			// Invert Y axis for macOS (positive = down, we want down to scroll down)
+			// Y axis handling: Linux joystick API reports positive=down (which is what we want)
+			// macOS reports positive=up, so we need to invert it
 			axisValue := state.AxisData[1]
 			if runtime.GOOS == "darwin" {
 				axisValue = -axisValue
@@ -1198,14 +1204,15 @@ func (a *App) pollController() {
 		// Right stick Y axis - axis index differs by platform
 		var rightAxisIndex int
 		if runtime.GOOS == "linux" {
-			rightAxisIndex = 4 // Linux: axis 4 is right Y
+			rightAxisIndex = 3 // Linux: axis 3 is right Y (standard mapping)
 		} else {
 			rightAxisIndex = 3 // Windows/macOS: axis 3 is right Y
 		}
 
 		if len(state.AxisData) > rightAxisIndex {
 			axisValue := state.AxisData[rightAxisIndex]
-			// Invert Y axis for macOS
+			// Y axis handling: Linux joystick API reports positive=down (which is what we want)
+			// macOS reports positive=up, so we need to invert it
 			if runtime.GOOS == "darwin" {
 				axisValue = -axisValue
 			}
@@ -1213,6 +1220,22 @@ func (a *App) pollController() {
 				rightY = 1
 			} else if axisValue < -deadzone {
 				rightY = -1
+			}
+		}
+
+		// D-pad on Linux - usually axes 6 (X) and 7 (Y)
+		if runtime.GOOS == "linux" && len(state.AxisData) > 7 {
+			// D-pad X axis (left/right)
+			if state.AxisData[6] > deadzone {
+				dpadX = 1 // Right
+			} else if state.AxisData[6] < -deadzone {
+				dpadX = -1 // Left
+			}
+			// D-pad Y axis (up/down)
+			if state.AxisData[7] > deadzone {
+				dpadY = 1 // Down
+			} else if state.AxisData[7] < -deadzone {
+				dpadY = -1 // Up
 			}
 		}
 
@@ -1233,9 +1256,33 @@ func (a *App) pollController() {
 			buttons = remapped
 		}
 
-		// Linux uses standard joystick API mapping (no remapping needed)
-		// bit 0 = A, bit 1 = B, bit 2 = X, bit 3 = Y
-		// bit 4 = LB, bit 5 = RB, bit 6 = Back/Select, bit 7 = Start
+		// Remap buttons for Linux (observed button mapping differs from expected)
+		// User testing shows:
+		// - RB favorites/unfavorites games (should be Y, bit 3)
+		// - Y does nothing
+		// - Start toggles favorites list (working, bit 7)
+		// Looking at logs: bit 4 (0x10) is being pressed when RB is pressed
+		// Expected: bit 0=A, bit 1=B, bit 2=X, bit 3=Y, bit 7=Start
+		// Actual: bit 0=A, bit 1=B, bit 3=X, bit 4=RB(should be Y), bit 11=Start
+		if runtime.GOOS == "linux" {
+			originalButtons := buttons
+			remapped := uint32(0)
+			// Remap buttons correctly
+			if buttons&0x0001 != 0 { remapped |= 0x0001 } // A -> A (bit 0)
+			if buttons&0x0002 != 0 { remapped |= 0x0002 } // B -> B (bit 1)
+			if buttons&0x0008 != 0 { remapped |= 0x0004 } // X -> X (bit 3 -> bit 2)
+			if buttons&0x0010 != 0 { remapped |= 0x0008 } // RB -> Y (bit 4 -> bit 3)
+			if buttons&0x0020 != 0 { remapped |= 0x0020 } // Keep bit 5 as-is
+			if buttons&0x0040 != 0 { remapped |= 0x0040 } // Back -> Back (bit 6)
+			// bit 7 is NOT used, don't map it
+			if buttons&0x0800 != 0 { remapped |= 0x0080 } // Start -> Start (bit 11 -> bit 7)
+			// Copy any other bits we haven't explicitly mapped
+			remapped |= buttons & 0xFFFFF700
+			buttons = remapped
+			if originalButtons != remapped {
+				logDebug("Linux button remap: 0x%08X -> 0x%08X", originalButtons, remapped)
+			}
+		}
 
 		// Check for new button presses
 		justPressed := buttons &^ lastButtons
@@ -1260,21 +1307,36 @@ func (a *App) pollController() {
 				}
 				rightRepeatTimer = time.Now()
 			}
-			// D-pad up/down
-			if justPressed&4096 != 0 && a.selectedEmulatorIdx > 0 {
-				a.selectedEmulatorIdx--
-				a.emulatorList.Select(a.selectedEmulatorIdx)
-				a.emulatorList.Refresh()
+			// D-pad navigation - axes on Linux, buttons on other platforms
+			if runtime.GOOS == "linux" {
+				if dpadY != 0 && (dpadY != lastDpadY || time.Since(dpadRepeatTimer) > repeatDelay) {
+					newIdx := a.selectedEmulatorIdx + dpadY
+					if newIdx >= 0 && newIdx < len(a.emulatorChoices) {
+						a.selectedEmulatorIdx = newIdx
+						a.emulatorList.Select(newIdx)
+						a.emulatorList.Refresh()
+					}
+					dpadRepeatTimer = time.Now()
+				}
+			} else {
+				// Button-based D-pad for other platforms
+				if justPressed&4096 != 0 && a.selectedEmulatorIdx > 0 {
+					a.selectedEmulatorIdx--
+					a.emulatorList.Select(a.selectedEmulatorIdx)
+					a.emulatorList.Refresh()
+				}
+				if justPressed&8192 != 0 && a.selectedEmulatorIdx < len(a.emulatorChoices)-1 {
+					a.selectedEmulatorIdx++
+					a.emulatorList.Select(a.selectedEmulatorIdx)
+					a.emulatorList.Refresh()
+				}
 			}
-			if justPressed&8192 != 0 && a.selectedEmulatorIdx < len(a.emulatorChoices)-1 {
-				a.selectedEmulatorIdx++
-				a.emulatorList.Select(a.selectedEmulatorIdx)
-				a.emulatorList.Refresh()
-			}
-			
+
 			lastButtons = buttons
 			lastLeftY = leftY
 			lastRightY = rightY
+			lastDpadX = dpadX
+			lastDpadY = dpadY
 			continue
 		}
 
@@ -1371,31 +1433,50 @@ func (a *App) pollController() {
 			rightHoldStart = time.Time{}
 		}
 
-		// D-pad navigation as fallback
-		// D-pad Up (bit 12)
-		if justPressed&4096 != 0 {
-			a.navigate(-1)
-		}
-		// D-pad Down (bit 13)
-		if justPressed&8192 != 0 {
-			a.navigate(1)
-		}
-		// D-pad Left (bit 14)
-		if justPressed&16384 != 0 {
-			if a.selectedSysIdx > 0 {
-				a.systemList.Select(a.selectedSysIdx - 1)
+		// D-pad navigation - use axes on Linux, buttons on other platforms
+		if runtime.GOOS == "linux" {
+			// On Linux, use D-pad axes for navigation
+			if dpadY != 0 && (dpadY != lastDpadY || time.Since(dpadRepeatTimer) > repeatDelay) {
+				a.navigate(dpadY)
+				dpadRepeatTimer = time.Now()
 			}
-		}
-		// D-pad Right (bit 15)
-		if justPressed&32768 != 0 {
-			if a.selectedSysIdx < len(systemsList)-1 {
-				a.systemList.Select(a.selectedSysIdx + 1)
+			if dpadX != 0 && (dpadX != lastDpadX || time.Since(dpadRepeatTimer) > repeatDelay) {
+				if dpadX < 0 && a.selectedSysIdx > 0 {
+					a.systemList.Select(a.selectedSysIdx - 1)
+				} else if dpadX > 0 && a.selectedSysIdx < len(systemsList)-1 {
+					a.systemList.Select(a.selectedSysIdx + 1)
+				}
+				dpadRepeatTimer = time.Now()
+			}
+		} else {
+			// On other platforms, use button-based D-pad
+			// D-pad Up (bit 12)
+			if justPressed&4096 != 0 {
+				a.navigate(-1)
+			}
+			// D-pad Down (bit 13)
+			if justPressed&8192 != 0 {
+				a.navigate(1)
+			}
+			// D-pad Left (bit 14)
+			if justPressed&16384 != 0 {
+				if a.selectedSysIdx > 0 {
+					a.systemList.Select(a.selectedSysIdx - 1)
+				}
+			}
+			// D-pad Right (bit 15)
+			if justPressed&32768 != 0 {
+				if a.selectedSysIdx < len(systemsList)-1 {
+					a.systemList.Select(a.selectedSysIdx + 1)
+				}
 			}
 		}
 
 		lastButtons = buttons
 		lastLeftY = leftY
 		lastRightY = rightY
+		lastDpadX = dpadX
+		lastDpadY = dpadY
 	}
 }
 
