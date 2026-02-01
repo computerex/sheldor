@@ -245,11 +245,11 @@ func resolvePlatformPath(windowsPath string) string {
 			return strings.Replace(path, "RetroArch/RetroArch-Win64/retroarch.exe", "RetroArch/RetroArch.app/Contents/MacOS/RetroArch", 1)
 		}
 
-		// Handle RetroArch cores - .dll -> .dylib
+		// Handle RetroArch cores
 		// On macOS, cores are stored in ~/Library/Application Support/RetroArch/cores/
-		if strings.Contains(path, "cores/") && strings.HasSuffix(path, ".dll") {
+		// Path arrives as .dylib already (converted by GetCorePath())
+		if strings.Contains(path, "cores/") && strings.HasSuffix(path, ".dylib") {
 			coreName := filepath.Base(path)
-			coreName = strings.TrimSuffix(coreName, ".dll") + ".dylib"
 			homeDir, _ := os.UserHomeDir()
 			return filepath.Join(homeDir, "Library/Application Support/RetroArch/cores", coreName)
 		}
@@ -1155,8 +1155,7 @@ func (a *App) pollController() {
 		time.Sleep(16 * time.Millisecond) // ~60fps polling
 
 		// Only process controller input when EmuBuddy window is focused
-		// Temporarily disabled on macOS for debugging lag issues
-		if runtime.GOOS != "darwin" && !isWindowFocused("EmuBuddy") {
+		if !isWindowFocused("EmuBuddy") {
 			continue
 		}
 
@@ -1858,11 +1857,15 @@ func (a *App) launchWithEmulator(game ROM, emuPath string, emuArgs []string) {
 		if strings.Contains(arg, "/") || strings.Contains(arg, "\\") {
 			// Resolve platform-specific core paths
 			resolvedArg := resolvePlatformPath(arg)
+			logDebug("Path resolution: '%s' -> '%s' (IsAbs=%v, platform=%s)", arg, resolvedArg, filepath.IsAbs(resolvedArg), runtime.GOOS)
+
 			// If resolved path is absolute, use it directly; otherwise join with emuDir
 			if filepath.IsAbs(resolvedArg) {
+				logDebug("Using absolute core path: %s", resolvedArg)
 				args = append(args, resolvedArg)
 			} else {
 				resolvedPath := filepath.Join(emuDir, resolvedArg)
+				logDebug("Joining relative path with emuDir: %s", resolvedPath)
 
 				// On Linux, verify core file exists
 				if runtime.GOOS == "linux" && strings.HasSuffix(strings.ToLower(resolvedPath), ".so") {
