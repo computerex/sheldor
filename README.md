@@ -2,6 +2,15 @@
 
 Cross-platform emulation frontend with automated setup.
 
+## Features
+
+- **One-Click Setup** — Automatically downloads and configures all emulators
+- **16+ Systems** — NES to PS2, handhelds to disc-based consoles
+- **Parallel Downloads** — Fast game downloads with multi-connection support
+- **Controller Support** — Full gamepad navigation for couch gaming
+- **Search & Favorites** — Instant search across 20,000+ games, mark favorites
+- **Portable** — No installation required, runs from any folder
+
 ## ⚠️ Legal Disclaimer
 
 **EmuBuddy does not condone or encourage piracy.** This software is a launcher and does not include any copyrighted game files. Users are solely responsible for ensuring they have the legal right to use any ROMs or game files. Only use games you legally own.
