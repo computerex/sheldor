@@ -460,6 +460,19 @@ func resolvePlatformPath(windowsPath string) string {
 			}
 			return "Emulators/Azahar/azahar.AppImage"
 		}
+		// Handle Cemu - find the AppImage in the Cemu folder
+		if strings.Contains(path, "Cemu/Cemu.exe") {
+			cemuDir := filepath.Join(baseDir, "Emulators", "Cemu")
+			if entries, err := os.ReadDir(cemuDir); err == nil {
+				for _, entry := range entries {
+					if strings.HasSuffix(strings.ToLower(entry.Name()), ".appimage") {
+						return fmt.Sprintf("Emulators/Cemu/%s", entry.Name())
+					}
+				}
+			}
+			return "Emulators/Cemu/Cemu.AppImage"
+		}
+
 
 		// Handle Dolphin - currently Flatpak, but if installed as AppImage
 		if strings.Contains(path, "Dolphin/Dolphin-x64/Dolphin.exe") {
@@ -728,7 +741,14 @@ func launchGameHeadless(game ROM, romPath string, emuPath string, emuArgs []stri
 
 	cmd := exec.Command(emuPath, args...)
 	if !isFlatpak {
-		cmd.Dir = emuDir
+		// On Linux, for AppImages (standalone emulators), use base directory as working dir
+		// This fixes issues with Cemu and other AppImages that need to run from the project root
+		if runtime.GOOS == "linux" && strings.HasSuffix(strings.ToLower(emuPath), ".appimage") {
+			cmd.Dir = baseDir
+			fmt.Printf("Using base directory as working dir for AppImage: %s\n", baseDir)
+		} else {
+			cmd.Dir = emuDir
+		}
 	}
 
 	// On Linux, set environment variables to fix AppImage compatibility
@@ -2136,13 +2156,21 @@ func (a *App) launchWithEmulator(game ROM, emuPath string, emuArgs []string) {
 
 	// Log launch command for debugging
 	logDebug("Launch command: %s %v", emuPath, args)
-	logDebug("Working directory: %s", emuDir)
+	logDebug("Emulator directory: %s", emuDir)
 	logDebug("ROM path: %s", romPath)
 
 	cmd := exec.Command(emuPath, args...)
 	if !isFlatpak {
-		cmd.Dir = emuDir
+		// On Linux, for AppImages (standalone emulators), use base directory as working dir
+		// This fixes issues with Cemu and other AppImages that need to run from the project root
+		if runtime.GOOS == "linux" && strings.HasSuffix(strings.ToLower(emuPath), ".appimage") {
+			cmd.Dir = baseDir
+			logDebug("Using base directory as working dir for AppImage: %s", baseDir)
+		} else {
+			cmd.Dir = emuDir
+		}
 	}
+	logDebug("Working directory: %s", cmd.Dir)
 
 	// On Linux, set environment variables to fix AppImage compatibility
 	if runtime.GOOS == "linux" {
