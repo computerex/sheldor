@@ -55,3 +55,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+# Test Docker files
+*.dockerfile
+test-*.dockerfile
